@@ -1,0 +1,370 @@
+[0.000000] (-) TimerEvent: {}
+[0.002191] (lane_angle) JobQueued: {'identifier': 'lane_angle', 'dependencies': OrderedDict()}
+[0.002764] (lane_detector) JobQueued: {'identifier': 'lane_detector', 'dependencies': OrderedDict()}
+[0.002985] (senal_detector) JobQueued: {'identifier': 'senal_detector', 'dependencies': OrderedDict()}
+[0.003326] (servo) JobQueued: {'identifier': 'servo', 'dependencies': OrderedDict()}
+[0.003559] (webcam) JobQueued: {'identifier': 'webcam', 'dependencies': OrderedDict()}
+[0.004744] (webcam_recorted) JobQueued: {'identifier': 'webcam_recorted', 'dependencies': OrderedDict()}
+[0.005334] (lane_angle) JobStarted: {'identifier': 'lane_angle'}
+[0.051140] (lane_detector) JobStarted: {'identifier': 'lane_detector'}
+[0.090626] (senal_detector) JobStarted: {'identifier': 'senal_detector'}
+[0.098877] (-) TimerEvent: {}
+[0.133160] (servo) JobStarted: {'identifier': 'servo'}
+[0.199110] (-) TimerEvent: {}
+[0.299940] (-) TimerEvent: {}
+[0.400850] (-) TimerEvent: {}
+[0.501636] (-) TimerEvent: {}
+[0.602398] (-) TimerEvent: {}
+[0.703148] (-) TimerEvent: {}
+[0.804752] (-) TimerEvent: {}
+[0.905766] (-) TimerEvent: {}
+[1.009116] (-) TimerEvent: {}
+[1.110298] (-) TimerEvent: {}
+[1.211237] (-) TimerEvent: {}
+[1.313186] (-) TimerEvent: {}
+[1.414041] (-) TimerEvent: {}
+[1.514800] (-) TimerEvent: {}
+[1.615547] (-) TimerEvent: {}
+[1.716467] (-) TimerEvent: {}
+[1.818020] (-) TimerEvent: {}
+[1.919003] (-) TimerEvent: {}
+[2.019858] (-) TimerEvent: {}
+[2.120615] (-) TimerEvent: {}
+[2.221420] (-) TimerEvent: {}
+[2.322157] (-) TimerEvent: {}
+[2.422916] (-) TimerEvent: {}
+[2.523740] (-) TimerEvent: {}
+[2.624706] (-) TimerEvent: {}
+[2.725492] (-) TimerEvent: {}
+[2.826223] (-) TimerEvent: {}
+[2.926948] (-) TimerEvent: {}
+[3.027710] (-) TimerEvent: {}
+[3.128422] (-) TimerEvent: {}
+[3.229151] (-) TimerEvent: {}
+[3.329899] (-) TimerEvent: {}
+[3.430747] (-) TimerEvent: {}
+[3.531670] (-) TimerEvent: {}
+[3.632406] (-) TimerEvent: {}
+[3.733223] (-) TimerEvent: {}
+[3.834066] (-) TimerEvent: {}
+[3.934796] (-) TimerEvent: {}
+[4.035620] (-) TimerEvent: {}
+[4.136338] (-) TimerEvent: {}
+[4.237077] (-) TimerEvent: {}
+[4.337893] (-) TimerEvent: {}
+[4.438673] (-) TimerEvent: {}
+[4.539432] (-) TimerEvent: {}
+[4.640146] (-) TimerEvent: {}
+[4.740877] (-) TimerEvent: {}
+[4.841648] (-) TimerEvent: {}
+[4.942601] (-) TimerEvent: {}
+[5.044073] (-) TimerEvent: {}
+[5.145196] (-) TimerEvent: {}
+[5.246152] (-) TimerEvent: {}
+[5.346904] (-) TimerEvent: {}
+[5.447834] (-) TimerEvent: {}
+[5.549082] (-) TimerEvent: {}
+[5.649914] (-) TimerEvent: {}
+[5.750638] (-) TimerEvent: {}
+[5.851399] (-) TimerEvent: {}
+[5.952112] (-) TimerEvent: {}
+[6.052837] (-) TimerEvent: {}
+[6.153699] (-) TimerEvent: {}
+[6.255089] (-) TimerEvent: {}
+[6.356927] (-) TimerEvent: {}
+[6.458484] (-) TimerEvent: {}
+[6.559309] (-) TimerEvent: {}
+[6.660217] (-) TimerEvent: {}
+[6.761083] (-) TimerEvent: {}
+[6.864104] (-) TimerEvent: {}
+[6.967499] (-) TimerEvent: {}
+[7.068852] (-) TimerEvent: {}
+[7.169825] (-) TimerEvent: {}
+[7.271101] (-) TimerEvent: {}
+[7.372375] (-) TimerEvent: {}
+[7.473511] (-) TimerEvent: {}
+[7.574659] (-) TimerEvent: {}
+[7.675795] (-) TimerEvent: {}
+[7.779529] (-) TimerEvent: {}
+[7.903280] (-) TimerEvent: {}
+[8.011837] (-) TimerEvent: {}
+[8.124943] (-) TimerEvent: {}
+[8.226025] (-) TimerEvent: {}
+[8.327125] (-) TimerEvent: {}
+[8.430120] (-) TimerEvent: {}
+[8.531125] (-) TimerEvent: {}
+[8.632043] (-) TimerEvent: {}
+[8.732881] (-) TimerEvent: {}
+[8.833901] (-) TimerEvent: {}
+[8.935519] (-) TimerEvent: {}
+[9.036448] (-) TimerEvent: {}
+[9.137339] (-) TimerEvent: {}
+[9.243895] (-) TimerEvent: {}
+[9.350625] (-) TimerEvent: {}
+[9.460680] (-) TimerEvent: {}
+[9.570381] (-) TimerEvent: {}
+[9.678120] (-) TimerEvent: {}
+[9.781244] (-) TimerEvent: {}
+[9.882271] (-) TimerEvent: {}
+[9.983517] (-) TimerEvent: {}
+[10.085715] (-) TimerEvent: {}
+[10.188117] (-) TimerEvent: {}
+[10.290438] (-) TimerEvent: {}
+[10.348761] (lane_detector) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/lane_detector', 'build', '--build-base', '/home/crofi/ros2_ws/build/lane_detector/build', 'install', '--record', '/home/crofi/ros2_ws/build/lane_detector/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/crofi/ros2_ws/src/vision/lane_detector', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'es_MX:es', 'USER': 'crofi', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2000', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/crofi/ros2_ws/install:/home/crofi/opencv_project/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'crofi', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/crofi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/crofi-desktop:@/tmp/.ICE-unix/1121,unix/crofi-desktop:/tmp/.ICE-unix/1121', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/13153c91_4f41_4c84_b5c3_447b63ce5d2d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_MX.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.VROS32', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.97', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/crofi/ros2_ws/install/webcam_recorted:/home/crofi/ros2_ws/install/webcam:/home/crofi/ros2_ws/install/visual_py:/home/crofi/ros2_ws/install/servo:/home/crofi/ros2_ws/install/senal_detector:/home/crofi/ros2_ws/install/lane_detector:/home/crofi/ros2_ws/install/lane_angle:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/crofi/ros2_ws/build/lane_detector', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/ros2_ws/build/lane_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/visual_py/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/señal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[10.392156] (-) TimerEvent: {}
+[10.495825] (-) TimerEvent: {}
+[10.547475] (senal_detector) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/senal_detector', 'build', '--build-base', '/home/crofi/ros2_ws/build/senal_detector/build', 'install', '--record', '/home/crofi/ros2_ws/build/senal_detector/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/crofi/ros2_ws/src/vision/senal_detector', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'es_MX:es', 'USER': 'crofi', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2000', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/crofi/ros2_ws/install:/home/crofi/opencv_project/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'crofi', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/crofi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/crofi-desktop:@/tmp/.ICE-unix/1121,unix/crofi-desktop:/tmp/.ICE-unix/1121', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/13153c91_4f41_4c84_b5c3_447b63ce5d2d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_MX.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.VROS32', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.97', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/crofi/ros2_ws/install/webcam_recorted:/home/crofi/ros2_ws/install/webcam:/home/crofi/ros2_ws/install/visual_py:/home/crofi/ros2_ws/install/servo:/home/crofi/ros2_ws/install/senal_detector:/home/crofi/ros2_ws/install/lane_detector:/home/crofi/ros2_ws/install/lane_angle:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/crofi/ros2_ws/build/senal_detector', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/ros2_ws/build/senal_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/visual_py/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/señal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[10.597522] (lane_angle) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/lane_angle', 'build', '--build-base', '/home/crofi/ros2_ws/build/lane_angle/build', 'install', '--record', '/home/crofi/ros2_ws/build/lane_angle/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/crofi/ros2_ws/src/vision/lane_angle', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'es_MX:es', 'USER': 'crofi', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2000', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/crofi/ros2_ws/install:/home/crofi/opencv_project/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'crofi', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/crofi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/crofi-desktop:@/tmp/.ICE-unix/1121,unix/crofi-desktop:/tmp/.ICE-unix/1121', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/13153c91_4f41_4c84_b5c3_447b63ce5d2d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_MX.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.VROS32', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.97', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/crofi/ros2_ws/install/webcam_recorted:/home/crofi/ros2_ws/install/webcam:/home/crofi/ros2_ws/install/visual_py:/home/crofi/ros2_ws/install/servo:/home/crofi/ros2_ws/install/senal_detector:/home/crofi/ros2_ws/install/lane_detector:/home/crofi/ros2_ws/install/lane_angle:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/crofi/ros2_ws/build/lane_angle', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/ros2_ws/build/lane_angle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/visual_py/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/señal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[10.605149] (-) TimerEvent: {}
+[10.625837] (servo) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/servo', 'build', '--build-base', '/home/crofi/ros2_ws/build/servo/build', 'install', '--record', '/home/crofi/ros2_ws/build/servo/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/crofi/ros2_ws/src/hardware/servo', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'es_MX:es', 'USER': 'crofi', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2000', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/crofi/ros2_ws/install:/home/crofi/opencv_project/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'crofi', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/crofi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/crofi-desktop:@/tmp/.ICE-unix/1121,unix/crofi-desktop:/tmp/.ICE-unix/1121', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/13153c91_4f41_4c84_b5c3_447b63ce5d2d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_MX.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.VROS32', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.97', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/crofi/ros2_ws/install/webcam_recorted:/home/crofi/ros2_ws/install/webcam:/home/crofi/ros2_ws/install/visual_py:/home/crofi/ros2_ws/install/servo:/home/crofi/ros2_ws/install/senal_detector:/home/crofi/ros2_ws/install/lane_detector:/home/crofi/ros2_ws/install/lane_angle:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/crofi/ros2_ws/build/servo', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/ros2_ws/build/servo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/visual_py/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/señal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[10.705496] (-) TimerEvent: {}
+[10.806494] (-) TimerEvent: {}
+[10.907564] (-) TimerEvent: {}
+[11.008874] (-) TimerEvent: {}
+[11.111969] (-) TimerEvent: {}
+[11.213521] (-) TimerEvent: {}
+[11.315504] (-) TimerEvent: {}
+[11.417133] (-) TimerEvent: {}
+[11.518948] (-) TimerEvent: {}
+[11.620283] (-) TimerEvent: {}
+[11.721734] (-) TimerEvent: {}
+[11.823218] (-) TimerEvent: {}
+[11.924770] (-) TimerEvent: {}
+[12.026115] (-) TimerEvent: {}
+[12.127583] (-) TimerEvent: {}
+[12.229092] (-) TimerEvent: {}
+[12.330636] (-) TimerEvent: {}
+[12.437106] (-) TimerEvent: {}
+[12.538115] (-) TimerEvent: {}
+[12.639077] (-) TimerEvent: {}
+[12.740303] (-) TimerEvent: {}
+[12.841790] (-) TimerEvent: {}
+[12.933397] (servo) StdoutLine: {'line': b'running egg_info\n'}
+[12.936918] (servo) StdoutLine: {'line': b'writing ../../../build/servo/servo.egg-info/PKG-INFO\n'}
+[12.938095] (servo) StdoutLine: {'line': b'writing dependency_links to ../../../build/servo/servo.egg-info/dependency_links.txt\n'}
+[12.939646] (servo) StdoutLine: {'line': b'writing entry points to ../../../build/servo/servo.egg-info/entry_points.txt\n'}
+[12.940624] (servo) StdoutLine: {'line': b'writing requirements to ../../../build/servo/servo.egg-info/requires.txt\n'}
+[12.941975] (servo) StdoutLine: {'line': b'writing top-level names to ../../../build/servo/servo.egg-info/top_level.txt\n'}
+[12.942739] (-) TimerEvent: {}
+[12.958670] (servo) StdoutLine: {'line': b"reading manifest file '../../../build/servo/servo.egg-info/SOURCES.txt'\n"}
+[12.962421] (servo) StdoutLine: {'line': b"writing manifest file '../../../build/servo/servo.egg-info/SOURCES.txt'\n"}
+[12.963536] (servo) StdoutLine: {'line': b'running build\n'}
+[12.964123] (servo) StdoutLine: {'line': b'running build_py\n'}
+[12.965340] (servo) StdoutLine: {'line': b'running install\n'}
+[12.967156] (servo) StdoutLine: {'line': b'running install_lib\n'}
+[12.983108] (servo) StdoutLine: {'line': b'running install_data\n'}
+[12.983955] (servo) StdoutLine: {'line': b'running install_egg_info\n'}
+[12.993844] (servo) StdoutLine: {'line': b"removing '/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages/servo-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[12.996711] (servo) StdoutLine: {'line': b'Copying ../../../build/servo/servo.egg-info to /home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages/servo-0.0.0-py3.10.egg-info\n'}
+[13.015628] (servo) StdoutLine: {'line': b'running install_scripts\n'}
+[13.042974] (-) TimerEvent: {}
+[13.141508] (servo) StdoutLine: {'line': b'Installing servo script to /home/crofi/ros2_ws/install/servo/lib/servo\n'}
+[13.151403] (-) TimerEvent: {}
+[13.154843] (servo) StdoutLine: {'line': b"writing list of installed files to '/home/crofi/ros2_ws/build/servo/install.log'\n"}
+[13.251708] (-) TimerEvent: {}
+[13.353788] (-) TimerEvent: {}
+[13.371595] (servo) CommandEnded: {'returncode': 0}
+[13.465502] (senal_detector) StdoutLine: {'line': b'running egg_info\n'}
+[13.466414] (-) TimerEvent: {}
+[13.469551] (senal_detector) StdoutLine: {'line': b'writing ../../../build/senal_detector/senal_detector.egg-info/PKG-INFO\n'}
+[13.478805] (senal_detector) StdoutLine: {'line': b'writing dependency_links to ../../../build/senal_detector/senal_detector.egg-info/dependency_links.txt\n'}
+[13.479724] (senal_detector) StdoutLine: {'line': b'writing entry points to ../../../build/senal_detector/senal_detector.egg-info/entry_points.txt\n'}
+[13.480758] (senal_detector) StdoutLine: {'line': b'writing requirements to ../../../build/senal_detector/senal_detector.egg-info/requires.txt\n'}
+[13.481376] (senal_detector) StdoutLine: {'line': b'writing top-level names to ../../../build/senal_detector/senal_detector.egg-info/top_level.txt\n'}
+[13.485348] (servo) JobEnded: {'identifier': 'servo', 'rc': 0}
+[13.489854] (webcam) JobStarted: {'identifier': 'webcam'}
+[13.491855] (senal_detector) StdoutLine: {'line': b"reading manifest file '../../../build/senal_detector/senal_detector.egg-info/SOURCES.txt'\n"}
+[13.512537] (senal_detector) StdoutLine: {'line': b"writing manifest file '../../../build/senal_detector/senal_detector.egg-info/SOURCES.txt'\n"}
+[13.514454] (senal_detector) StdoutLine: {'line': b'running build\n'}
+[13.520459] (senal_detector) StdoutLine: {'line': b'running build_py\n'}
+[13.521879] (senal_detector) StdoutLine: {'line': b'copying senal_detector/senal_detector.py -> /home/crofi/ros2_ws/build/senal_detector/build/lib/senal_detector\n'}
+[13.523059] (senal_detector) StdoutLine: {'line': b'running install\n'}
+[13.523992] (senal_detector) StdoutLine: {'line': b'running install_lib\n'}
+[13.524571] (senal_detector) StdoutLine: {'line': b'copying /home/crofi/ros2_ws/build/senal_detector/build/lib/senal_detector/senal_detector.py -> /home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages/senal_detector\n'}
+[13.525128] (senal_detector) StdoutLine: {'line': b'byte-compiling /home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages/senal_detector/senal_detector.py to senal_detector.cpython-310.pyc\n'}
+[13.528880] (senal_detector) StdoutLine: {'line': b'running install_data\n'}
+[13.529737] (senal_detector) StdoutLine: {'line': b'running install_egg_info\n'}
+[13.541049] (senal_detector) StdoutLine: {'line': b"removing '/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages/senal_detector-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[13.543543] (senal_detector) StdoutLine: {'line': b'Copying ../../../build/senal_detector/senal_detector.egg-info to /home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages/senal_detector-0.0.0-py3.10.egg-info\n'}
+[13.552125] (senal_detector) StdoutLine: {'line': b'running install_scripts\n'}
+[13.570122] (-) TimerEvent: {}
+[13.671256] (-) TimerEvent: {}
+[13.714656] (senal_detector) StdoutLine: {'line': b'Installing senal_detector script to /home/crofi/ros2_ws/install/senal_detector/lib/senal_detector\n'}
+[13.718252] (senal_detector) StdoutLine: {'line': b"writing list of installed files to '/home/crofi/ros2_ws/build/senal_detector/install.log'\n"}
+[13.721785] (lane_angle) StdoutLine: {'line': b'running egg_info\n'}
+[13.729659] (lane_angle) StdoutLine: {'line': b'writing ../../../build/lane_angle/lane_angle.egg-info/PKG-INFO\n'}
+[13.733941] (lane_angle) StdoutLine: {'line': b'writing dependency_links to ../../../build/lane_angle/lane_angle.egg-info/dependency_links.txt\n'}
+[13.736410] (lane_angle) StdoutLine: {'line': b'writing entry points to ../../../build/lane_angle/lane_angle.egg-info/entry_points.txt\n'}
+[13.737860] (lane_angle) StdoutLine: {'line': b'writing requirements to ../../../build/lane_angle/lane_angle.egg-info/requires.txt\n'}
+[13.738985] (lane_angle) StdoutLine: {'line': b'writing top-level names to ../../../build/lane_angle/lane_angle.egg-info/top_level.txt\n'}
+[13.769038] (lane_angle) StdoutLine: {'line': b"reading manifest file '../../../build/lane_angle/lane_angle.egg-info/SOURCES.txt'\n"}
+[13.769995] (lane_detector) StdoutLine: {'line': b'running egg_info\n'}
+[13.771462] (-) TimerEvent: {}
+[13.775070] (lane_detector) StdoutLine: {'line': b'writing ../../../build/lane_detector/lane_detector.egg-info/PKG-INFO\n'}
+[13.775952] (lane_angle) StdoutLine: {'line': b"writing manifest file '../../../build/lane_angle/lane_angle.egg-info/SOURCES.txt'\n"}
+[13.776978] (lane_angle) StdoutLine: {'line': b'running build\n'}
+[13.777886] (lane_angle) StdoutLine: {'line': b'running build_py\n'}
+[13.778734] (lane_detector) StdoutLine: {'line': b'writing dependency_links to ../../../build/lane_detector/lane_detector.egg-info/dependency_links.txt\n'}
+[13.779413] (lane_angle) StdoutLine: {'line': b'running install\n'}
+[13.780282] (lane_detector) StdoutLine: {'line': b'writing entry points to ../../../build/lane_detector/lane_detector.egg-info/entry_points.txt\n'}
+[13.781078] (lane_angle) StdoutLine: {'line': b'running install_lib\n'}
+[13.781810] (lane_detector) StdoutLine: {'line': b'writing requirements to ../../../build/lane_detector/lane_detector.egg-info/requires.txt\n'}
+[13.783981] (lane_detector) StdoutLine: {'line': b'writing top-level names to ../../../build/lane_detector/lane_detector.egg-info/top_level.txt\n'}
+[13.802950] (lane_detector) StdoutLine: {'line': b"reading manifest file '../../../build/lane_detector/lane_detector.egg-info/SOURCES.txt'\n"}
+[13.810620] (lane_angle) StdoutLine: {'line': b'running install_data\n'}
+[13.819769] (lane_detector) StdoutLine: {'line': b"writing manifest file '../../../build/lane_detector/lane_detector.egg-info/SOURCES.txt'\n"}
+[13.824556] (lane_detector) StdoutLine: {'line': b'running build\n'}
+[13.826747] (lane_detector) StdoutLine: {'line': b'running build_py\n'}
+[13.828861] (lane_angle) StdoutLine: {'line': b'running install_egg_info\n'}
+[13.836119] (lane_detector) StdoutLine: {'line': b'running install\n'}
+[13.841341] (lane_detector) StdoutLine: {'line': b'running install_lib\n'}
+[13.856782] (lane_angle) StdoutLine: {'line': b"removing '/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages/lane_angle-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[13.868767] (lane_detector) StdoutLine: {'line': b'running install_data\n'}
+[13.871553] (lane_angle) StdoutLine: {'line': b'Copying ../../../build/lane_angle/lane_angle.egg-info to /home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages/lane_angle-0.0.0-py3.10.egg-info\n'}
+[13.873012] (-) TimerEvent: {}
+[13.875795] (lane_detector) StdoutLine: {'line': b'running install_egg_info\n'}
+[13.891435] (lane_detector) StdoutLine: {'line': b"removing '/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages/lane_detector-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[13.893111] (lane_angle) StdoutLine: {'line': b'running install_scripts\n'}
+[13.898125] (lane_detector) StdoutLine: {'line': b'Copying ../../../build/lane_detector/lane_detector.egg-info to /home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages/lane_detector-0.0.0-py3.10.egg-info\n'}
+[13.922559] (lane_detector) StdoutLine: {'line': b'running install_scripts\n'}
+[13.973296] (-) TimerEvent: {}
+[14.074485] (-) TimerEvent: {}
+[14.090728] (lane_detector) StdoutLine: {'line': b'Installing lane_detector script to /home/crofi/ros2_ws/install/lane_detector/lib/lane_detector\n'}
+[14.093932] (lane_detector) StdoutLine: {'line': b"writing list of installed files to '/home/crofi/ros2_ws/build/lane_detector/install.log'\n"}
+[14.165076] (lane_angle) StdoutLine: {'line': b'Installing lane_angle script to /home/crofi/ros2_ws/install/lane_angle/lib/lane_angle\n'}
+[14.172204] (lane_angle) StdoutLine: {'line': b"writing list of installed files to '/home/crofi/ros2_ws/build/lane_angle/install.log'\n"}
+[14.174816] (-) TimerEvent: {}
+[14.277348] (-) TimerEvent: {}
+[14.384239] (-) TimerEvent: {}
+[14.485983] (-) TimerEvent: {}
+[14.586878] (-) TimerEvent: {}
+[14.687729] (-) TimerEvent: {}
+[14.788419] (-) TimerEvent: {}
+[14.889179] (-) TimerEvent: {}
+[14.989974] (-) TimerEvent: {}
+[15.090678] (-) TimerEvent: {}
+[15.191440] (-) TimerEvent: {}
+[15.292196] (-) TimerEvent: {}
+[15.392938] (-) TimerEvent: {}
+[15.493679] (-) TimerEvent: {}
+[15.594607] (-) TimerEvent: {}
+[15.695941] (-) TimerEvent: {}
+[15.720338] (lane_detector) CommandEnded: {'returncode': 0}
+[15.768108] (lane_detector) JobEnded: {'identifier': 'lane_detector', 'rc': 0}
+[15.771687] (senal_detector) CommandEnded: {'returncode': 0}
+[15.805816] (-) TimerEvent: {}
+[15.819717] (senal_detector) JobEnded: {'identifier': 'senal_detector', 'rc': 0}
+[15.825783] (webcam_recorted) JobStarted: {'identifier': 'webcam_recorted'}
+[15.865966] (lane_angle) CommandEnded: {'returncode': 0}
+[15.906352] (-) TimerEvent: {}
+[15.910262] (lane_angle) JobEnded: {'identifier': 'lane_angle', 'rc': 0}
+[16.006673] (-) TimerEvent: {}
+[16.111175] (-) TimerEvent: {}
+[16.215490] (-) TimerEvent: {}
+[16.316821] (-) TimerEvent: {}
+[16.417742] (-) TimerEvent: {}
+[16.518940] (-) TimerEvent: {}
+[16.619750] (-) TimerEvent: {}
+[16.720912] (-) TimerEvent: {}
+[16.821834] (-) TimerEvent: {}
+[16.922577] (-) TimerEvent: {}
+[17.024276] (-) TimerEvent: {}
+[17.124984] (-) TimerEvent: {}
+[17.225721] (-) TimerEvent: {}
+[17.326480] (-) TimerEvent: {}
+[17.427407] (-) TimerEvent: {}
+[17.528593] (-) TimerEvent: {}
+[17.630800] (-) TimerEvent: {}
+[17.731640] (-) TimerEvent: {}
+[17.832477] (-) TimerEvent: {}
+[17.933387] (-) TimerEvent: {}
+[18.034164] (-) TimerEvent: {}
+[18.135214] (-) TimerEvent: {}
+[18.236103] (-) TimerEvent: {}
+[18.337215] (-) TimerEvent: {}
+[18.438706] (-) TimerEvent: {}
+[18.508766] (webcam) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/webcam', 'build', '--build-base', '/home/crofi/ros2_ws/build/webcam/build', 'install', '--record', '/home/crofi/ros2_ws/build/webcam/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/crofi/ros2_ws/src/hardware/webcam', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'es_MX:es', 'USER': 'crofi', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2000', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/crofi/ros2_ws/install:/home/crofi/opencv_project/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'crofi', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/crofi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/crofi-desktop:@/tmp/.ICE-unix/1121,unix/crofi-desktop:/tmp/.ICE-unix/1121', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/13153c91_4f41_4c84_b5c3_447b63ce5d2d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_MX.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.VROS32', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.97', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/crofi/ros2_ws/install/webcam_recorted:/home/crofi/ros2_ws/install/webcam:/home/crofi/ros2_ws/install/visual_py:/home/crofi/ros2_ws/install/servo:/home/crofi/ros2_ws/install/senal_detector:/home/crofi/ros2_ws/install/lane_detector:/home/crofi/ros2_ws/install/lane_angle:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/crofi/ros2_ws/build/webcam', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/ros2_ws/build/webcam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/visual_py/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/señal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[18.538923] (-) TimerEvent: {}
+[18.639783] (-) TimerEvent: {}
+[18.740460] (-) TimerEvent: {}
+[18.841203] (-) TimerEvent: {}
+[18.942143] (-) TimerEvent: {}
+[19.043034] (-) TimerEvent: {}
+[19.144562] (-) TimerEvent: {}
+[19.245439] (-) TimerEvent: {}
+[19.346194] (-) TimerEvent: {}
+[19.447004] (-) TimerEvent: {}
+[19.547864] (-) TimerEvent: {}
+[19.648765] (-) TimerEvent: {}
+[19.750135] (-) TimerEvent: {}
+[19.850937] (-) TimerEvent: {}
+[19.951941] (-) TimerEvent: {}
+[20.053118] (-) TimerEvent: {}
+[20.155056] (-) TimerEvent: {}
+[20.208523] (webcam) StdoutLine: {'line': b'running egg_info\n'}
+[20.215360] (webcam) StdoutLine: {'line': b'writing ../../../build/webcam/webcam.egg-info/PKG-INFO\n'}
+[20.217258] (webcam) StdoutLine: {'line': b'writing dependency_links to ../../../build/webcam/webcam.egg-info/dependency_links.txt\n'}
+[20.218304] (webcam) StdoutLine: {'line': b'writing entry points to ../../../build/webcam/webcam.egg-info/entry_points.txt\n'}
+[20.219572] (webcam) StdoutLine: {'line': b'writing requirements to ../../../build/webcam/webcam.egg-info/requires.txt\n'}
+[20.220289] (webcam) StdoutLine: {'line': b'writing top-level names to ../../../build/webcam/webcam.egg-info/top_level.txt\n'}
+[20.229804] (webcam) StdoutLine: {'line': b"reading manifest file '../../../build/webcam/webcam.egg-info/SOURCES.txt'\n"}
+[20.232649] (webcam) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[20.236948] (webcam) StdoutLine: {'line': b"writing manifest file '../../../build/webcam/webcam.egg-info/SOURCES.txt'\n"}
+[20.238421] (webcam) StdoutLine: {'line': b'running build\n'}
+[20.239717] (webcam) StdoutLine: {'line': b'running build_py\n'}
+[20.242196] (webcam) StdoutLine: {'line': b'running install\n'}
+[20.259604] (-) TimerEvent: {}
+[20.265820] (webcam) StdoutLine: {'line': b'running install_lib\n'}
+[20.284118] (webcam) StdoutLine: {'line': b'running install_data\n'}
+[20.295790] (webcam) StdoutLine: {'line': b'running install_egg_info\n'}
+[20.302588] (webcam) StdoutLine: {'line': b"removing '/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages/webcam-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[20.311103] (webcam) StdoutLine: {'line': b'Copying ../../../build/webcam/webcam.egg-info to /home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages/webcam-0.0.0-py3.10.egg-info\n'}
+[20.325507] (webcam) StdoutLine: {'line': b'running install_scripts\n'}
+[20.359829] (-) TimerEvent: {}
+[20.463519] (-) TimerEvent: {}
+[20.472987] (webcam_recorted) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/webcam_recorted', 'build', '--build-base', '/home/crofi/ros2_ws/build/webcam_recorted/build', 'install', '--record', '/home/crofi/ros2_ws/build/webcam_recorted/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/crofi/ros2_ws/src/hardware/webcam_recorted', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'es_MX:es', 'USER': 'crofi', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2000', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/crofi/ros2_ws/install:/home/crofi/opencv_project/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'crofi', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/crofi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/crofi-desktop:@/tmp/.ICE-unix/1121,unix/crofi-desktop:/tmp/.ICE-unix/1121', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/13153c91_4f41_4c84_b5c3_447b63ce5d2d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_MX.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.VROS32', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.97', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/crofi/ros2_ws/install/webcam_recorted:/home/crofi/ros2_ws/install/webcam:/home/crofi/ros2_ws/install/visual_py:/home/crofi/ros2_ws/install/servo:/home/crofi/ros2_ws/install/senal_detector:/home/crofi/ros2_ws/install/lane_detector:/home/crofi/ros2_ws/install/lane_angle:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/crofi/ros2_ws/build/webcam_recorted', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/ros2_ws/build/webcam_recorted/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/visual_py/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/señal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[20.500706] (webcam) StdoutLine: {'line': b'Installing webcam script to /home/crofi/ros2_ws/install/webcam/lib/webcam\n'}
+[20.501956] (webcam) StdoutLine: {'line': b"writing list of installed files to '/home/crofi/ros2_ws/build/webcam/install.log'\n"}
+[20.563763] (-) TimerEvent: {}
+[20.665147] (-) TimerEvent: {}
+[20.702070] (webcam) CommandEnded: {'returncode': 0}
+[20.762759] (webcam) JobEnded: {'identifier': 'webcam', 'rc': 0}
+[20.766473] (-) TimerEvent: {}
+[20.867210] (-) TimerEvent: {}
+[20.968009] (-) TimerEvent: {}
+[21.068672] (-) TimerEvent: {}
+[21.169467] (-) TimerEvent: {}
+[21.270128] (-) TimerEvent: {}
+[21.370839] (-) TimerEvent: {}
+[21.471533] (-) TimerEvent: {}
+[21.572185] (-) TimerEvent: {}
+[21.672842] (-) TimerEvent: {}
+[21.773579] (-) TimerEvent: {}
+[21.874278] (-) TimerEvent: {}
+[21.975058] (-) TimerEvent: {}
+[22.011123] (webcam_recorted) StdoutLine: {'line': b'running egg_info\n'}
+[22.014777] (webcam_recorted) StdoutLine: {'line': b'writing ../../../build/webcam_recorted/webcam_recorted.egg-info/PKG-INFO\n'}
+[22.017989] (webcam_recorted) StdoutLine: {'line': b'writing dependency_links to ../../../build/webcam_recorted/webcam_recorted.egg-info/dependency_links.txt\n'}
+[22.019450] (webcam_recorted) StdoutLine: {'line': b'writing entry points to ../../../build/webcam_recorted/webcam_recorted.egg-info/entry_points.txt\n'}
+[22.021100] (webcam_recorted) StdoutLine: {'line': b'writing requirements to ../../../build/webcam_recorted/webcam_recorted.egg-info/requires.txt\n'}
+[22.022145] (webcam_recorted) StdoutLine: {'line': b'writing top-level names to ../../../build/webcam_recorted/webcam_recorted.egg-info/top_level.txt\n'}
+[22.034568] (webcam_recorted) StdoutLine: {'line': b"reading manifest file '../../../build/webcam_recorted/webcam_recorted.egg-info/SOURCES.txt'\n"}
+[22.039226] (webcam_recorted) StdoutLine: {'line': b"writing manifest file '../../../build/webcam_recorted/webcam_recorted.egg-info/SOURCES.txt'\n"}
+[22.039973] (webcam_recorted) StdoutLine: {'line': b'running build\n'}
+[22.040572] (webcam_recorted) StdoutLine: {'line': b'running build_py\n'}
+[22.042195] (webcam_recorted) StdoutLine: {'line': b'running install\n'}
+[22.044178] (webcam_recorted) StdoutLine: {'line': b'running install_lib\n'}
+[22.060980] (webcam_recorted) StdoutLine: {'line': b'running install_data\n'}
+[22.061901] (webcam_recorted) StdoutLine: {'line': b'running install_egg_info\n'}
+[22.073000] (webcam_recorted) StdoutLine: {'line': b"removing '/home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages/webcam_recorted-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[22.075274] (webcam_recorted) StdoutLine: {'line': b'Copying ../../../build/webcam_recorted/webcam_recorted.egg-info to /home/crofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages/webcam_recorted-0.0.0-py3.10.egg-info\n'}
+[22.076108] (-) TimerEvent: {}
+[22.084277] (webcam_recorted) StdoutLine: {'line': b'running install_scripts\n'}
+[22.176371] (-) TimerEvent: {}
+[22.193504] (webcam_recorted) StdoutLine: {'line': b'Installing webcam_recorted script to /home/crofi/ros2_ws/install/webcam_recorted/lib/webcam_recorted\n'}
+[22.195243] (webcam_recorted) StdoutLine: {'line': b"writing list of installed files to '/home/crofi/ros2_ws/build/webcam_recorted/install.log'\n"}
+[22.276764] (-) TimerEvent: {}
+[22.376071] (webcam_recorted) CommandEnded: {'returncode': 0}
+[22.378326] (-) TimerEvent: {}
+[22.431285] (webcam_recorted) JobEnded: {'identifier': 'webcam_recorted', 'rc': 0}
+[22.435806] (-) EventReactorShutdown: {}

@@ -17,15 +17,14 @@ class LaneAngle(Node):
         self.timer = self.create_timer(timer_period, self.publish_angle)
         self.publisher_ = self.create_publisher(Float64, 'angle_servo', 10)
         self.linesP = None
+        self.last_frame = None
 
     def listener_callback_lines(self, msg):
         self.linesP = np.array(msg.data).reshape(-1, 1, 4)
 
     def listener_callback_image(self, msg):
-        self.get_logger().info("Received image: %dx%d" % (msg.width, msg.height))
-        frame = bridge.imgmsg_to_cv2(msg)
-        deviation = self.Angle_Calc(frame)
-        self.publish_angle(deviation)
+        #self.get_logger().info("Received image: %dx%d" % (msg.width, msg.height))
+        self.last_frame = bridge.imgmsg_to_cv2(msg)
 
     def Angle_Calc(self, frame):
         # Calcular el centro de la imagen
@@ -44,29 +43,32 @@ class LaneAngle(Node):
                     left_lines.append((x1, y1, x2, y2))
                 else:
                     right_lines.append((x1, y1, x2, y2))
-#esto segun yo esta mal, nunca esta calculando el angulo respecto al centro de la imagen 
-        if left_lines and right_lines: #si hay lineas a la derecha y a la izquierda
-            left_x = np.mean([x1 for x1, _, _, _ in left_lines]) #obtiene el punto inicial en x de la linea izq.
-            right_x = np.mean([x1 for x1, _, _, _ in right_lines])#obtiene el punto inical en x de la linea derecha
-            lane_center = (left_x + right_x) / 2 #obtiene el centro entre las dos lineas 
-            deviation = center_x - lane_center #obtiene la diferencia entre el centro de la imagen y el centro de las lineas 
-            return self.Angle_Rad(-deviation) #Envia la -diferencia entre el centro de la imagen y el de las lineas
+        if left_lines and right_lines:  # Si hay líneas a la derecha y a la izquierda
+            left_x = np.mean([x1 for x1, _, _, _ in left_lines])  # Punto inicial en x de la primera línea izquierda que detecto 
+            right_x = np.mean([x1 for x1, _, _, _ in right_lines])  # Punto inicial en x de la primera línea derecha que detecto 
+            print(f"left_x: {left_x}")
+            print(f"right_x: {right_x}")
+            lane_center = (left_x + right_x) / 2  # Centro entre las dos líneas en el eje x
+            print(f"lane_center: {lane_center}")
+            deviation_x = center_x - lane_center  # Diferencia entre el centro de la imagen y el centro de las líneas
+            print(f"deviation_x: {deviation_x}")
+            deviation_y = height - center_y  # Diferencia entre el centro de la imagen y la altura del frame
+            print(f"deviation_y: {deviation_y}")
+            return self.Angle_Rad(-deviation_x, deviation_y)  # Enviar -diferencia en x y diferencia en y
 
         return 0.0
-    
-    def Angle_Rad(self, deviation):
-        deviation= deviation * np.pi/180#multiplica deviation por pi/180
-        if deviation <= -0.5: #si deviation es menor o igual a -0.5 mandara al codigo servo.py -0.5
-            return 0.5
-        elif deviation >= 0.5: #si deviation es mayor o igual a 0.5 mandara al codigo servo.py 0.5
-            return -0.5
-        elif deviation == 0.5: #si deviation es igual a 0.5 regresa 0???? Eso pa que?
-            return 0
-        else: return round(deviation, 3) #si esta [-0.5,0.5] manda el "angulo" redondeado a 3 decimales
-            
-    
-    
-    def publish_angle(self, deviation):
+
+    def Angle_Rad(self, Dx, Dy):
+        angle = np.round(np.arctan2(Dy, Dx)-(np.pi/2), 3)  # Corrige el uso de arctan2
+        print(f"angle: {angle}")
+        return np.clip(angle, -0.5, 0.5)  # Delimita el ángulo obtenido a -0.5 y 0.5
+
+    def publish_angle(self):
+        if self.last_frame is not None:  # Verificar si hay un frame disponible
+            deviation = self.Angle_Calc(self.last_frame)  # Calcular el ángulo usando el último frame
+        else:
+            deviation = 0.0  # Si no hay frame, publicar 0.0
+        print(deviation)
         msg = Float64()
         msg.data = float(deviation)
         self.publisher_.publish(msg)

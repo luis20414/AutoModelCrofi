@@ -1,0 +1,538 @@
+[1.592s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.593s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffad62c250>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffad7d9150>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffad7d9150>>, mixin_verb=('build',))
+[4.355s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[4.356s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[4.356s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[4.356s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[4.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[4.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[4.357s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/crofi/AutoModel_Rep'
+[4.359s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[4.361s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[4.363s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[4.364s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[4.364s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[4.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[4.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[4.367s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[4.368s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[4.485s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[4.486s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[4.487s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[4.488s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[4.488s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[4.489s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[4.491s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[4.492s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[4.493s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[4.495s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[4.495s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[4.497s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[4.498s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[4.499s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[4.501s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extensions ['ignore', 'ignore_ament_install']
+[4.502s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'ignore'
+[4.503s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'ignore_ament_install'
+[4.505s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extensions ['colcon_pkg']
+[4.505s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'colcon_pkg'
+[4.506s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extensions ['colcon_meta']
+[4.506s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'colcon_meta'
+[4.507s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extensions ['ros']
+[4.507s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'ros'
+[4.509s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extensions ['cmake', 'python']
+[4.510s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'cmake'
+[4.512s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'python'
+[4.513s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extensions ['python_setup_py']
+[4.514s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws) by extension 'python_setup_py'
+[4.516s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/build) by extensions ['ignore', 'ignore_ament_install']
+[4.516s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/build) by extension 'ignore'
+[4.517s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/build) ignored
+[4.519s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/install) by extensions ['ignore', 'ignore_ament_install']
+[4.520s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/install) by extension 'ignore'
+[4.521s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/install) ignored
+[4.527s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/log) by extensions ['ignore', 'ignore_ament_install']
+[4.528s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/log) by extension 'ignore'
+[4.529s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/log) ignored
+[4.531s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extensions ['ignore', 'ignore_ament_install']
+[4.531s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'ignore'
+[4.532s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'ignore_ament_install'
+[4.532s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extensions ['colcon_pkg']
+[4.533s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'colcon_pkg'
+[4.533s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extensions ['colcon_meta']
+[4.534s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'colcon_meta'
+[4.535s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extensions ['ros']
+[4.536s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'ros'
+[4.537s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extensions ['cmake', 'python']
+[4.538s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'cmake'
+[4.539s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'python'
+[4.539s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extensions ['python_setup_py']
+[4.540s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src) by extension 'python_setup_py'
+[4.541s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/build) by extensions ['ignore', 'ignore_ament_install']
+[4.542s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/build) by extension 'ignore'
+[4.543s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/build) ignored
+[4.544s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extensions ['ignore', 'ignore_ament_install']
+[4.545s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'ignore'
+[4.545s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'ignore_ament_install'
+[4.547s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extensions ['colcon_pkg']
+[4.548s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'colcon_pkg'
+[4.548s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extensions ['colcon_meta']
+[4.549s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'colcon_meta'
+[4.550s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extensions ['ros']
+[4.551s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'ros'
+[4.552s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extensions ['cmake', 'python']
+[4.552s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'cmake'
+[4.553s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'python'
+[4.555s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extensions ['python_setup_py']
+[4.556s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware) by extension 'python_setup_py'
+[4.557s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extensions ['ignore', 'ignore_ament_install']
+[4.559s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extension 'ignore'
+[4.560s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extension 'ignore_ament_install'
+[4.563s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extensions ['colcon_pkg']
+[4.564s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extension 'colcon_pkg'
+[4.565s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extensions ['colcon_meta']
+[4.565s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extension 'colcon_meta'
+[4.566s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extensions ['ros']
+[4.567s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/servo) by extension 'ros'
+[4.592s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/hardware/servo' with type 'ros.ament_python' and name 'servo'
+[4.594s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extensions ['ignore', 'ignore_ament_install']
+[4.595s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extension 'ignore'
+[4.596s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extension 'ignore_ament_install'
+[4.597s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extensions ['colcon_pkg']
+[4.598s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extension 'colcon_pkg'
+[4.599s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extensions ['colcon_meta']
+[4.600s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extension 'colcon_meta'
+[4.601s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extensions ['ros']
+[4.601s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam) by extension 'ros'
+[4.606s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/hardware/webcam' with type 'ros.ament_python' and name 'webcam'
+[4.607s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extensions ['ignore', 'ignore_ament_install']
+[4.608s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extension 'ignore'
+[4.610s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extension 'ignore_ament_install'
+[4.612s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extensions ['colcon_pkg']
+[4.613s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extension 'colcon_pkg'
+[4.615s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extensions ['colcon_meta']
+[4.615s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extension 'colcon_meta'
+[4.617s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extensions ['ros']
+[4.617s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/hardware/webcam_recorted) by extension 'ros'
+[4.623s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/hardware/webcam_recorted' with type 'ros.ament_python' and name 'webcam_recorted'
+[4.625s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/install) by extensions ['ignore', 'ignore_ament_install']
+[4.627s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/install) by extension 'ignore'
+[4.629s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/install) ignored
+[4.630s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/log) by extensions ['ignore', 'ignore_ament_install']
+[4.631s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/log) by extension 'ignore'
+[4.632s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/log) ignored
+[4.633s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extensions ['ignore', 'ignore_ament_install']
+[4.635s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'ignore'
+[4.636s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'ignore_ament_install'
+[4.637s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extensions ['colcon_pkg']
+[4.637s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'colcon_pkg'
+[4.638s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extensions ['colcon_meta']
+[4.639s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'colcon_meta'
+[4.640s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extensions ['ros']
+[4.640s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'ros'
+[4.641s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extensions ['cmake', 'python']
+[4.643s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'cmake'
+[4.643s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'python'
+[4.644s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extensions ['python_setup_py']
+[4.644s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision) by extension 'python_setup_py'
+[4.646s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extensions ['ignore', 'ignore_ament_install']
+[4.647s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extension 'ignore'
+[4.648s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extension 'ignore_ament_install'
+[4.649s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extensions ['colcon_pkg']
+[4.649s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extension 'colcon_pkg'
+[4.650s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extensions ['colcon_meta']
+[4.651s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extension 'colcon_meta'
+[4.652s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extensions ['ros']
+[4.652s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_angle) by extension 'ros'
+[4.656s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/vision/lane_angle' with type 'ros.ament_python' and name 'lane_angle'
+[4.657s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extensions ['ignore', 'ignore_ament_install']
+[4.658s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extension 'ignore'
+[4.659s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extension 'ignore_ament_install'
+[4.661s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extensions ['colcon_pkg']
+[4.663s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extension 'colcon_pkg'
+[4.664s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extensions ['colcon_meta']
+[4.665s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extension 'colcon_meta'
+[4.666s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extensions ['ros']
+[4.666s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/lane_detector) by extension 'ros'
+[4.673s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/vision/lane_detector' with type 'ros.ament_python' and name 'lane_detector'
+[4.675s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extensions ['ignore', 'ignore_ament_install']
+[4.676s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extension 'ignore'
+[4.677s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extension 'ignore_ament_install'
+[4.679s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extensions ['colcon_pkg']
+[4.679s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extension 'colcon_pkg'
+[4.681s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extensions ['colcon_meta']
+[4.681s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extension 'colcon_meta'
+[4.689s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extensions ['ros']
+[4.689s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/prueba_angle) by extension 'ros'
+[4.707s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/vision/prueba_angle' with type 'ros.ament_python' and name 'prueba_angle'
+[4.708s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extensions ['ignore', 'ignore_ament_install']
+[4.709s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extension 'ignore'
+[4.710s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extension 'ignore_ament_install'
+[4.712s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extensions ['colcon_pkg']
+[4.714s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extension 'colcon_pkg'
+[4.715s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extensions ['colcon_meta']
+[4.715s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extension 'colcon_meta'
+[4.716s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extensions ['ros']
+[4.717s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/red_vision) by extension 'ros'
+[4.730s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/vision/red_vision' with type 'ros.ament_python' and name 'red_vision'
+[4.731s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extensions ['ignore', 'ignore_ament_install']
+[4.732s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extension 'ignore'
+[4.734s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extension 'ignore_ament_install'
+[4.741s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extensions ['colcon_pkg']
+[4.742s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extension 'colcon_pkg'
+[4.743s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extensions ['colcon_meta']
+[4.743s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extension 'colcon_meta'
+[4.744s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extensions ['ros']
+[4.744s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_ws/src/vision/senal_detector) by extension 'ros'
+[4.749s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_ws/src/vision/senal_detector' with type 'ros.ament_python' and name 'senal_detector'
+[4.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[4.750s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[4.751s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[4.751s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[4.752s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[5.077s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[5.077s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[5.107s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 8 installed packages in /home/crofi/AutoModel_Rep/install
+[5.117s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/crofi/ros2_ws/install
+[5.135s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 295 installed packages in /opt/ros/humble
+[5.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[5.679s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'cmake_args' from command line to 'None'
+[5.679s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'cmake_target' from command line to 'None'
+[5.680s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.680s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'cmake_clean_cache' from command line to 'False'
+[5.680s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'cmake_clean_first' from command line to 'False'
+[5.680s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'cmake_force_configure' from command line to 'False'
+[5.681s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'ament_cmake_args' from command line to 'None'
+[5.681s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'catkin_cmake_args' from command line to 'None'
+[5.681s] Level 5:colcon.colcon_core.verb:set package 'lane_angle' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.682s] DEBUG:colcon.colcon_core.verb:Building package 'lane_angle' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/lane_angle', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/lane_angle', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_angle', 'symlink_install': False, 'test_result_base': None}
+[5.686s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'cmake_args' from command line to 'None'
+[5.686s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'cmake_target' from command line to 'None'
+[5.686s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.687s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'cmake_clean_cache' from command line to 'False'
+[5.687s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'cmake_clean_first' from command line to 'False'
+[5.688s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'cmake_force_configure' from command line to 'False'
+[5.688s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'ament_cmake_args' from command line to 'None'
+[5.688s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'catkin_cmake_args' from command line to 'None'
+[5.688s] Level 5:colcon.colcon_core.verb:set package 'lane_detector' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.688s] DEBUG:colcon.colcon_core.verb:Building package 'lane_detector' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/lane_detector', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/lane_detector', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_detector', 'symlink_install': False, 'test_result_base': None}
+[5.691s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'cmake_args' from command line to 'None'
+[5.692s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'cmake_target' from command line to 'None'
+[5.692s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.693s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'cmake_clean_cache' from command line to 'False'
+[5.693s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'cmake_clean_first' from command line to 'False'
+[5.694s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'cmake_force_configure' from command line to 'False'
+[5.694s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'ament_cmake_args' from command line to 'None'
+[5.694s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'catkin_cmake_args' from command line to 'None'
+[5.694s] Level 5:colcon.colcon_core.verb:set package 'prueba_angle' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.695s] DEBUG:colcon.colcon_core.verb:Building package 'prueba_angle' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/prueba_angle', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/prueba_angle', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/prueba_angle', 'symlink_install': False, 'test_result_base': None}
+[5.698s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'cmake_args' from command line to 'None'
+[5.698s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'cmake_target' from command line to 'None'
+[5.698s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.698s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'cmake_clean_cache' from command line to 'False'
+[5.699s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'cmake_clean_first' from command line to 'False'
+[5.700s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'cmake_force_configure' from command line to 'False'
+[5.700s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'ament_cmake_args' from command line to 'None'
+[5.701s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'catkin_cmake_args' from command line to 'None'
+[5.701s] Level 5:colcon.colcon_core.verb:set package 'red_vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.702s] DEBUG:colcon.colcon_core.verb:Building package 'red_vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/red_vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/red_vision', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/red_vision', 'symlink_install': False, 'test_result_base': None}
+[5.704s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'cmake_args' from command line to 'None'
+[5.705s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'cmake_target' from command line to 'None'
+[5.705s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.705s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'cmake_clean_cache' from command line to 'False'
+[5.706s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'cmake_clean_first' from command line to 'False'
+[5.706s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'cmake_force_configure' from command line to 'False'
+[5.707s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'ament_cmake_args' from command line to 'None'
+[5.707s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'catkin_cmake_args' from command line to 'None'
+[5.708s] Level 5:colcon.colcon_core.verb:set package 'senal_detector' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.708s] DEBUG:colcon.colcon_core.verb:Building package 'senal_detector' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/senal_detector', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/senal_detector', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/senal_detector', 'symlink_install': False, 'test_result_base': None}
+[5.712s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'cmake_args' from command line to 'None'
+[5.713s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'cmake_target' from command line to 'None'
+[5.713s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.713s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'cmake_clean_cache' from command line to 'False'
+[5.714s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'cmake_clean_first' from command line to 'False'
+[5.714s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'cmake_force_configure' from command line to 'False'
+[5.715s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'ament_cmake_args' from command line to 'None'
+[5.716s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'catkin_cmake_args' from command line to 'None'
+[5.716s] Level 5:colcon.colcon_core.verb:set package 'servo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.717s] DEBUG:colcon.colcon_core.verb:Building package 'servo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/servo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/servo', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/servo', 'symlink_install': False, 'test_result_base': None}
+[5.720s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'cmake_args' from command line to 'None'
+[5.721s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'cmake_target' from command line to 'None'
+[5.722s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.722s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'cmake_clean_cache' from command line to 'False'
+[5.722s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'cmake_clean_first' from command line to 'False'
+[5.726s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'cmake_force_configure' from command line to 'False'
+[5.727s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'ament_cmake_args' from command line to 'None'
+[5.727s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'catkin_cmake_args' from command line to 'None'
+[5.727s] Level 5:colcon.colcon_core.verb:set package 'webcam' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.728s] DEBUG:colcon.colcon_core.verb:Building package 'webcam' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/webcam', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/webcam', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam', 'symlink_install': False, 'test_result_base': None}
+[5.731s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'cmake_args' from command line to 'None'
+[5.732s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'cmake_target' from command line to 'None'
+[5.733s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.733s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'cmake_clean_cache' from command line to 'False'
+[5.734s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'cmake_clean_first' from command line to 'False'
+[5.734s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'cmake_force_configure' from command line to 'False'
+[5.735s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'ament_cmake_args' from command line to 'None'
+[5.735s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'catkin_cmake_args' from command line to 'None'
+[5.735s] Level 5:colcon.colcon_core.verb:set package 'webcam_recorted' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.736s] DEBUG:colcon.colcon_core.verb:Building package 'webcam_recorted' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/crofi/AutoModel_Rep/build/webcam_recorted', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/crofi/AutoModel_Rep/install/webcam_recorted', 'merge_install': False, 'path': '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam_recorted', 'symlink_install': False, 'test_result_base': None}
+[5.737s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[5.744s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[5.752s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_angle' with build type 'ament_python'
+[5.756s] Level 1:colcon.colcon_core.shell:create_environment_hook('lane_angle', 'ament_prefix_path')
+[5.799s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[5.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/hook/ament_prefix_path.ps1'
+[5.809s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/hook/ament_prefix_path.dsv'
+[5.815s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/hook/ament_prefix_path.sh'
+[5.823s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.824s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.921s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_detector' with build type 'ament_python'
+[5.924s] Level 1:colcon.colcon_core.shell:create_environment_hook('lane_detector', 'ament_prefix_path')
+[5.926s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/hook/ament_prefix_path.ps1'
+[5.949s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/hook/ament_prefix_path.dsv'
+[5.963s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/hook/ament_prefix_path.sh'
+[6.016s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.017s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.148s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/prueba_angle' with build type 'ament_python'
+[6.148s] Level 1:colcon.colcon_core.shell:create_environment_hook('prueba_angle', 'ament_prefix_path')
+[6.152s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/hook/ament_prefix_path.ps1'
+[6.165s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/hook/ament_prefix_path.dsv'
+[6.195s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/hook/ament_prefix_path.sh'
+[6.200s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.201s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.255s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/red_vision' with build type 'ament_python'
+[6.257s] Level 1:colcon.colcon_core.shell:create_environment_hook('red_vision', 'ament_prefix_path')
+[6.260s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/hook/ament_prefix_path.ps1'
+[6.285s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/hook/ament_prefix_path.dsv'
+[6.289s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/hook/ament_prefix_path.sh'
+[6.300s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.301s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[10.736s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_angle'
+[10.739s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.740s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[14.935s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_detector'
+[14.937s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[14.937s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[19.160s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/prueba_angle'
+[19.161s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[19.161s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[23.145s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/red_vision'
+[23.147s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[23.147s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[29.055s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/red_vision': PYTHONPATH=/home/crofi/AutoModel_Rep/build/red_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/red_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/red_vision build --build-base /home/crofi/AutoModel_Rep/build/red_vision/build install --record /home/crofi/AutoModel_Rep/build/red_vision/install.log --single-version-externally-managed install_data
+[33.768s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_detector': PYTHONPATH=/home/crofi/AutoModel_Rep/build/lane_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/lane_detector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/lane_detector build --build-base /home/crofi/AutoModel_Rep/build/lane_detector/build install --record /home/crofi/AutoModel_Rep/build/lane_detector/install.log --single-version-externally-managed install_data
+[35.609s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_angle': PYTHONPATH=/home/crofi/AutoModel_Rep/build/lane_angle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/lane_angle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/lane_angle build --build-base /home/crofi/AutoModel_Rep/build/lane_angle/build install --record /home/crofi/AutoModel_Rep/build/lane_angle/install.log --single-version-externally-managed install_data
+[36.108s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/red_vision' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/red_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/red_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/red_vision build --build-base /home/crofi/AutoModel_Rep/build/red_vision/build install --record /home/crofi/AutoModel_Rep/build/red_vision/install.log --single-version-externally-managed install_data
+[36.317s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/red_vision' for CMake module files
+[36.343s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/red_vision' for CMake config files
+[36.442s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/red_vision/lib'
+[36.451s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/red_vision/bin'
+[36.452s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/red_vision/lib/pkgconfig/red_vision.pc'
+[36.453s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/red_vision/lib/python3.10/site-packages'
+[36.454s] Level 1:colcon.colcon_core.shell:create_environment_hook('red_vision', 'pythonpath')
+[36.468s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/hook/pythonpath.ps1'
+[36.495s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/hook/pythonpath.dsv'
+[36.524s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/hook/pythonpath.sh'
+[36.556s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/red_vision/bin'
+[36.557s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(red_vision)
+[36.572s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/package.ps1'
+[36.609s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/package.dsv'
+[36.642s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/package.sh'
+[36.649s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/package.bash'
+[36.695s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/red_vision/share/red_vision/package.zsh'
+[36.745s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/red_vision/share/colcon-core/packages/red_vision)
+[36.787s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/senal_detector' with build type 'ament_python'
+[36.798s] Level 1:colcon.colcon_core.shell:create_environment_hook('senal_detector', 'ament_prefix_path')
+[36.847s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/hook/ament_prefix_path.ps1'
+[36.916s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/hook/ament_prefix_path.dsv'
+[36.949s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/hook/ament_prefix_path.sh'
+[36.960s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[36.960s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[43.638s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/senal_detector'
+[43.640s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[43.641s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[43.874s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_angle' for CMake module files
+[43.879s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_angle' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/lane_angle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/lane_angle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/lane_angle build --build-base /home/crofi/AutoModel_Rep/build/lane_angle/build install --record /home/crofi/AutoModel_Rep/build/lane_angle/install.log --single-version-externally-managed install_data
+[43.887s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_angle' for CMake config files
+[43.940s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_angle/lib'
+[43.942s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_angle/bin'
+[43.943s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_angle/lib/pkgconfig/lane_angle.pc'
+[43.945s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_angle/lib/python3.10/site-packages'
+[43.963s] Level 1:colcon.colcon_core.shell:create_environment_hook('lane_angle', 'pythonpath')
+[43.965s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/hook/pythonpath.ps1'
+[43.991s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/hook/pythonpath.dsv'
+[44.006s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/hook/pythonpath.sh'
+[44.024s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_angle/bin'
+[44.025s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lane_angle)
+[44.028s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/package.ps1'
+[44.056s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/package.dsv'
+[44.086s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/package.sh'
+[44.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/package.bash'
+[44.117s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_angle/share/lane_angle/package.zsh'
+[44.130s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/lane_angle/share/colcon-core/packages/lane_angle)
+[44.216s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/prueba_angle': PYTHONPATH=/home/crofi/AutoModel_Rep/build/prueba_angle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/prueba_angle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/prueba_angle build --build-base /home/crofi/AutoModel_Rep/build/prueba_angle/build install --record /home/crofi/AutoModel_Rep/build/prueba_angle/install.log --single-version-externally-managed install_data
+[44.243s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/servo' with build type 'ament_python'
+[44.244s] Level 1:colcon.colcon_core.shell:create_environment_hook('servo', 'ament_prefix_path')
+[44.246s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/servo/share/servo/hook/ament_prefix_path.ps1'
+[44.256s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/servo/share/servo/hook/ament_prefix_path.dsv'
+[44.264s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/servo/share/servo/hook/ament_prefix_path.sh'
+[44.287s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[44.288s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[52.073s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/servo'
+[52.075s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[52.076s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[52.236s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_detector' for CMake module files
+[52.240s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/lane_detector' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/lane_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/lane_detector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/lane_detector build --build-base /home/crofi/AutoModel_Rep/build/lane_detector/build install --record /home/crofi/AutoModel_Rep/build/lane_detector/install.log --single-version-externally-managed install_data
+[52.248s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_detector' for CMake config files
+[52.262s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_detector/lib'
+[52.274s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_detector/bin'
+[52.280s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_detector/lib/pkgconfig/lane_detector.pc'
+[52.283s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_detector/lib/python3.10/site-packages'
+[52.284s] Level 1:colcon.colcon_core.shell:create_environment_hook('lane_detector', 'pythonpath')
+[52.286s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/hook/pythonpath.ps1'
+[52.293s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/hook/pythonpath.dsv'
+[52.308s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/hook/pythonpath.sh'
+[52.334s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/lane_detector/bin'
+[52.337s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lane_detector)
+[52.340s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/package.ps1'
+[52.347s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/package.dsv'
+[52.360s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/package.sh'
+[52.369s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/package.bash'
+[52.391s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/lane_detector/share/lane_detector/package.zsh'
+[52.420s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/lane_detector/share/colcon-core/packages/lane_detector)
+[52.488s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/senal_detector': PYTHONPATH=/home/crofi/AutoModel_Rep/build/senal_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/senal_detector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/senal_detector build --build-base /home/crofi/AutoModel_Rep/build/senal_detector/build install --record /home/crofi/AutoModel_Rep/build/senal_detector/install.log --single-version-externally-managed install_data
+[52.549s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam' with build type 'ament_python'
+[52.557s] Level 1:colcon.colcon_core.shell:create_environment_hook('webcam', 'ament_prefix_path')
+[52.560s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/hook/ament_prefix_path.ps1'
+[52.597s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/hook/ament_prefix_path.dsv'
+[52.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/hook/ament_prefix_path.sh'
+[52.658s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[52.659s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[52.866s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/prueba_angle' for CMake module files
+[52.883s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/prueba_angle' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/prueba_angle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/prueba_angle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/prueba_angle build --build-base /home/crofi/AutoModel_Rep/build/prueba_angle/build install --record /home/crofi/AutoModel_Rep/build/prueba_angle/install.log --single-version-externally-managed install_data
+[52.888s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/prueba_angle' for CMake config files
+[52.984s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/prueba_angle/lib'
+[52.985s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/prueba_angle/bin'
+[52.985s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/prueba_angle/lib/pkgconfig/prueba_angle.pc'
+[53.000s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/prueba_angle/lib/python3.10/site-packages'
+[53.001s] Level 1:colcon.colcon_core.shell:create_environment_hook('prueba_angle', 'pythonpath')
+[53.023s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/hook/pythonpath.ps1'
+[53.044s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/hook/pythonpath.dsv'
+[53.048s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/hook/pythonpath.sh'
+[53.077s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/prueba_angle/bin'
+[53.082s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(prueba_angle)
+[53.089s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/package.ps1'
+[53.129s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/package.dsv'
+[53.134s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/package.sh'
+[53.149s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/package.bash'
+[53.166s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/prueba_angle/share/prueba_angle/package.zsh'
+[53.188s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/prueba_angle/share/colcon-core/packages/prueba_angle)
+[59.770s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam'
+[59.772s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[59.773s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[59.952s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam_recorted' with build type 'ament_python'
+[59.954s] Level 1:colcon.colcon_core.shell:create_environment_hook('webcam_recorted', 'ament_prefix_path')
+[59.983s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/hook/ament_prefix_path.ps1'
+[59.991s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/hook/ament_prefix_path.dsv'
+[59.995s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/hook/ament_prefix_path.sh'
+[60.016s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[60.017s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[60.186s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/servo': PYTHONPATH=/home/crofi/AutoModel_Rep/build/servo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/servo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/servo build --build-base /home/crofi/AutoModel_Rep/build/servo/build install --record /home/crofi/AutoModel_Rep/build/servo/install.log --single-version-externally-managed install_data
+[69.049s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam_recorted'
+[69.051s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[69.052s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[69.135s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/senal_detector' for CMake module files
+[69.139s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/vision/senal_detector' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/senal_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/senal_detector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/senal_detector build --build-base /home/crofi/AutoModel_Rep/build/senal_detector/build install --record /home/crofi/AutoModel_Rep/build/senal_detector/install.log --single-version-externally-managed install_data
+[69.148s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/senal_detector' for CMake config files
+[69.159s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/senal_detector/lib'
+[69.161s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/senal_detector/bin'
+[69.163s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/senal_detector/lib/pkgconfig/senal_detector.pc'
+[69.165s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/senal_detector/lib/python3.10/site-packages'
+[69.165s] Level 1:colcon.colcon_core.shell:create_environment_hook('senal_detector', 'pythonpath')
+[69.168s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/hook/pythonpath.ps1'
+[69.184s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/hook/pythonpath.dsv'
+[69.195s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/hook/pythonpath.sh'
+[69.201s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/senal_detector/bin'
+[69.202s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(senal_detector)
+[69.206s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/package.ps1'
+[69.213s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/package.dsv'
+[69.220s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/package.sh'
+[69.225s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/package.bash'
+[69.229s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/senal_detector/share/senal_detector/package.zsh'
+[69.233s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/senal_detector/share/colcon-core/packages/senal_detector)
+[69.237s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/servo' for CMake module files
+[69.243s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/servo' for CMake config files
+[69.266s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/servo' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/servo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/servo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/servo build --build-base /home/crofi/AutoModel_Rep/build/servo/build install --record /home/crofi/AutoModel_Rep/build/servo/install.log --single-version-externally-managed install_data
+[69.271s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/servo/lib'
+[69.272s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/servo/bin'
+[69.273s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/servo/lib/pkgconfig/servo.pc'
+[69.283s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/servo/lib/python3.10/site-packages'
+[69.283s] Level 1:colcon.colcon_core.shell:create_environment_hook('servo', 'pythonpath')
+[69.285s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/servo/share/servo/hook/pythonpath.ps1'
+[69.297s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/servo/share/servo/hook/pythonpath.dsv'
+[69.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/servo/share/servo/hook/pythonpath.sh'
+[69.325s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/servo/bin'
+[69.327s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(servo)
+[69.329s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/servo/share/servo/package.ps1'
+[69.334s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/servo/share/servo/package.dsv'
+[69.340s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/servo/share/servo/package.sh'
+[69.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/servo/share/servo/package.bash'
+[69.349s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/servo/share/servo/package.zsh'
+[69.359s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/servo/share/colcon-core/packages/servo)
+[69.423s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam': PYTHONPATH=/home/crofi/AutoModel_Rep/build/webcam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/webcam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/webcam build --build-base /home/crofi/AutoModel_Rep/build/webcam/build install --record /home/crofi/AutoModel_Rep/build/webcam/install.log --single-version-externally-managed install_data
+[75.090s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam_recorted': PYTHONPATH=/home/crofi/AutoModel_Rep/build/webcam_recorted/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/webcam_recorted/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/webcam_recorted build --build-base /home/crofi/AutoModel_Rep/build/webcam_recorted/build install --record /home/crofi/AutoModel_Rep/build/webcam_recorted/install.log --single-version-externally-managed install_data
+[75.998s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam' for CMake module files
+[76.003s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/webcam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/webcam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/webcam build --build-base /home/crofi/AutoModel_Rep/build/webcam/build install --record /home/crofi/AutoModel_Rep/build/webcam/install.log --single-version-externally-managed install_data
+[76.009s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam' for CMake config files
+[76.033s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam/lib'
+[76.034s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam/bin'
+[76.035s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam/lib/pkgconfig/webcam.pc'
+[76.038s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam/lib/python3.10/site-packages'
+[76.050s] Level 1:colcon.colcon_core.shell:create_environment_hook('webcam', 'pythonpath')
+[76.052s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/hook/pythonpath.ps1'
+[76.067s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/hook/pythonpath.dsv'
+[76.071s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/hook/pythonpath.sh'
+[76.084s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam/bin'
+[76.085s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(webcam)
+[76.088s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/package.ps1'
+[76.099s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/package.dsv'
+[76.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/package.sh'
+[76.112s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/package.bash'
+[76.117s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam/share/webcam/package.zsh'
+[76.142s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/webcam/share/colcon-core/packages/webcam)
+[79.904s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam_recorted' for CMake module files
+[79.909s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/crofi/AutoModel_Rep/ros2_ws/src/hardware/webcam_recorted' returned '0': PYTHONPATH=/home/crofi/AutoModel_Rep/build/webcam_recorted/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModel_Rep/install/webcam_recorted/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/webcam_recorted build --build-base /home/crofi/AutoModel_Rep/build/webcam_recorted/build install --record /home/crofi/AutoModel_Rep/build/webcam_recorted/install.log --single-version-externally-managed install_data
+[79.912s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam_recorted' for CMake config files
+[79.927s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam_recorted/lib'
+[79.928s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam_recorted/bin'
+[79.929s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam_recorted/lib/pkgconfig/webcam_recorted.pc'
+[79.934s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam_recorted/lib/python3.10/site-packages'
+[79.935s] Level 1:colcon.colcon_core.shell:create_environment_hook('webcam_recorted', 'pythonpath')
+[79.945s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/hook/pythonpath.ps1'
+[79.954s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/hook/pythonpath.dsv'
+[79.965s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/hook/pythonpath.sh'
+[79.972s] Level 1:colcon.colcon_core.environment:checking '/home/crofi/AutoModel_Rep/install/webcam_recorted/bin'
+[79.973s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(webcam_recorted)
+[79.976s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/package.ps1'
+[79.994s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/package.dsv'
+[79.999s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/package.sh'
+[80.013s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/package.bash'
+[80.018s] INFO:colcon.colcon_core.shell:Creating package script '/home/crofi/AutoModel_Rep/install/webcam_recorted/share/webcam_recorted/package.zsh'
+[80.031s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/crofi/AutoModel_Rep/install/webcam_recorted/share/colcon-core/packages/webcam_recorted)
+[80.041s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[80.047s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[80.048s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[80.048s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[80.125s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[80.126s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[80.126s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[80.252s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[80.256s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/crofi/AutoModel_Rep/install/local_setup.ps1'
+[80.269s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/crofi/AutoModel_Rep/install/_local_setup_util_ps1.py'
+[80.283s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/crofi/AutoModel_Rep/install/setup.ps1'
+[80.319s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/crofi/AutoModel_Rep/install/local_setup.sh'
+[80.324s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/crofi/AutoModel_Rep/install/_local_setup_util_sh.py'
+[80.335s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/crofi/AutoModel_Rep/install/setup.sh'
+[80.353s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/crofi/AutoModel_Rep/install/local_setup.bash'
+[80.361s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/crofi/AutoModel_Rep/install/setup.bash'
+[80.378s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/crofi/AutoModel_Rep/install/local_setup.zsh'
+[80.384s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/crofi/AutoModel_Rep/install/setup.zsh'

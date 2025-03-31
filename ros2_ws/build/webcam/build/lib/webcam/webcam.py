@@ -13,7 +13,7 @@ class WebcamPublisher(Node):
         self.publisher_ = self.create_publisher(Image, 'camera', 10)
         timer_period = 0.05  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.cam=cv2.VideoCapture(0)
+        self.cam=cv2.VideoCapture(4)
         
         
     def timer_callback(self):

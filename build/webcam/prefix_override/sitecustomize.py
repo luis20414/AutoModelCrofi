@@ -1,4 +1,4 @@
 import sys
 if sys.prefix == '/usr':
     sys.real_prefix = sys.prefix
-    sys.prefix = sys.exec_prefix = '/home/crofi/AutoModel_Rep/install/webcam'
+    sys.prefix = sys.exec_prefix = '/home/tars/AutoModelCrofi/install/webcam'

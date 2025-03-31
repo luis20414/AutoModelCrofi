@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# EASY-INSTALL-ENTRY-SCRIPT: 'servo==0.0.0','console_scripts','servo'
+# EASY-INSTALL-ENTRY-SCRIPT: 'servo','console_scripts','servo'
 import re
 import sys
 
 # for compatibility with easy_install; see #2198
-__requires__ = 'servo==0.0.0'
+__requires__ = 'servo'
 
 try:
     from importlib.metadata import distribution
@@ -30,4 +30,4 @@ globals().setdefault('load_entry_point', importlib_load_entry_point)
 
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(load_entry_point('servo==0.0.0', 'console_scripts', 'servo')())
+    sys.exit(load_entry_point('servo', 'console_scripts', 'servo')())

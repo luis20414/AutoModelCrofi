@@ -1,4 +1,4 @@
 import sys
 if sys.prefix == '/usr':
     sys.real_prefix = sys.prefix
-    sys.prefix = sys.exec_prefix = '/home/crofi/AutoModel_Rep/install/senal_detector'
+    sys.prefix = sys.exec_prefix = '/home/tars/AutoModelCrofi/install/senal_detector'

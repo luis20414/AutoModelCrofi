@@ -11,7 +11,7 @@ bridge = CvBridge()
 blackBajo = np.array([0, 0, 0], np.uint8)  # Esta para negro
 blackAlto = np.array([255, 255, 80], np.uint8)
 
-cv2.namedWindow('Bordes + Lineas Detectadas', cv2.WINDOW_NORMAL)
+#cv2.namedWindow('Bordes + Lineas Detectadas', cv2.WINDOW_NORMAL)
 
 class LaneDetector(Node):
     def __init__(self):
@@ -47,7 +47,7 @@ class LaneDetector(Node):
                     cv2.line(result_img, (x1, y1), (x2, y2), (0, 0, 255), 3, cv2.LINE_AA)  # Dibujar la línea
             # Actualizar self.linesP con las líneas filtradas en base al angulo
             self.linesP = np.array(filtered_lines) if filtered_lines else None
-        cv2.imshow('Bordes + Lineas Detectadas', result_img)
+        #cv2.imshow('Bordes + Lineas Detectadas', result_img)
         cv2.waitKey(10)
 
     def lane_publisher(self):

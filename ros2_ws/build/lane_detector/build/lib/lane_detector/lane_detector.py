@@ -23,7 +23,7 @@ class LaneDetector(Node):
         self.linesP = None
 
     def listener_callback(self, msg):
-        self.get_logger().info("Received image: %dx%d" % (msg.width, msg.height))
+        #self.get_logger().info("Received image: %dx%d" % (msg.width, msg.height))
         frame = bridge.imgmsg_to_cv2(msg)
          # Calcular el centro de la imagen
         height, width = frame.shape[:2]
@@ -33,8 +33,8 @@ class LaneDetector(Node):
         mask = cv2.inRange(frameHSV, blackBajo, blackAlto)
         kernel = np.ones((2, 2), np.uint8)
         mask_clean = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel, iterations=3)
-        edges = cv2.Canny(mask_clean, 100, 200)
-        result_img = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR) #Quitamos el canny para que vea mejorlas lineas
+        #edges = cv2.Canny(mask_clean, 100, 200)
+        result_img = cv2.cvtColor(mask_clean, cv2.COLOR_GRAY2BGR) #Quitamos el canny para que vea mejorlas lineas
         self.linesP = cv2.HoughLinesP(mask_clean, 1, np.pi / 180, 50, None, 50, 10)
         if self.linesP is not None:
             filtered_lines = []        

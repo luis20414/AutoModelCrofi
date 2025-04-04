@@ -22,7 +22,7 @@ class ServoController(Node):
            
     def listener_callback(self, msg):
            
-        wheel_angle = str(round(msg.data,3))+'\n'
+        wheel_angle = str(round((-1)*(msg.data),3))+'\n'
         time.sleep(0.1)
         self.arduino.write(wheel_angle.encode())  
         print(msg.data)      

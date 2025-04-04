@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# EASY-INSTALL-ENTRY-SCRIPT: 'senal-detector==0.0.0','console_scripts','senal_detector'
+# EASY-INSTALL-ENTRY-SCRIPT: 'senal-detector','console_scripts','senal_detector'
 import re
 import sys
 
 # for compatibility with easy_install; see #2198
-__requires__ = 'senal-detector==0.0.0'
+__requires__ = 'senal-detector'
 
 try:
     from importlib.metadata import distribution
@@ -30,4 +30,4 @@ globals().setdefault('load_entry_point', importlib_load_entry_point)
 
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(load_entry_point('senal-detector==0.0.0', 'console_scripts', 'senal_detector')())
+    sys.exit(load_entry_point('senal-detector', 'console_scripts', 'senal_detector')())

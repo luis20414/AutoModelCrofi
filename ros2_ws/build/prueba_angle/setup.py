@@ -1,0 +1,1 @@
+/home/crofi/AutoModelCrofi/ros2_ws/src/vision/prueba_angle/setup.py

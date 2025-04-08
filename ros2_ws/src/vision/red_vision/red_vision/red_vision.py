@@ -4,6 +4,8 @@ from rclpy.node import Node
 import numpy as np
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
+import pytesseract  # Importar Tesseract OCR
+
 bridge = CvBridge()
 
 
@@ -15,7 +17,6 @@ class ImageProcessor(Node):
         
     def red_callback(self, msg):    
         frame = bridge.imgmsg_to_cv2(msg)
-        
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
         # Definir el rango de color rojo
@@ -29,14 +30,31 @@ class ImageProcessor(Node):
         mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
         mask = cv2.bitwise_or(mask1, mask2)
 
-        # Aplicar la máscara a la imagen original
-        roi = cv2.bitwise_and(frame, frame, mask=mask)
+        # Encontrar contornos en la máscara
+        contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        
+        for contour in contours:
+            # Aproximar el contorno a un polígono
+            epsilon = 0.02 * cv2.arcLength(contour, True)
+            approx = cv2.approxPolyDP(contour, epsilon, True)
 
-        # Convertir la región de interés (ROI) a escala de grises (solo el rojo detectado)
-        img_scene = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-    
-        # Publica la imagen recortada
-        self.publisher_.publish(bridge.cv2_to_imgmsg(img_scene))
+            # Verificar si el polígono tiene 8 lados (octágono)
+            if len(approx) == 8:
+                # Procesar la señal de alto detectada
+                x, y, w, h = cv2.boundingRect(contour)
+                roi = frame[y:y+h, x:x+w]
+
+                # Convertir la ROI a escala de grises
+                img_scene = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+
+                # Usar OCR para buscar texto dentro del octágono
+                text = pytesseract.image_to_string(img_scene, lang='eng')  # Cambia 'eng' a 'spa' si buscas texto en español
+                text = text.strip().upper()  # Normalizar texto a mayúsculas
+
+                # Verificar si el texto contiene "ALTO" o "STOP"
+                if "ALTO" in text or "STOP" in text:
+                    self.get_logger().info(f"Señal detectada con texto: {text}")
+                    self.publisher_.publish(bridge.cv2_to_imgmsg(img_scene))
 
 
 def main(args=None):

@@ -7,31 +7,28 @@ import math
 
 class ServoController(Node):
     def __init__(self):
-        super().__init__('servo_cotroller')
+        super().__init__('servo_controller')
         
-        #self.subscription = self.create_subscription(Float32, '/hardware/servo_goal_angle', self.listener_callback, 10)
-        self.subscription_angle =self.create_subscription(Float64, 'angle_servo', self.listener_callback, 10)
+        self.subscription_angle = self.create_subscription(Float64, 'angle_servo', self.listener_callback, 10)
         
         try:
-            self.arduino = serial.Serial('/dev/ttyACM0', 500000, timeout=1)
-            time.sleep(2) 
+            self.arduino = serial.Serial('/dev/ttyACM0', 115200, timeout=1)  # Cambiar a 115200 si es necesario
+            time.sleep(2)  # Esperar a que el Arduino esté listo
             self.get_logger().info('Arduino ready')
         except Exception as e:
-            self.get_logger().error(f' Error connceting with Arduino: {e}')
+            self.get_logger().error(f'Error connecting with Arduino: {e}')
             self.arduino = None
            
     def listener_callback(self, msg):
-           
-        wheel_angle = str(round((-1)*(msg.data),3))+'\n'
-        time.sleep(0.1)
-        self.arduino.write(wheel_angle.encode())  
-        print(msg.data)      
-        
-    
+        if self.arduino:
+            wheel_angle = str(round((-1) * msg.data, 3)) + '\n'
+            self.arduino.write(wheel_angle.encode())
+            self.get_logger().info(f"Sent angle: {msg.data}")
+        else:
+            self.get_logger().error("Arduino not connected.")
 
 
-def main(args = None):
-    print('Hi from servo.')
+def main(args=None):
     rclpy.init(args=args)
     node = ServoController()
     rclpy.spin(node)
@@ -40,6 +37,6 @@ def main(args = None):
 
 if __name__ == '__main__':
     main()
-    
-    
-    
+
+
+

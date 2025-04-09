@@ -3,6 +3,7 @@ import rclpy
 from rclpy.node import Node
 import numpy as np
 from sensor_msgs.msg import Image
+from std_msgs.msg import String  # Importar String para publicar "s" o "n"
 from cv_bridge import CvBridge
 import pytesseract  # Importar Tesseract OCR
 
@@ -12,8 +13,8 @@ bridge = CvBridge()
 class ImageProcessor(Node):
     def __init__(self):
         super().__init__('image_processor')
-        self.subscription = self.create_subscription(Image,'camera',self.red_callback,10)
-        self.publisher_ = self.create_publisher(Image, 'camera_red', 10)
+        self.subscription = self.create_subscription(Image, 'camera', self.red_callback, 10)
+        self.publisher_ = self.create_publisher(String, 'camera_red', 10)  # Cambiar a String
         
     def red_callback(self, msg):    
         frame = bridge.imgmsg_to_cv2(msg)
@@ -33,6 +34,8 @@ class ImageProcessor(Node):
         # Encontrar contornos en la máscara
         contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         
+        detected = False  # Variable para rastrear si se detectó un octágono válido
+
         for contour in contours:
             # Aproximar el contorno a un polígono
             epsilon = 0.02 * cv2.arcLength(contour, True)
@@ -54,7 +57,12 @@ class ImageProcessor(Node):
                 # Verificar si el texto contiene "ALTO" o "STOP"
                 if "ALTO" in text or "STOP" in text:
                     self.get_logger().info(f"Señal detectada con texto: {text}")
-                    self.publisher_.publish(bridge.cv2_to_imgmsg(img_scene))
+                    self.publisher_.publish(String(data="s"))  # Publicar "s" si se detecta
+                    detected = True
+                    break  # Salir del bucle si se detecta un octágono válido
+
+        if not detected:
+            self.publisher_.publish(String(data="n"))  # Publicar "n" si no se detectó nada
 
 
 def main(args=None):

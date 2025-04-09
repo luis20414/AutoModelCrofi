@@ -20,6 +20,10 @@ class LaneDetector(Node):
         timer_period = 0.05  # seconds
         self.timer = self.create_timer(timer_period, self.lane_publisher)
         self.publisher_ = self.create_publisher(Float64MultiArray, 'lane_deviation', 10)
+
+        self.image_publisher = self.create_publisher(Image, 'processed_image', 10)
+
+
         self.linesP = None
 
     def listener_callback(self, msg):
@@ -35,6 +39,9 @@ class LaneDetector(Node):
         mask_clean = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel, iterations=3)
         #edges = cv2.Canny(mask_clean, 100, 200)
         result_img = cv2.cvtColor(mask_clean, cv2.COLOR_GRAY2BGR) #Quitamos el canny para que vea mejorlas lineas
+
+
+
         self.linesP = cv2.HoughLinesP(mask_clean, 1, np.pi / 180, 50, None, 50, 10)
         if self.linesP is not None:
             filtered_lines = []        
@@ -49,6 +56,9 @@ class LaneDetector(Node):
             self.linesP = np.array(filtered_lines) if filtered_lines else None
         #cv2.imshow('Bordes + Lineas Detectadas', result_img)
         cv2.waitKey(10)
+
+        img_msg = bridge.cv2_to_imgmsg(result_img, encoding="bgr8")
+        self.image_publisher.publish(img_msg)
 
     def lane_publisher(self):
         if self.linesP is not None:

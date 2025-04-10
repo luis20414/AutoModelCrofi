@@ -1,15 +1,26 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32, Float64
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 import serial
 import time
 import math
+import struct
+
+
+
 
 class ServoController(Node):
     def __init__(self):
         super().__init__('servo_controller')
+
+        qos_profile = QoSProfile(
+            depth=10,
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            history=HistoryPolicy.KEEP_LAST
+        )
         
-        self.subscription_angle = self.create_subscription(Float64, 'angle_servo', self.listener_callback, 10)
+        self.subscription_angle = self.create_subscription(Float64, 'angle_servo', self.listener_callback, qos_profile)
         
         try:
             self.arduino = serial.Serial('/dev/ttyACM0', 115200, timeout=1)  # Cambiar a 115200 si es necesario
@@ -21,9 +32,13 @@ class ServoController(Node):
            
     def listener_callback(self, msg):
         if self.arduino:
-            wheel_angle = str(round((-1) * msg.data, 3)) + '\n'
-            self.arduino.write(wheel_angle.encode())
-            self.get_logger().info(f"Sent angle: {msg.data}")
+            try:
+                wheel_angle = round((-1) * msg.data, 3)
+                self.arduino.write(struct.pack('<f', wheel_angle))
+                self.arduino.flush()
+                self.get_logger().info(f"Sent angle: {msg.data}")
+            except Exception as e:
+                self.get_logger().error(f"Error: {e}")
         else:
             self.get_logger().error("Arduino not connected.")
 

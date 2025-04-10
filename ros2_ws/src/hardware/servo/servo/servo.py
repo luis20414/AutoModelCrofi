@@ -4,10 +4,7 @@ from std_msgs.msg import Float32, Float64
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 import serial
 import time
-import math
 import struct
-
-
 
 
 class ServoController(Node):

@@ -1,3 +1,4 @@
+#include<Servo.h> 
 Servo servo;
 float targetAngle = 90; // Ángulo inicial del servo
 const int pinServo = 5;

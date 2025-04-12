@@ -48,8 +48,8 @@ class LaneDetector(Node):
             for line in self.linesP:
                 x1, y1, x2, y2 = line[0]
                 angle = np.arctan2(y2 - y1, x2 - x1) * 180 / np.pi  # Calcula el ángulo en grados
-                # Filtrar líneas con ángulo entre -60° y 60°
-                if 60 <= abs(angle) <= 120 :
+                # Filtrar líneas con ángulo entre -40° y 40°
+                if 40 <= abs(angle) <= 140 :
                     filtered_lines.append(line)  # Guardar la línea filtrada
                     cv2.line(result_img, (x1, y1), (x2, y2), (0, 0, 255), 3, cv2.LINE_AA)  # Dibujar la línea
             # Actualizar self.linesP con las líneas filtradas en base al angulo
@@ -64,7 +64,7 @@ class LaneDetector(Node):
         if self.linesP is not None:
             msg = Float64MultiArray()
             msg.data = [float(x) for x in self.linesP.flatten().tolist()]
-            self.publisher_.publish(msg) #envia las lineas entre 60 y 120
+            self.publisher_.publish(msg) #envia las lineas entre 40 y 140
 
 def main(args=None):
     rclpy.init(args=args)

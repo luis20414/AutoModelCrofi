@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/tars/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/tars/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/tars/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/tars/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${destination}")
+      set(destination "/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -311,49 +311,49 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install("TARGETS" "ydlidar_ros2_driver_node" "ydlidar_ros2_driver_client" "DESTINATION" "lib/ydlidar_ros2_driver")
-include("/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "launch" "params" "startup" "config" "DESTINATION" "share/ydlidar_ros2_driver")
-ament_cmake_symlink_install_directory("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" DIRECTORY "launch" "params" "startup" "config" "DESTINATION" "share/ydlidar_ros2_driver")
+ament_cmake_symlink_install_directory("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" DIRECTORY "launch" "params" "startup" "config" "DESTINATION" "share/ydlidar_ros2_driver")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
-# install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+# install(FILES "/home/crofi/ros2_humble/ros2-linux/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/ros2_humble/ros2-linux/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
 
-# install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+# install(FILES "/home/crofi/ros2_humble/ros2-linux/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/ros2_humble/ros2-linux/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ydlidar_ros2_driver/environment")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ydlidar_ros2_driver/environment")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ydlidar_ros2_driver")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ydlidar_ros2_driver")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ydlidar_ros2_driver")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ydlidar_ros2_driver")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ydlidar_ros2_driver")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ydlidar_ros2_driver")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ydlidar_ros2_driver")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ydlidar_ros2_driver")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ydlidar_ros2_driver")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ydlidar_ros2_driver")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ydlidar_ros2_driver")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ydlidar_ros2_driver")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ydlidar_ros2_driver")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/packages/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/packages/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/packages/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_index/share/ament_index/resource_index/packages/ydlidar_ros2_driver" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig.cmake" "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig-version.cmake" "DESTINATION" "share/ydlidar_ros2_driver/cmake")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig.cmake" "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig-version.cmake" "DESTINATION" "share/ydlidar_ros2_driver/cmake")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig.cmake" "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig-version.cmake" "DESTINATION" "share/ydlidar_ros2_driver/cmake")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig.cmake" "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig-version.cmake" "DESTINATION" "share/ydlidar_ros2_driver/cmake")
 
-# install(FILES "/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver/package.xml" "DESTINATION" "share/ydlidar_ros2_driver")
-ament_cmake_symlink_install_files("/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver/package.xml" "DESTINATION" "share/ydlidar_ros2_driver")
+# install(FILES "/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver/package.xml" "DESTINATION" "share/ydlidar_ros2_driver")
+ament_cmake_symlink_install_files("/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver" FILES "/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver/package.xml" "DESTINATION" "share/ydlidar_ros2_driver")

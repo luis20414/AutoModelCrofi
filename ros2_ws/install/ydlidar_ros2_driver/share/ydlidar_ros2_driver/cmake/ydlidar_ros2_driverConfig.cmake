@@ -1,1 +1,1 @@
-/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig.cmake
+/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_core/ydlidar_ros2_driverConfig.cmake

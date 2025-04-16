@@ -27,7 +27,7 @@ if(NOT "" STREQUAL "")
     set(_msg "${_msg} ()")
   endif()
   # optionally quiet the deprecation message
-  if(NOT ydlidar_ros2_driver_DEPRECATED_QUIET)
+  if(NOT ${ydlidar_ros2_driver_DEPRECATED_QUIET})
     message(DEPRECATION "${_msg}")
   endif()
 endif()

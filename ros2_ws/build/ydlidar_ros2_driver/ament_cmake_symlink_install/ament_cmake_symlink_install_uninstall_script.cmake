@@ -1,7 +1,7 @@
 # generated from
 # ament_cmake_core/cmake/symlink_install/ament_cmake_symlink_install_uninstall_script.cmake.in
 
-set(install_manifest "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/symlink_install_manifest.txt")
+set(install_manifest "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/symlink_install_manifest.txt")
 if(NOT EXISTS "${install_manifest}")
   message(FATAL_ERROR "Cannot find symlink install manifest: ${install_manifest}")
 endif()

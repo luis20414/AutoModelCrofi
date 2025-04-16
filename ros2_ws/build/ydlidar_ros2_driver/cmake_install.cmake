@@ -1,8 +1,8 @@
-# Install script for directory: /home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver
+# Install script for directory: /home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tars/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver")
+  set(CMAKE_INSTALL_PREFIX "/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_ros2_driver")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -42,8 +42,8 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tars/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_ros2_driver/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

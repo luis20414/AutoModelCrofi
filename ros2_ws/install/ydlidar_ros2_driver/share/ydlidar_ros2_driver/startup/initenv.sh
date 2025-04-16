@@ -1,1 +1,1 @@
-/home/tars/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver/startup/initenv.sh
+/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_ros2_driver/startup/initenv.sh

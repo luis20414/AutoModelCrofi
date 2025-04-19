@@ -57,7 +57,7 @@ class ImageProcessor(Node):
                 # Verificar si el texto contiene "ALTO" o "STOP"
                 if "ALTO" in text or "STOP" in text:
                     self.get_logger().info(f"Señal detectada con texto: {text}")
-                    self.publisher_.publish(String(data="s"))  # Publicar "s" si se detecta
+                    self.publisher_.publish(String(data="s1500"))  # Publicar "s" si se detecta
                     detected = True
                     break  # Salir del bucle si se detecta un octágono válido
 

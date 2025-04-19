@@ -5,8 +5,9 @@ const int pinESC = 9;
 
 void setup() {
   Serial.begin(115200);
-  
   esc.attach(pinESC);
+
+  esc.writeMicroseconds(1000); 
   delay(5000);  // Espera crítica para ESC
   esc.writeMicroseconds(1500);  // Neutral
 }

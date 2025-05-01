@@ -66,8 +66,13 @@ class LaneDetector(Node):
                     if not added:
                         grouped_lines.append([x1, y1, x2, y2])
 
-                # Actualizar las líneas con las agrupadas
-                self.linesP = np.array(grouped_lines)
+                # Verificar que grouped_lines tiene la estructura correcta
+                if all(isinstance(group, list) and len(group) == 4 for group in grouped_lines):
+                    self.linesP = np.array(grouped_lines)
+                else:
+                    self.get_logger().error("Grouped lines have an invalid structure.")
+                    self.linesP = None
+                    
             else:
                 self.linesP = None
 
@@ -104,7 +109,7 @@ class LaneDetector(Node):
                 curvature_msg.data = curvature_radius
                 self.curvature_publisher.publish(curvature_msg)  # Publicar el radio de curvatura
 
-        #cv2.imshow('Bordes + Lineas Detectadas', result_img)
+        cv2.imshow('Bordes + Lineas Detectadas', result_img)
         cv2.waitKey(10)
 
         img_msg = bridge.cv2_to_imgmsg(result_img, encoding="bgr8")

@@ -142,6 +142,7 @@ def main(args=None):
     global primeraFase
     global segundaFase
     global terceraFase
+    
     rebasando = False
     primeraFase = False
     segundaFase = False

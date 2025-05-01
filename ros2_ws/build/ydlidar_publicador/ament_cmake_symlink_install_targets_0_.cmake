@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador/ydlidar_publicador_node" "/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador/ydlidar_publicador_client" "TARGETS" "ydlidar_publicador_node" "ydlidar_publicador_client" "DESTINATION" "lib/ydlidar_publicador")

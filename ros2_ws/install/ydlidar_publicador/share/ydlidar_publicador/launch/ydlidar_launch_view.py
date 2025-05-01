@@ -1,0 +1,1 @@
+/home/crofi/AutoModelCrofi/ros2_ws/src/hardware/ydlidar_publicador/launch/ydlidar_launch_view.py

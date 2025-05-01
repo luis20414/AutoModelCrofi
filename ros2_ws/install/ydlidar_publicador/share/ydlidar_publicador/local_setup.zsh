@@ -1,0 +1,1 @@
+/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador/ament_cmake_environment_hooks/local_setup.zsh

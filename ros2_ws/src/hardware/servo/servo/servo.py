@@ -30,10 +30,10 @@ class ServoController(Node):
     def listener_callback(self, msg):
         if self.arduino:
             try:
-                wheel_angle = round(msg.data, 3)
+                wheel_angle = round(-msg.data, 3)
                 self.arduino.write(struct.pack('<f', wheel_angle))
                 self.arduino.flush()
-                self.get_logger().info(f"Sent angle: {msg.data}")
+                self.get_logger().info(f"Sent angle: {-msg.data}")
             except Exception as e:
                 self.get_logger().error(f"Error: {e}")
         else:

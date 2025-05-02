@@ -18,7 +18,7 @@ class DriverController(Node):
         )
         
         self.subscription_angle = self.create_subscription(Int32, '/target_speed', self.listener_callback, qos_profile)
-        self.publisher_intermittent_lights = self.create_publisher(String, 'rebase', qos_profile) 
+        self.publisher_intermittent_lights = self.create_publisher(String, 'rebase', 10) 
 
         try:
             self.arduino = serial.Serial('/dev/arduino_nano', 115200, timeout=1)  # Cambiar a 115200 si es necesario
@@ -35,9 +35,9 @@ class DriverController(Node):
                 self.arduino.flush()
                 self.get_logger().info(f"Sent speed: {msg.data}")
                 if msg.data == 1500:
-                    self.publisher_intermittent_lights.publish(Int32(data='T'))
+                    self.publisher_intermittent_lights.publish(String(data='T'))
                 else: 
-                    self.publisher_intermittent_lights.publish(Int32(data='N'))
+                    self.publisher_intermittent_lights.publish(String(data='N'))
             except Exception as e:
                 self.get_logger().error(f"Error: {e}")
         else:

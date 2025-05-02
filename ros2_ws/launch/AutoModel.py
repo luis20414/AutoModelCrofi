@@ -9,23 +9,33 @@ def generate_launch_description():
             name='webcam_node'
         ),
         Node(
-            package='lane_detector',
-            executable='lane_detector',
-            name='lane_detector_node'
+            package='directional_led',
+            executable='directional_led',
+            name='directional_led_node'
         ),
         Node(
-            package='lane_angle',
-            executable='lane_angle',
-            name='lane_angle_node'
+            package='steering_error',
+            executable='steering_error',
+            name='steering_error_node'
         ),
         Node(
-            package='servo',
-            executable='servo',
-            name='servo_node'
-        ), 
+            package='lanes_borders',
+            executable='lanes_borders',
+            name='lanes_borders_node'
+        ),
         Node(
             package='red_vision',
             executable='red_vision',
             name='red_vision_node'
-        )
+        ),
+	    Node(
+	        package='servo',
+	        executable='servo',
+	        name='servo_node'
+	    ),
+    	#Node(
+    	#    package='driver',
+    	#    executable='driver',
+    	#    name='driver_node'
+    	#)
     ])

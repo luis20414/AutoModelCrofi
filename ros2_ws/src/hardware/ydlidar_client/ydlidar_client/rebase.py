@@ -33,6 +33,8 @@ class YDLidarClient(Node):
 
     def scan_callback(self, scan):
         count = int(scan.scan_time / scan.time_increment)
+        print(f"Número de medidas: {count}")
+        print(f"Medidas por grado: {count / 360:.2f}")
         #print(f"[YDLIDAR INFO]: Escaneo recibido {scan.header.frame_id}[{count}]:")
         #print(f"[YDLIDAR INFO]: Rango angular : [{math.degrees(scan.angle_min):.2f}, {math.degrees(scan.angle_max):.2f}]")
 
@@ -54,7 +56,7 @@ class YDLidarClient(Node):
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if degree > -15 and degree < 15:
-                if scan.ranges[i] < 0.35 and scan.ranges[i] != 0:
+                if scan.ranges[i] < 0.25 and scan.ranges[i] != 0:
                     colision = True
                     print("Frente")
                     
@@ -105,9 +107,10 @@ class YDLidarClient(Node):
                 if self.incorporarse(scan, count):
                     self.segundaFase = True
                 else:
-                    self.alinearse(scan, count)
+                    self.alineacion(scan, count)
             if not self.terceraFase and self.segundaFase:
                 print("Incorporándose")
+                # Maniobra de incorporación
                 self.primeraFase = False
                 self.segundaFaseFase = False
                 self.terceraFase = False
@@ -116,20 +119,23 @@ class YDLidarClient(Node):
             self.detectarPosibleRebase(scan, count)
 
     def enderezarDireccion(self, scan, count):
+        libre = True
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if 0 < degree < 30:
-                if scan.ranges[i] > 0.30:
-                    print("Enderezando dirección")
-                    self.servo_publisher.publish(Float64(data=0.0))
-                    return True
-        return False
+                if scan.ranges[i] < 0.30 and scan.ranges[i] != 0:
+                    libre = False
+        if libre:
+            self.servo_publisher.publish(Float64(data=-0.5))
+            return True
+        else:
+            return False
 
     def incorporarse(self, scan, count):
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if 85 < degree < 95:
-                if scan.ranges[i] > 0.25:
+                if scan.ranges[i] > 0.25: # Por ajustar
                     print("Incorporándose")
                     return True
         print("No se puede incorporar")

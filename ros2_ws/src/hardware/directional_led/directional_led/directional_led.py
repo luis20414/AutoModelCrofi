@@ -35,7 +35,7 @@ class LEDController(Node):
         self.subscription  # Evita advertencia de variable no usada
         self.get_logger().info("LED Controller listo, esperando mensajes en /rebase...")
 
-    def blink_leds(self, pins, blink_count=5, delay=0):
+    def blink_leds(self, pins, blink_count=1, delay=0.5):
         """
         Hace parpadear los LEDs en los pines especificados.
         :param pins: Lista de pines GPIO a parpadear.

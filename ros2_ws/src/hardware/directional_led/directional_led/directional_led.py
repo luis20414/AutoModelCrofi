@@ -55,9 +55,9 @@ class LEDController(Node):
         command = msg.data.strip().upper()  # Convertir a mayúsculas y eliminar espacios
         
         # Apagar todos los LEDs primero
-        all_pins = set(self.led_pins['T'])
-        for pin in all_pins:
-            GPIO.output(pin, GPIO.LOW)
+       # all_pins = set(self.led_pins['T'])
+       # for pin in all_pins:
+        #    GPIO.output(pin, GPIO.LOW)
         
         # Encender o parpadear LEDs según el comando
         if command in self.led_pins:

@@ -17,7 +17,7 @@ class ServoController(Node):
             history=HistoryPolicy.KEEP_LAST
         )
         
-        self.subscription_angle = self.create_subscription(Float64, 'angle_servo', self.listener_callback, qos_profile)
+        self.subscription_angle = self.create_subscription(Float64, 'steering', self.listener_callback, qos_profile)
         
         try:
             self.arduino = serial.Serial('/dev/ttyACM0', 115200, timeout=1)  # cambiar a /dev/ttyACM0 o /dev/ttyACM1 dependiendo de la conexión

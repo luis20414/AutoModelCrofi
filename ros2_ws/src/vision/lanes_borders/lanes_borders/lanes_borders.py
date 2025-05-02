@@ -51,15 +51,15 @@ class LaneDetector(Node):
             right_indexes = right_indexes[:, 0, 0]
             (right_point, _, __, ___) = cv2.minMaxLoc(right_indexes)
             right_point = int(right_point)
-        print("Left Point: ", type(left_point))
-        print("Right Point: ", type(right_point))
+        print("Left Point: ", int(left_point))
+        print("Right Point: ", int(right_point))
         result_img = cv2.cvtColor(mask_clean, cv2.COLOR_GRAY2BGR) 
         if left_point > 0:
             cv2.circle(result_img, (left_point, height-2), 5, (0, 255, 0), -1)
         if right_point > 0:
             cv2.circle(result_img, (right_point + width//2, height-2), 5, (0, 255, 0), -1)
-        cv2.imshow('Imagen Result', result_img)
-        cv2.waitKey(10)
+        #cv2.imshow('Imagen Result', result_img)
+        #cv2.waitKey(10)
 
         img_msg = bridge.cv2_to_imgmsg(result_img, encoding="bgr8")
         self.image_publisher.publish(img_msg)

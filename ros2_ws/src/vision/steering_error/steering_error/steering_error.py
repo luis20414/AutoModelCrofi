@@ -1,19 +1,19 @@
 import rclpy
 from rclpy.node import Node
-import numpy as np
-from std_msgs.msg import Float64MultiArray, Float64, String
+from std_msgs.msg import Float64MultiArray, Float64, Bool, Int32
 
 class SteeringError(Node):
+    print("In steering error")
     def __init__(self):
         super().__init__('steering_error')
         self.subscription_borders = self.create_subscription(Float64MultiArray, 'lane_borders', self.listener_callback_points, 10)
         self.steering_publisher = self.create_publisher(Float64, 'steering', 10)
-        self.speed_publisher = self.create_publisher(Float64, '/target_speed', 10)
+        self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.max_speed = 1570
-        self.subscription_enable = self.create_subscription(String, 'enable_Auto', self.listener_enable, 10)
-        self.enable = False
-        self.left_point = None
-        self.right_point = None
+        self.subscription_enable = self.create_subscription(Bool, 'enable_Auto', self.listener_enable, 10)
+        self.enable = 0
+        self.left_point = 64
+        self.right_point = 105
         self.previous_error = 0.0
         self.kp = 1.0  # Constante proporcional
         self.kd = 0.1  # Constante derivativa
@@ -23,9 +23,12 @@ class SteeringError(Node):
         self.right_point = msg.data[1]
 
     def listener_enable(self, msg):
-        self.enable = msg.data.strip().lower() == 'true'
+        print("In listener_enable")
+        self.enable = msg.data
+        self.correction_mov()
 
     def correction_mov(self):
+        print("In correction_mov")
         if self.enable:
             error = 0.0
             if self.left_point > 0 and self.right_point > 0:
@@ -46,7 +49,7 @@ class SteeringError(Node):
             # Si el error es 0, mantener velocidad máxima y dirección recta
             if error <= 0.01:
                 self.steering_publisher.publish(Float64(data=0.0))
-                self.speed_publisher.publish(Float64(data=self.max_speed))
+                self.speed_publisher.publish(Int32(data=self.max_speed))
                 return
 
             # Controlador PD
@@ -62,14 +65,16 @@ class SteeringError(Node):
 
             # Publicar la velocidad (puedes ajustar esta lógica según el error)
             speed = max(self.max_speed - abs(error) * 10, 1530)  # Reducir velocidad con error
-            self.speed_publisher.publish(Float64(data=speed))
+            print(speed)
+            self.speed_publisher.publish(Int32(data=speed))
 
         else:
             # Desactivar movimiento
-            self.steering_publisher.publish(Float64(data=0))
-            self.speed_publisher.publish(Float64(data=1500))
+            self.steering_publisher.publish(Float64(data=0.0))
+            self.speed_publisher.publish(Int32(data=1500))
 
 def main(args=None):
+    print("Hi there")
     rclpy.init(args=args)
     node = SteeringError()
     rclpy.spin(node)

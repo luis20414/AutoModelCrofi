@@ -1,0 +1,635 @@
+[0.000000] (-) TimerEvent: {}
+[0.001829] (directional_led) JobQueued: {'identifier': 'directional_led', 'dependencies': OrderedDict()}
+[0.002456] (driver) JobQueued: {'identifier': 'driver', 'dependencies': OrderedDict()}
+[0.002958] (lanes_borders) JobQueued: {'identifier': 'lanes_borders', 'dependencies': OrderedDict()}
+[0.003153] (red_vision) JobQueued: {'identifier': 'red_vision', 'dependencies': OrderedDict()}
+[0.003446] (serial_bridge) JobQueued: {'identifier': 'serial_bridge', 'dependencies': OrderedDict()}
+[0.003608] (servo) JobQueued: {'identifier': 'servo', 'dependencies': OrderedDict()}
+[0.003702] (steering_error) JobQueued: {'identifier': 'steering_error', 'dependencies': OrderedDict()}
+[0.003855] (webcam) JobQueued: {'identifier': 'webcam', 'dependencies': OrderedDict()}
+[0.003947] (ydlidar_client) JobQueued: {'identifier': 'ydlidar_client', 'dependencies': OrderedDict()}
+[0.004029] (ydlidar_publicador) JobQueued: {'identifier': 'ydlidar_publicador', 'dependencies': OrderedDict()}
+[0.004140] (directional_led) JobStarted: {'identifier': 'directional_led'}
+[0.099772] (-) TimerEvent: {}
+[0.109731] (driver) JobStarted: {'identifier': 'driver'}
+[0.200075] (lanes_borders) JobStarted: {'identifier': 'lanes_borders'}
+[0.201090] (-) TimerEvent: {}
+[0.271768] (red_vision) JobStarted: {'identifier': 'red_vision'}
+[0.301389] (-) TimerEvent: {}
+[0.402832] (-) TimerEvent: {}
+[0.503593] (-) TimerEvent: {}
+[0.604356] (-) TimerEvent: {}
+[0.705081] (-) TimerEvent: {}
+[0.805860] (-) TimerEvent: {}
+[0.906641] (-) TimerEvent: {}
+[1.007383] (-) TimerEvent: {}
+[1.108143] (-) TimerEvent: {}
+[1.208888] (-) TimerEvent: {}
+[1.309612] (-) TimerEvent: {}
+[1.410311] (-) TimerEvent: {}
+[1.511050] (-) TimerEvent: {}
+[1.611779] (-) TimerEvent: {}
+[1.712599] (-) TimerEvent: {}
+[1.813497] (-) TimerEvent: {}
+[1.914513] (-) TimerEvent: {}
+[2.015289] (-) TimerEvent: {}
+[2.116225] (-) TimerEvent: {}
+[2.217159] (-) TimerEvent: {}
+[2.317958] (-) TimerEvent: {}
+[2.418753] (-) TimerEvent: {}
+[2.519552] (-) TimerEvent: {}
+[2.620304] (-) TimerEvent: {}
+[2.721038] (-) TimerEvent: {}
+[2.821753] (-) TimerEvent: {}
+[2.922466] (-) TimerEvent: {}
+[3.023175] (-) TimerEvent: {}
+[3.123881] (-) TimerEvent: {}
+[3.224646] (-) TimerEvent: {}
+[3.325346] (-) TimerEvent: {}
+[3.426171] (-) TimerEvent: {}
+[3.527560] (-) TimerEvent: {}
+[3.628728] (-) TimerEvent: {}
+[3.729684] (-) TimerEvent: {}
+[3.830407] (-) TimerEvent: {}
+[3.931171] (-) TimerEvent: {}
+[4.031896] (-) TimerEvent: {}
+[4.132672] (-) TimerEvent: {}
+[4.233390] (-) TimerEvent: {}
+[4.334103] (-) TimerEvent: {}
+[4.434824] (-) TimerEvent: {}
+[4.535519] (-) TimerEvent: {}
+[4.636240] (-) TimerEvent: {}
+[4.736978] (-) TimerEvent: {}
+[4.837703] (-) TimerEvent: {}
+[4.938699] (-) TimerEvent: {}
+[5.040160] (-) TimerEvent: {}
+[5.140822] (-) TimerEvent: {}
+[5.241555] (-) TimerEvent: {}
+[5.342281] (-) TimerEvent: {}
+[5.443013] (-) TimerEvent: {}
+[5.543764] (-) TimerEvent: {}
+[5.644569] (-) TimerEvent: {}
+[5.745325] (-) TimerEvent: {}
+[5.846036] (-) TimerEvent: {}
+[5.946797] (-) TimerEvent: {}
+[6.047522] (-) TimerEvent: {}
+[6.148223] (-) TimerEvent: {}
+[6.248972] (-) TimerEvent: {}
+[6.350757] (-) TimerEvent: {}
+[6.451559] (-) TimerEvent: {}
+[6.552357] (-) TimerEvent: {}
+[6.653480] (-) TimerEvent: {}
+[6.755214] (-) TimerEvent: {}
+[6.856449] (-) TimerEvent: {}
+[6.957646] (-) TimerEvent: {}
+[7.059545] (-) TimerEvent: {}
+[7.161453] (-) TimerEvent: {}
+[7.263603] (-) TimerEvent: {}
+[7.365593] (-) TimerEvent: {}
+[7.468602] (-) TimerEvent: {}
+[7.570588] (-) TimerEvent: {}
+[7.671886] (-) TimerEvent: {}
+[7.773302] (-) TimerEvent: {}
+[7.874607] (-) TimerEvent: {}
+[7.976787] (-) TimerEvent: {}
+[8.078766] (-) TimerEvent: {}
+[8.180757] (-) TimerEvent: {}
+[8.282663] (-) TimerEvent: {}
+[8.384490] (-) TimerEvent: {}
+[8.485806] (-) TimerEvent: {}
+[8.587165] (-) TimerEvent: {}
+[8.688419] (-) TimerEvent: {}
+[8.789988] (-) TimerEvent: {}
+[8.892775] (-) TimerEvent: {}
+[8.994684] (-) TimerEvent: {}
+[9.096569] (-) TimerEvent: {}
+[9.198673] (-) TimerEvent: {}
+[9.300545] (-) TimerEvent: {}
+[9.402373] (-) TimerEvent: {}
+[9.504526] (-) TimerEvent: {}
+[9.606788] (-) TimerEvent: {}
+[9.711772] (-) TimerEvent: {}
+[9.816482] (-) TimerEvent: {}
+[9.921606] (-) TimerEvent: {}
+[9.979834] (directional_led) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[10.019469] (lanes_borders) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[10.030153] (-) TimerEvent: {}
+[10.031777] (red_vision) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[10.049688] (driver) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/driver/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/driver', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/driver', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[10.130367] (-) TimerEvent: {}
+[10.232499] (-) TimerEvent: {}
+[10.335552] (-) TimerEvent: {}
+[10.437424] (-) TimerEvent: {}
+[10.540111] (-) TimerEvent: {}
+[10.642121] (-) TimerEvent: {}
+[10.744292] (-) TimerEvent: {}
+[10.846384] (-) TimerEvent: {}
+[10.948362] (-) TimerEvent: {}
+[11.050022] (-) TimerEvent: {}
+[11.151893] (-) TimerEvent: {}
+[11.254881] (-) TimerEvent: {}
+[11.357017] (-) TimerEvent: {}
+[11.458948] (-) TimerEvent: {}
+[11.560850] (-) TimerEvent: {}
+[11.662793] (-) TimerEvent: {}
+[11.764850] (-) TimerEvent: {}
+[11.866873] (-) TimerEvent: {}
+[11.968950] (-) TimerEvent: {}
+[12.070908] (-) TimerEvent: {}
+[12.173054] (-) TimerEvent: {}
+[12.255119] (directional_led) StdoutLine: {'line': b'running develop\n'}
+[12.273329] (-) TimerEvent: {}
+[12.295004] (red_vision) StdoutLine: {'line': b'running develop\n'}
+[12.330932] (driver) StdoutLine: {'line': b'running develop\n'}
+[12.373580] (-) TimerEvent: {}
+[12.394768] (lanes_borders) StdoutLine: {'line': b'running develop\n'}
+[12.473801] (-) TimerEvent: {}
+[12.584285] (-) TimerEvent: {}
+[12.685382] (-) TimerEvent: {}
+[12.786871] (-) TimerEvent: {}
+[12.888272] (-) TimerEvent: {}
+[12.989614] (-) TimerEvent: {}
+[13.091034] (-) TimerEvent: {}
+[13.193159] (-) TimerEvent: {}
+[13.294349] (-) TimerEvent: {}
+[13.395715] (-) TimerEvent: {}
+[13.497224] (-) TimerEvent: {}
+[13.598611] (-) TimerEvent: {}
+[13.700165] (-) TimerEvent: {}
+[13.802531] (-) TimerEvent: {}
+[13.903988] (-) TimerEvent: {}
+[14.005600] (-) TimerEvent: {}
+[14.059894] (driver) StdoutLine: {'line': b'running egg_info\n'}
+[14.065159] (driver) StdoutLine: {'line': b'writing driver.egg-info/PKG-INFO\n'}
+[14.068043] (driver) StdoutLine: {'line': b'writing dependency_links to driver.egg-info/dependency_links.txt\n'}
+[14.070912] (driver) StdoutLine: {'line': b'writing entry points to driver.egg-info/entry_points.txt\n'}
+[14.073725] (driver) StdoutLine: {'line': b'writing requirements to driver.egg-info/requires.txt\n'}
+[14.076354] (driver) StdoutLine: {'line': b'writing top-level names to driver.egg-info/top_level.txt\n'}
+[14.079031] (driver) StdoutLine: {'line': b"reading manifest file 'driver.egg-info/SOURCES.txt'\n"}
+[14.083469] (directional_led) StdoutLine: {'line': b'running egg_info\n'}
+[14.087455] (directional_led) StdoutLine: {'line': b'writing directional_led.egg-info/PKG-INFO\n'}
+[14.093213] (directional_led) StdoutLine: {'line': b'writing dependency_links to directional_led.egg-info/dependency_links.txt\n'}
+[14.098386] (directional_led) StdoutLine: {'line': b'writing entry points to directional_led.egg-info/entry_points.txt\n'}
+[14.101286] (directional_led) StdoutLine: {'line': b'writing requirements to directional_led.egg-info/requires.txt\n'}
+[14.107141] (-) TimerEvent: {}
+[14.114711] (directional_led) StdoutLine: {'line': b'writing top-level names to directional_led.egg-info/top_level.txt\n'}
+[14.116930] (driver) StdoutLine: {'line': b"writing manifest file 'driver.egg-info/SOURCES.txt'\n"}
+[14.121420] (directional_led) StdoutLine: {'line': b"reading manifest file 'directional_led.egg-info/SOURCES.txt'\n"}
+[14.122028] (directional_led) StdoutLine: {'line': b"writing manifest file 'directional_led.egg-info/SOURCES.txt'\n"}
+[14.122567] (red_vision) StdoutLine: {'line': b'running egg_info\n'}
+[14.123102] (red_vision) StdoutLine: {'line': b'writing red_vision.egg-info/PKG-INFO\n'}
+[14.123705] (directional_led) StdoutLine: {'line': b'running build_ext\n'}
+[14.124299] (directional_led) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages/directional-led.egg-link (link to .)\n'}
+[14.124799] (lanes_borders) StdoutLine: {'line': b'running egg_info\n'}
+[14.125288] (lanes_borders) StdoutLine: {'line': b'writing lanes_borders.egg-info/PKG-INFO\n'}
+[14.128724] (driver) StdoutLine: {'line': b'running build_ext\n'}
+[14.130198] (driver) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages/driver.egg-link (link to .)\n'}
+[14.131403] (directional_led) StdoutLine: {'line': b'Installing directional_led script to /home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/directional_led\n'}
+[14.136903] (directional_led) StdoutLine: {'line': b'\n'}
+[14.137739] (directional_led) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/directional_led\n'}
+[14.138637] (directional_led) StdoutLine: {'line': b'running symlink_data\n'}
+[14.139667] (red_vision) StdoutLine: {'line': b'writing dependency_links to red_vision.egg-info/dependency_links.txt\n'}
+[14.152784] (lanes_borders) StdoutLine: {'line': b'writing dependency_links to lanes_borders.egg-info/dependency_links.txt\n'}
+[14.154019] (lanes_borders) StdoutLine: {'line': b'writing entry points to lanes_borders.egg-info/entry_points.txt\n'}
+[14.154969] (lanes_borders) StdoutLine: {'line': b'writing requirements to lanes_borders.egg-info/requires.txt\n'}
+[14.156049] (lanes_borders) StdoutLine: {'line': b'writing top-level names to lanes_borders.egg-info/top_level.txt\n'}
+[14.157200] (lanes_borders) StdoutLine: {'line': b"reading manifest file 'lanes_borders.egg-info/SOURCES.txt'\n"}
+[14.157826] (red_vision) StdoutLine: {'line': b'writing entry points to red_vision.egg-info/entry_points.txt\n'}
+[14.158716] (lanes_borders) StdoutLine: {'line': b"writing manifest file 'lanes_borders.egg-info/SOURCES.txt'\n"}
+[14.159893] (red_vision) StdoutLine: {'line': b'writing requirements to red_vision.egg-info/requires.txt\n'}
+[14.172693] (red_vision) StdoutLine: {'line': b'writing top-level names to red_vision.egg-info/top_level.txt\n'}
+[14.173684] (lanes_borders) StdoutLine: {'line': b'running build_ext\n'}
+[14.174582] (lanes_borders) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages/lanes-borders.egg-link (link to .)\n'}
+[14.175812] (driver) StdoutLine: {'line': b'Installing driver script to /home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/driver\n'}
+[14.177205] (driver) StdoutLine: {'line': b'\n'}
+[14.178480] (driver) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/driver\n'}
+[14.179751] (driver) StdoutLine: {'line': b'running symlink_data\n'}
+[14.181070] (lanes_borders) StdoutLine: {'line': b'Installing lanes_borders script to /home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/lanes_borders\n'}
+[14.182382] (lanes_borders) StdoutLine: {'line': b'\n'}
+[14.183614] (lanes_borders) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders\n'}
+[14.198025] (lanes_borders) StdoutLine: {'line': b'running symlink_data\n'}
+[14.200464] (red_vision) StdoutLine: {'line': b"reading manifest file 'red_vision.egg-info/SOURCES.txt'\n"}
+[14.203388] (red_vision) StdoutLine: {'line': b"writing manifest file 'red_vision.egg-info/SOURCES.txt'\n"}
+[14.207848] (-) TimerEvent: {}
+[14.232915] (red_vision) StdoutLine: {'line': b'running build_ext\n'}
+[14.234572] (red_vision) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages/red-vision.egg-link (link to .)\n'}
+[14.257204] (red_vision) StdoutLine: {'line': b'Installing red_vision script to /home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/red_vision\n'}
+[14.261648] (red_vision) StdoutLine: {'line': b'\n'}
+[14.262832] (red_vision) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/red_vision\n'}
+[14.264166] (red_vision) StdoutLine: {'line': b'running symlink_data\n'}
+[14.308435] (-) TimerEvent: {}
+[14.410648] (-) TimerEvent: {}
+[14.455289] (directional_led) CommandEnded: {'returncode': 0}
+[14.510918] (-) TimerEvent: {}
+[14.616484] (-) TimerEvent: {}
+[14.710970] (directional_led) JobEnded: {'identifier': 'directional_led', 'rc': 0}
+[14.717091] (-) TimerEvent: {}
+[14.718257] (serial_bridge) JobStarted: {'identifier': 'serial_bridge'}
+[14.817229] (-) TimerEvent: {}
+[14.822259] (lanes_borders) CommandEnded: {'returncode': 0}
+[14.878272] (lanes_borders) JobEnded: {'identifier': 'lanes_borders', 'rc': 0}
+[14.887765] (servo) JobStarted: {'identifier': 'servo'}
+[14.917502] (-) TimerEvent: {}
+[14.980256] (driver) CommandEnded: {'returncode': 0}
+[15.017983] (-) TimerEvent: {}
+[15.026148] (driver) JobEnded: {'identifier': 'driver', 'rc': 0}
+[15.030468] (red_vision) CommandEnded: {'returncode': 0}
+[15.071156] (red_vision) JobEnded: {'identifier': 'red_vision', 'rc': 0}
+[15.078588] (steering_error) JobStarted: {'identifier': 'steering_error'}
+[15.118245] (-) TimerEvent: {}
+[15.160192] (webcam) JobStarted: {'identifier': 'webcam'}
+[15.218385] (-) TimerEvent: {}
+[15.319175] (-) TimerEvent: {}
+[15.420247] (-) TimerEvent: {}
+[15.521215] (-) TimerEvent: {}
+[15.622212] (-) TimerEvent: {}
+[15.723115] (-) TimerEvent: {}
+[15.823912] (-) TimerEvent: {}
+[15.924643] (-) TimerEvent: {}
+[16.025341] (-) TimerEvent: {}
+[16.126086] (-) TimerEvent: {}
+[16.226856] (-) TimerEvent: {}
+[16.327563] (-) TimerEvent: {}
+[16.428337] (-) TimerEvent: {}
+[16.529031] (-) TimerEvent: {}
+[16.629763] (-) TimerEvent: {}
+[16.730651] (-) TimerEvent: {}
+[16.831540] (-) TimerEvent: {}
+[16.932569] (-) TimerEvent: {}
+[17.033750] (-) TimerEvent: {}
+[17.134583] (-) TimerEvent: {}
+[17.235319] (-) TimerEvent: {}
+[17.336180] (-) TimerEvent: {}
+[17.436915] (-) TimerEvent: {}
+[17.537657] (-) TimerEvent: {}
+[17.638354] (-) TimerEvent: {}
+[17.739070] (-) TimerEvent: {}
+[17.839791] (-) TimerEvent: {}
+[17.940532] (-) TimerEvent: {}
+[18.041248] (-) TimerEvent: {}
+[18.141980] (-) TimerEvent: {}
+[18.242738] (-) TimerEvent: {}
+[18.343453] (-) TimerEvent: {}
+[18.444411] (-) TimerEvent: {}
+[18.545508] (-) TimerEvent: {}
+[18.646501] (-) TimerEvent: {}
+[18.747208] (-) TimerEvent: {}
+[18.847938] (-) TimerEvent: {}
+[18.948729] (-) TimerEvent: {}
+[19.049454] (-) TimerEvent: {}
+[19.150158] (-) TimerEvent: {}
+[19.250990] (-) TimerEvent: {}
+[19.352041] (-) TimerEvent: {}
+[19.452801] (-) TimerEvent: {}
+[19.553501] (-) TimerEvent: {}
+[19.654230] (-) TimerEvent: {}
+[19.754964] (-) TimerEvent: {}
+[19.855720] (-) TimerEvent: {}
+[19.956613] (-) TimerEvent: {}
+[20.057793] (-) TimerEvent: {}
+[20.158467] (-) TimerEvent: {}
+[20.259262] (-) TimerEvent: {}
+[20.360064] (-) TimerEvent: {}
+[20.460907] (-) TimerEvent: {}
+[20.561810] (-) TimerEvent: {}
+[20.662545] (-) TimerEvent: {}
+[20.763245] (-) TimerEvent: {}
+[20.863963] (-) TimerEvent: {}
+[20.964727] (-) TimerEvent: {}
+[21.065413] (-) TimerEvent: {}
+[21.166125] (-) TimerEvent: {}
+[21.266883] (-) TimerEvent: {}
+[21.367634] (-) TimerEvent: {}
+[21.468425] (-) TimerEvent: {}
+[21.569269] (-) TimerEvent: {}
+[21.670335] (-) TimerEvent: {}
+[21.772349] (-) TimerEvent: {}
+[21.878083] (-) TimerEvent: {}
+[21.982764] (-) TimerEvent: {}
+[22.083819] (-) TimerEvent: {}
+[22.184838] (-) TimerEvent: {}
+[22.285764] (-) TimerEvent: {}
+[22.386703] (-) TimerEvent: {}
+[22.488342] (-) TimerEvent: {}
+[22.589331] (-) TimerEvent: {}
+[22.690410] (-) TimerEvent: {}
+[22.791596] (-) TimerEvent: {}
+[22.897673] (-) TimerEvent: {}
+[22.998606] (-) TimerEvent: {}
+[23.099527] (-) TimerEvent: {}
+[23.200479] (-) TimerEvent: {}
+[23.301344] (-) TimerEvent: {}
+[23.402281] (-) TimerEvent: {}
+[23.503215] (-) TimerEvent: {}
+[23.604197] (-) TimerEvent: {}
+[23.705135] (-) TimerEvent: {}
+[23.806166] (-) TimerEvent: {}
+[23.912286] (-) TimerEvent: {}
+[24.016261] (-) TimerEvent: {}
+[24.117842] (-) TimerEvent: {}
+[24.219713] (-) TimerEvent: {}
+[24.321516] (-) TimerEvent: {}
+[24.427743] (-) TimerEvent: {}
+[24.531224] (-) TimerEvent: {}
+[24.623228] (serial_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[24.651136] (-) TimerEvent: {}
+[24.754408] (-) TimerEvent: {}
+[24.858780] (-) TimerEvent: {}
+[24.972397] (-) TimerEvent: {}
+[25.072280] (webcam) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/webcam/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/webcam', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/webcam', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/webcam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[25.075945] (-) TimerEvent: {}
+[25.187205] (servo) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/servo/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/servo', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/servo', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/servo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[25.190880] (-) TimerEvent: {}
+[25.236525] (steering_error) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/steering_error/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/steering_error', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/steering_error', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/steering_error/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[25.300273] (-) TimerEvent: {}
+[25.412291] (-) TimerEvent: {}
+[25.514259] (-) TimerEvent: {}
+[25.617184] (-) TimerEvent: {}
+[25.719000] (-) TimerEvent: {}
+[25.819930] (-) TimerEvent: {}
+[25.920920] (-) TimerEvent: {}
+[26.021839] (-) TimerEvent: {}
+[26.122704] (-) TimerEvent: {}
+[26.223591] (-) TimerEvent: {}
+[26.324582] (-) TimerEvent: {}
+[26.425440] (-) TimerEvent: {}
+[26.526345] (-) TimerEvent: {}
+[26.627209] (-) TimerEvent: {}
+[26.728108] (-) TimerEvent: {}
+[26.829045] (-) TimerEvent: {}
+[26.930011] (-) TimerEvent: {}
+[27.030998] (-) TimerEvent: {}
+[27.131889] (-) TimerEvent: {}
+[27.232895] (-) TimerEvent: {}
+[27.250586] (serial_bridge) StdoutLine: {'line': b'running develop\n'}
+[27.329507] (webcam) StdoutLine: {'line': b'running develop\n'}
+[27.333126] (-) TimerEvent: {}
+[27.434061] (-) TimerEvent: {}
+[27.514842] (servo) StdoutLine: {'line': b'running develop\n'}
+[27.534355] (-) TimerEvent: {}
+[27.624279] (steering_error) StdoutLine: {'line': b'running develop\n'}
+[27.634557] (-) TimerEvent: {}
+[27.735458] (-) TimerEvent: {}
+[27.836397] (-) TimerEvent: {}
+[27.937383] (-) TimerEvent: {}
+[28.038292] (-) TimerEvent: {}
+[28.139160] (-) TimerEvent: {}
+[28.240035] (-) TimerEvent: {}
+[28.341776] (-) TimerEvent: {}
+[28.442700] (-) TimerEvent: {}
+[28.543616] (-) TimerEvent: {}
+[28.644573] (-) TimerEvent: {}
+[28.745460] (-) TimerEvent: {}
+[28.846366] (-) TimerEvent: {}
+[28.947415] (-) TimerEvent: {}
+[29.040475] (serial_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[29.043444] (serial_bridge) StdoutLine: {'line': b'writing serial_bridge.egg-info/PKG-INFO\n'}
+[29.047201] (serial_bridge) StdoutLine: {'line': b'writing dependency_links to serial_bridge.egg-info/dependency_links.txt\n'}
+[29.052309] (-) TimerEvent: {}
+[29.053503] (serial_bridge) StdoutLine: {'line': b'writing entry points to serial_bridge.egg-info/entry_points.txt\n'}
+[29.056176] (serial_bridge) StdoutLine: {'line': b'writing requirements to serial_bridge.egg-info/requires.txt\n'}
+[29.058981] (serial_bridge) StdoutLine: {'line': b'writing top-level names to serial_bridge.egg-info/top_level.txt\n'}
+[29.061869] (serial_bridge) StdoutLine: {'line': b"reading manifest file 'serial_bridge.egg-info/SOURCES.txt'\n"}
+[29.068982] (serial_bridge) StdoutLine: {'line': b"writing manifest file 'serial_bridge.egg-info/SOURCES.txt'\n"}
+[29.074167] (webcam) StdoutLine: {'line': b'running egg_info\n'}
+[29.079944] (webcam) StdoutLine: {'line': b'writing webcam.egg-info/PKG-INFO\n'}
+[29.083079] (webcam) StdoutLine: {'line': b'writing dependency_links to webcam.egg-info/dependency_links.txt\n'}
+[29.085892] (webcam) StdoutLine: {'line': b'writing entry points to webcam.egg-info/entry_points.txt\n'}
+[29.088584] (webcam) StdoutLine: {'line': b'writing requirements to webcam.egg-info/requires.txt\n'}
+[29.091332] (webcam) StdoutLine: {'line': b'writing top-level names to webcam.egg-info/top_level.txt\n'}
+[29.098061] (webcam) StdoutLine: {'line': b"reading manifest file 'webcam.egg-info/SOURCES.txt'\n"}
+[29.100549] (webcam) StdoutLine: {'line': b"writing manifest file 'webcam.egg-info/SOURCES.txt'\n"}
+[29.106034] (webcam) StdoutLine: {'line': b'running build_ext\n'}
+[29.109489] (webcam) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages/webcam.egg-link (link to .)\n'}
+[29.112167] (webcam) StdoutLine: {'line': b'Installing webcam script to /home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/webcam\n'}
+[29.115787] (webcam) StdoutLine: {'line': b'\n'}
+[29.124149] (webcam) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/webcam\n'}
+[29.128480] (webcam) StdoutLine: {'line': b'running symlink_data\n'}
+[29.136050] (serial_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[29.140327] (serial_bridge) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages/serial-bridge.egg-link (link to .)\n'}
+[29.149864] (serial_bridge) StdoutLine: {'line': b'Installing serial_node script to /home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/serial_bridge\n'}
+[29.155770] (-) TimerEvent: {}
+[29.158086] (serial_bridge) StdoutLine: {'line': b'\n'}
+[29.161484] (serial_bridge) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge\n'}
+[29.166246] (serial_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[29.256398] (-) TimerEvent: {}
+[29.359045] (-) TimerEvent: {}
+[29.371087] (webcam) CommandEnded: {'returncode': 0}
+[29.460464] (-) TimerEvent: {}
+[29.474575] (webcam) JobEnded: {'identifier': 'webcam', 'rc': 0}
+[29.480890] (ydlidar_client) JobStarted: {'identifier': 'ydlidar_client'}
+[29.507686] (servo) StdoutLine: {'line': b'running egg_info\n'}
+[29.508626] (servo) StdoutLine: {'line': b'writing servo.egg-info/PKG-INFO\n'}
+[29.511226] (servo) StdoutLine: {'line': b'writing dependency_links to servo.egg-info/dependency_links.txt\n'}
+[29.512335] (servo) StdoutLine: {'line': b'writing entry points to servo.egg-info/entry_points.txt\n'}
+[29.513937] (servo) StdoutLine: {'line': b'writing requirements to servo.egg-info/requires.txt\n'}
+[29.514626] (servo) StdoutLine: {'line': b'writing top-level names to servo.egg-info/top_level.txt\n'}
+[29.517956] (steering_error) StdoutLine: {'line': b'running egg_info\n'}
+[29.518907] (steering_error) StdoutLine: {'line': b'creating steering_error.egg-info\n'}
+[29.519782] (steering_error) StdoutLine: {'line': b'writing steering_error.egg-info/PKG-INFO\n'}
+[29.521485] (steering_error) StdoutLine: {'line': b'writing dependency_links to steering_error.egg-info/dependency_links.txt\n'}
+[29.522153] (servo) StdoutLine: {'line': b"reading manifest file 'servo.egg-info/SOURCES.txt'\n"}
+[29.522755] (steering_error) StdoutLine: {'line': b'writing entry points to steering_error.egg-info/entry_points.txt\n'}
+[29.523576] (steering_error) StdoutLine: {'line': b'writing requirements to steering_error.egg-info/requires.txt\n'}
+[29.526006] (steering_error) StdoutLine: {'line': b'writing top-level names to steering_error.egg-info/top_level.txt\n'}
+[29.526824] (servo) StdoutLine: {'line': b"writing manifest file 'servo.egg-info/SOURCES.txt'\n"}
+[29.527359] (steering_error) StdoutLine: {'line': b"writing manifest file 'steering_error.egg-info/SOURCES.txt'\n"}
+[29.534264] (steering_error) StdoutLine: {'line': b"reading manifest file 'steering_error.egg-info/SOURCES.txt'\n"}
+[29.535758] (servo) StdoutLine: {'line': b'running build_ext\n'}
+[29.536773] (servo) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages/servo.egg-link (link to .)\n'}
+[29.538571] (steering_error) StdoutLine: {'line': b"writing manifest file 'steering_error.egg-info/SOURCES.txt'\n"}
+[29.541258] (servo) StdoutLine: {'line': b'Installing servo script to /home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/servo\n'}
+[29.542764] (servo) StdoutLine: {'line': b'\n'}
+[29.543546] (servo) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/servo\n'}
+[29.544143] (servo) StdoutLine: {'line': b'running symlink_data\n'}
+[29.551031] (steering_error) StdoutLine: {'line': b'running build_ext\n'}
+[29.553062] (steering_error) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/lib/python3.10/site-packages/steering-error.egg-link (link to .)\n'}
+[29.560181] (steering_error) StdoutLine: {'line': b'Installing steering_error script to /home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/lib/steering_error\n'}
+[29.561380] (-) TimerEvent: {}
+[29.563630] (steering_error) StdoutLine: {'line': b'\n'}
+[29.565228] (steering_error) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/steering_error\n'}
+[29.567057] (steering_error) StdoutLine: {'line': b'running symlink_data\n'}
+[29.568767] (steering_error) StdoutLine: {'line': b'creating /home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/share/ament_index\n'}
+[29.571513] (steering_error) StdoutLine: {'line': b'creating /home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/share/ament_index/resource_index\n'}
+[29.574321] (steering_error) StdoutLine: {'line': b'creating /home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/share/ament_index/resource_index/packages\n'}
+[29.576546] (steering_error) StdoutLine: {'line': b'symbolically linking /home/crofi/AutoModelCrofi/ros2_ws/build/steering_error/resource/steering_error -> /home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/share/ament_index/resource_index/packages\n'}
+[29.579035] (steering_error) StdoutLine: {'line': b'symbolically linking /home/crofi/AutoModelCrofi/ros2_ws/build/steering_error/package.xml -> /home/crofi/AutoModelCrofi/ros2_ws/install/steering_error/share/steering_error\n'}
+[29.634956] (serial_bridge) CommandEnded: {'returncode': 0}
+[29.661758] (-) TimerEvent: {}
+[29.766417] (serial_bridge) JobEnded: {'identifier': 'serial_bridge', 'rc': 0}
+[29.771066] (-) TimerEvent: {}
+[29.775846] (ydlidar_publicador) JobStarted: {'identifier': 'ydlidar_publicador'}
+[29.871219] (-) TimerEvent: {}
+[29.972237] (-) TimerEvent: {}
+[30.073165] (-) TimerEvent: {}
+[30.174004] (-) TimerEvent: {}
+[30.275177] (-) TimerEvent: {}
+[30.376552] (-) TimerEvent: {}
+[30.477564] (-) TimerEvent: {}
+[30.578311] (-) TimerEvent: {}
+[30.679132] (-) TimerEvent: {}
+[30.779940] (-) TimerEvent: {}
+[30.880836] (-) TimerEvent: {}
+[30.981736] (-) TimerEvent: {}
+[31.082541] (-) TimerEvent: {}
+[31.183334] (-) TimerEvent: {}
+[31.284197] (-) TimerEvent: {}
+[31.384992] (-) TimerEvent: {}
+[31.485818] (-) TimerEvent: {}
+[31.586625] (-) TimerEvent: {}
+[31.687510] (-) TimerEvent: {}
+[31.788723] (-) TimerEvent: {}
+[31.901171] (-) TimerEvent: {}
+[31.972545] (servo) CommandEnded: {'returncode': 0}
+[32.004478] (-) TimerEvent: {}
+[32.051050] (servo) JobEnded: {'identifier': 'servo', 'rc': 0}
+[32.053376] (steering_error) CommandEnded: {'returncode': 0}
+[32.105204] (-) TimerEvent: {}
+[32.114564] (steering_error) JobEnded: {'identifier': 'steering_error', 'rc': 0}
+[32.121234] (ydlidar_publicador) JobProgress: {'identifier': 'ydlidar_publicador', 'progress': 'cmake'}
+[32.132731] (ydlidar_publicador) JobProgress: {'identifier': 'ydlidar_publicador', 'progress': 'build'}
+[32.136875] (ydlidar_publicador) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador', '--', '-j4', '-l4'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'crofi'), ('SSH_CLIENT', '192.168.42.180 48378 22'), ('LC_TIME', 'es_MX.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/crofi'), ('OLDPWD', '/home/crofi'), ('SSH_TTY', '/dev/pts/5'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'es_MX.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'crofi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '14'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin'), ('LC_ADDRESS', 'es_MX.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'es_MX.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux'), ('SHELL', '/bin/bash'), ('LC_NAME', 'es_MX.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'es_MX.UTF-8'), ('LC_IDENTIFICATION', 'es_MX.UTF-8'), ('PWD', '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador'), ('SSH_CONNECTION', '192.168.42.180 48378 192.168.42.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages'), ('LC_NUMERIC', 'es_MX.UTF-8'), ('LC_PAPER', 'es_MX.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble')]), 'shell': False}
+[32.205434] (-) TimerEvent: {}
+[32.306930] (-) TimerEvent: {}
+[32.409224] (-) TimerEvent: {}
+[32.511339] (-) TimerEvent: {}
+[32.613031] (-) TimerEvent: {}
+[32.714908] (-) TimerEvent: {}
+[32.808178] (ydlidar_publicador) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target ydlidar_publicador_node\x1b[0m\n'}
+[32.820251] (ydlidar_publicador) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target ydlidar_publicador_client\x1b[0m\n'}
+[32.820826] (-) TimerEvent: {}
+[32.921477] (-) TimerEvent: {}
+[33.022311] (-) TimerEvent: {}
+[33.123029] (-) TimerEvent: {}
+[33.198744] (ydlidar_publicador) StdoutLine: {'line': b'[ 50%] Built target ydlidar_publicador_client\n'}
+[33.223276] (-) TimerEvent: {}
+[33.267365] (ydlidar_publicador) StdoutLine: {'line': b'[100%] Built target ydlidar_publicador_node\n'}
+[33.322130] (ydlidar_publicador) CommandEnded: {'returncode': 0}
+[33.323732] (-) TimerEvent: {}
+[33.329692] (ydlidar_publicador) JobProgress: {'identifier': 'ydlidar_publicador', 'progress': 'install'}
+[33.373453] (ydlidar_publicador) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'crofi'), ('SSH_CLIENT', '192.168.42.180 48378 22'), ('LC_TIME', 'es_MX.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/crofi'), ('OLDPWD', '/home/crofi'), ('SSH_TTY', '/dev/pts/5'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'es_MX.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'crofi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '14'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin'), ('LC_ADDRESS', 'es_MX.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'es_MX.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux'), ('SHELL', '/bin/bash'), ('LC_NAME', 'es_MX.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'es_MX.UTF-8'), ('LC_IDENTIFICATION', 'es_MX.UTF-8'), ('PWD', '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_publicador'), ('SSH_CONNECTION', '192.168.42.180 48378 192.168.42.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages'), ('LC_NUMERIC', 'es_MX.UTF-8'), ('LC_PAPER', 'es_MX.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble')]), 'shell': False}
+[33.420490] (ydlidar_publicador) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[33.423962] (-) TimerEvent: {}
+[33.428440] (ydlidar_publicador) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[33.436503] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/lib/ydlidar_publicador/ydlidar_publicador_node\n'}
+[33.440430] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/lib/ydlidar_publicador/ydlidar_publicador_client\n'}
+[33.448542] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/launch/ydlidar.py\n'}
+[33.449178] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/launch/ydlidar_launch.py\n'}
+[33.449728] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/launch/ydlidar_launch_view.py\n'}
+[33.450589] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/G1.yaml\n'}
+[33.451610] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/G2.yaml\n'}
+[33.452630] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/G6.yaml\n'}
+[33.453667] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/GS2.yaml\n'}
+[33.454679] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/TEA.yaml\n'}
+[33.455764] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/TG.yaml\n'}
+[33.457089] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/TminiPro.yaml\n'}
+[33.458133] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/X2.yaml\n'}
+[33.459199] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/X4-Pro.yaml\n'}
+[33.460304] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/X4.yaml\n'}
+[33.468335] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/params/ydlidar.yaml\n'}
+[33.469192] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/startup/initenv.sh\n'}
+[33.477326] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/config/ydlidar.rviz\n'}
+[33.479150] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ament_index/resource_index/package_run_dependencies/ydlidar_publicador\n'}
+[33.480784] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ament_index/resource_index/parent_prefix_path/ydlidar_publicador\n'}
+[33.482342] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/environment/ament_prefix_path.sh\n'}
+[33.483785] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/environment/ament_prefix_path.dsv\n'}
+[33.485285] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/environment/path.sh\n'}
+[33.486685] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/environment/path.dsv\n'}
+[33.488213] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/local_setup.bash\n'}
+[33.497971] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/local_setup.sh\n'}
+[33.499397] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/local_setup.zsh\n'}
+[33.500821] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/local_setup.dsv\n'}
+[33.503596] (ydlidar_publicador) StdoutLine: {'line': b'-- Symlinking: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/package.dsv\n'}
+[33.524308] (-) TimerEvent: {}
+[33.553020] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ament_index/resource_index/packages/ydlidar_publicador\n'}
+[33.554312] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/cmake/ydlidar_publicadorConfig.cmake\n'}
+[33.555319] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/cmake/ydlidar_publicadorConfig-version.cmake\n'}
+[33.556646] (ydlidar_publicador) StdoutLine: {'line': b'-- Up-to-date symlink: /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador/share/ydlidar_publicador/package.xml\n'}
+[33.581398] (ydlidar_publicador) CommandEnded: {'returncode': 0}
+[33.624444] (-) TimerEvent: {}
+[33.664565] (ydlidar_publicador) JobEnded: {'identifier': 'ydlidar_publicador', 'rc': 0}
+[33.724625] (-) TimerEvent: {}
+[33.825415] (-) TimerEvent: {}
+[33.926313] (-) TimerEvent: {}
+[34.027138] (-) TimerEvent: {}
+[34.127948] (-) TimerEvent: {}
+[34.228728] (-) TimerEvent: {}
+[34.329594] (-) TimerEvent: {}
+[34.430496] (-) TimerEvent: {}
+[34.531310] (-) TimerEvent: {}
+[34.632151] (-) TimerEvent: {}
+[34.733037] (-) TimerEvent: {}
+[34.833912] (-) TimerEvent: {}
+[34.934813] (-) TimerEvent: {}
+[35.035824] (-) TimerEvent: {}
+[35.136793] (-) TimerEvent: {}
+[35.237817] (-) TimerEvent: {}
+[35.339269] (-) TimerEvent: {}
+[35.388487] (ydlidar_client) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client/build', '--no-deps', 'symlink_data'], 'cwd': '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'crofi', 'SSH_CLIENT': '192.168.42.180 48378 22', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/home/crofi/ros2_humble/ros2-linux/opt/rviz_ogre_vendor/lib:/home/crofi/ros2_humble/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/crofi', 'OLDPWD': '/home/crofi', 'SSH_TTY': '/dev/pts/5', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/crofi/AutoModelCrofi/ros2_ws/install:/home/crofi/ydlidar_ros2_ws/install:/home/crofi/ros2_humble/ros2-linux', 'ROS_DISTRO': 'humble', 'LOGNAME': 'crofi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/crofi/ros2_humble/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/crofi/ros2_humble/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '14', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/crofi/.local/bin:/home/crofi/bin:/opt/ros/humble/bin:/home/crofi/ros2_humble/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/crofi/bin', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led:/opt/ros/humble:/home/crofi/ros2_humble/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'PWD': '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client', 'SSH_CONNECTION': '192.168.42.180 48378 192.168.42.2 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam_recorted:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam_recorted/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/webcam:/home/crofi/AutoModelCrofi/ros2_ws/install/webcam/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/speed_controller:/home/crofi/AutoModelCrofi/ros2_ws/install/speed_controller/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/servo:/home/crofi/AutoModelCrofi/ros2_ws/install/servo/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/serial_bridge:/home/crofi/AutoModelCrofi/ros2_ws/install/serial_bridge/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/senal_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/senal_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/red_vision:/home/crofi/AutoModelCrofi/ros2_ws/install/red_vision/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/prueba_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/prueba_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lanes_borders:/home/crofi/AutoModelCrofi/ros2_ws/install/lanes_borders/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_detector:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_detector/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/lane_angle:/home/crofi/AutoModelCrofi/ros2_ws/install/lane_angle/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/driver:/home/crofi/AutoModelCrofi/ros2_ws/install/driver/lib/python3.10/site-packages:/home/crofi/AutoModelCrofi/ros2_ws/build/directional_led:/home/crofi/AutoModelCrofi/ros2_ws/install/directional_led/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/local/lib/python3.10/dist-packages:/home/crofi/ros2_humble/ros2-linux/lib/python3.10/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/crofi/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_publicador:/home/crofi/ros2_humble/ros2-linux'}, 'shell': False}
+[35.439520] (-) TimerEvent: {}
+[35.540504] (-) TimerEvent: {}
+[35.641368] (-) TimerEvent: {}
+[35.742207] (-) TimerEvent: {}
+[35.843121] (-) TimerEvent: {}
+[35.944440] (-) TimerEvent: {}
+[36.045457] (-) TimerEvent: {}
+[36.146274] (-) TimerEvent: {}
+[36.247086] (-) TimerEvent: {}
+[36.347890] (-) TimerEvent: {}
+[36.448757] (-) TimerEvent: {}
+[36.549660] (-) TimerEvent: {}
+[36.650500] (-) TimerEvent: {}
+[36.751343] (-) TimerEvent: {}
+[36.852263] (-) TimerEvent: {}
+[36.953154] (-) TimerEvent: {}
+[37.054015] (-) TimerEvent: {}
+[37.155935] (-) TimerEvent: {}
+[37.256871] (-) TimerEvent: {}
+[37.357725] (-) TimerEvent: {}
+[37.458593] (-) TimerEvent: {}
+[37.559432] (-) TimerEvent: {}
+[37.660448] (-) TimerEvent: {}
+[37.761931] (-) TimerEvent: {}
+[37.768412] (ydlidar_client) StdoutLine: {'line': b'running develop\n'}
+[37.862126] (-) TimerEvent: {}
+[37.963002] (-) TimerEvent: {}
+[38.063873] (-) TimerEvent: {}
+[38.164749] (-) TimerEvent: {}
+[38.265755] (-) TimerEvent: {}
+[38.366875] (-) TimerEvent: {}
+[38.467841] (-) TimerEvent: {}
+[38.568897] (-) TimerEvent: {}
+[38.669742] (-) TimerEvent: {}
+[38.770677] (-) TimerEvent: {}
+[38.871717] (-) TimerEvent: {}
+[38.972617] (-) TimerEvent: {}
+[39.073463] (-) TimerEvent: {}
+[39.174406] (-) TimerEvent: {}
+[39.275595] (-) TimerEvent: {}
+[39.377029] (-) TimerEvent: {}
+[39.477960] (-) TimerEvent: {}
+[39.578864] (-) TimerEvent: {}
+[39.679880] (-) TimerEvent: {}
+[39.766086] (ydlidar_client) StdoutLine: {'line': b'running egg_info\n'}
+[39.767299] (ydlidar_client) StdoutLine: {'line': b'writing ydlidar_client.egg-info/PKG-INFO\n'}
+[39.773229] (ydlidar_client) StdoutLine: {'line': b'writing dependency_links to ydlidar_client.egg-info/dependency_links.txt\n'}
+[39.776529] (ydlidar_client) StdoutLine: {'line': b'writing entry points to ydlidar_client.egg-info/entry_points.txt\n'}
+[39.777937] (ydlidar_client) StdoutLine: {'line': b'writing requirements to ydlidar_client.egg-info/requires.txt\n'}
+[39.779227] (ydlidar_client) StdoutLine: {'line': b'writing top-level names to ydlidar_client.egg-info/top_level.txt\n'}
+[39.779985] (-) TimerEvent: {}
+[39.793515] (ydlidar_client) StdoutLine: {'line': b"reading manifest file 'ydlidar_client.egg-info/SOURCES.txt'\n"}
+[39.803889] (ydlidar_client) StdoutLine: {'line': b"writing manifest file 'ydlidar_client.egg-info/SOURCES.txt'\n"}
+[39.817353] (ydlidar_client) StdoutLine: {'line': b'running build_ext\n'}
+[39.818929] (ydlidar_client) StdoutLine: {'line': b'Creating /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/python3.10/site-packages/ydlidar-client.egg-link (link to .)\n'}
+[39.825861] (ydlidar_client) StdoutLine: {'line': b'Installing colision script to /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/ydlidar_client\n'}
+[39.827119] (ydlidar_client) StdoutLine: {'line': b'Installing rebase script to /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/ydlidar_client\n'}
+[39.828385] (ydlidar_client) StdoutLine: {'line': b'Installing ydlidar_client script to /home/crofi/AutoModelCrofi/ros2_ws/install/ydlidar_client/lib/ydlidar_client\n'}
+[39.830237] (ydlidar_client) StdoutLine: {'line': b'\n'}
+[39.831009] (ydlidar_client) StdoutLine: {'line': b'Installed /home/crofi/AutoModelCrofi/ros2_ws/build/ydlidar_client\n'}
+[39.831992] (ydlidar_client) StdoutLine: {'line': b'running symlink_data\n'}
+[39.880500] (-) TimerEvent: {}
+[39.982257] (-) TimerEvent: {}
+[40.042221] (ydlidar_client) CommandEnded: {'returncode': 0}
+[40.084458] (-) TimerEvent: {}
+[40.117192] (ydlidar_client) JobEnded: {'identifier': 'ydlidar_client', 'rc': 0}
+[40.127263] (-) EventReactorShutdown: {}

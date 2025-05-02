@@ -1,1 +1,1 @@
-/home/tars/AutoModelCrofi/ros2_ws/src/vision/red_vision/setup.py
+/home/crofi/AutoModelCrofi/ros2_ws/src/vision/red_vision/setup.py

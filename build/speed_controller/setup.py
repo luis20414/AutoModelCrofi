@@ -1,1 +1,0 @@
-/home/tars/AutoModelCrofi/ros2_ws/src/hardware/speed_controller/setup.py

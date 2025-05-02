@@ -1,1 +1,0 @@
-/home/tars/AutoModelCrofi/ros2_ws/src/vision/lane_detector/setup.py

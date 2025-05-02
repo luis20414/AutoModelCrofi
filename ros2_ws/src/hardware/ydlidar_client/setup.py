@@ -20,7 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'ydlidar_client = ydlidar_client.ydlidar_client:main'
+            'ydlidar_client = ydlidar_client.ydlidar_client:main',
+            'rebase = ydlidar_client.rebase:main',
+            'colision = ydlidar_client.colision:main'
         ],
     },
 )

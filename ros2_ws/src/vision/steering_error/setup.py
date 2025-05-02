@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'speed_controller'
+package_name = 'steering_error'
 
 setup(
     name=package_name,
@@ -13,14 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='tars',
-    maintainer_email='sgmartes19@comunidad.unam.mx',
+    maintainer='danielgrioja',
+    maintainer_email='angel.galicia@ingenieria.unam.edu',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-		'speed_controller=speed_controller.speed_controller:main'
+		'steering_error=steering_error.steering_error:main'
         ],
     },
 )

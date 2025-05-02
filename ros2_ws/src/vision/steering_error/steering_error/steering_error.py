@@ -9,7 +9,7 @@ class SteeringError(Node):
         self.subscription_borders = self.create_subscription(Float64MultiArray, 'lane_borders', self.listener_callback_points, 10)
         self.steering_publisher = self.create_publisher(Float64, 'steering', 10)
         self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
-        self.max_speed = 1570
+        self.max_speed = 1585
         self.subscription_enable = self.create_subscription(Bool, 'enable_Auto', self.listener_enable, 10)
         self.enable = 0
         self.left_point = 64
@@ -64,7 +64,7 @@ class SteeringError(Node):
             self.steering_publisher.publish(Float64(data=steering_angle))
 
             # Publicar la velocidad (puedes ajustar esta lógica según el error)
-            speed = max(self.max_speed - abs(error) * 10, 1530)  # Reducir velocidad con error
+            speed = max(self.max_speed - abs(error) * 10, 1570)  # Reducir velocidad con error
             print(speed)
             self.speed_publisher.publish(Int32(data=speed))
 

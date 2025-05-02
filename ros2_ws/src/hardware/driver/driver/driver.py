@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int32
+from std_msgs.msg import Int32, String
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 import serial
 import time
@@ -18,7 +18,8 @@ class DriverController(Node):
         )
         
         self.subscription_angle = self.create_subscription(Int32, '/target_speed', self.listener_callback, qos_profile)
-        
+        self.publisher_intermittent_lights = self.create_publisher(String, 'rebase', qos_profile) 
+
         try:
             self.arduino = serial.Serial('/dev/arduino_nano', 115200, timeout=1)  # Cambiar a 115200 si es necesario
             time.sleep(2)  # Esperar a que el Arduino esté listo
@@ -33,6 +34,10 @@ class DriverController(Node):
                 self.arduino.write(struct.pack('<i', msg.data)) # Enviar el valor como entero
                 self.arduino.flush()
                 self.get_logger().info(f"Sent speed: {msg.data}")
+                if msg.data == 1500:
+                    self.publisher_intermittent_lights.publish(Int32(data='T'))
+                else: 
+                    self.publisher_intermittent_lights.publish(Int32(data='N'))
             except Exception as e:
                 self.get_logger().error(f"Error: {e}")
         else:

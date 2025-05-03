@@ -39,41 +39,42 @@ class SteeringError(Node):
         error = 0.0
         if self.left_point > 0 and self.right_point > 0:
             # Ambos puntos válidos, calcular error promedio
-            error_left = self.left_point - self.left_pointR  # Suponiendo que 0 es el valor de referencia
+            error_left = self.left_point - self.left_pointR
             error_right = self.right_point - self.right_pointR
             error = (error_left + error_right) / 2
         elif self.left_point > 0:
             # Solo punto izquierdo válido
-            error = self.left_point - 0
+            error = self.left_point - self.left_pointR
         elif self.right_point > 0:
             # Solo punto derecho válido
-            error = self.right_point - 0
+            error = self.right_point - self.right_pointR
         else:
             self.get_logger().warn("No se recibieron puntos válidos.")
             return
 
-        print(error)
-        # Si el error es 0, mantener velocidad máxima y dirección recta
-        if error <= 0.01:
-            self.steering_publisher.publish(Float64(data=0.0))
-            self.speed_publisher.publish(Int32(data=self.max_speed))
-            return
+        print(f"Raw Error: {error}")
 
-        # Controlador PD
+        # Aplicar el controlador PD al error
         derivative = error - self.previous_error
-        steering = self.kp * error + self.kd * derivative
+        corrected_error = self.kp * error + self.kd * derivative
         self.previous_error = error
 
-        # Escalar el ángulo de dirección al rango permitido (-0.5 a 0.5 rad)
-        kp_steering = 0.005  # Constante para ajustar el rango del ángulo
-        steering_angle = max(min(kp_steering * steering, 0.5), -0.5)
+        print(f"Corrected Error (PD): {corrected_error}")
+
+        # Determinar el ángulo de dirección basado en el error corregido
+        # Si el error es positivo, steering_angle será positivo (girar a la derecha)
+        # Si el error es negativo, steering_angle será negativo (girar a la izquierda)
+        kp_steering = 0.03  # Constante para ajustar el rango del ángulo
+        steering_angle = max(min(kp_steering * -corrected_error, 0.5), -0.5)
+        print(f"Steering angle: {steering_angle}")
+
         # Publicar el ángulo de dirección
         self.steering_publisher.publish(Float64(data=steering_angle))
 
-        # Publicar la velocidad (puedes ajustar esta lógica según el error)
-        speed = max(self.max_speed - abs(error) * 10, 1570)  # Reducir velocidad con error
-        print(speed)
-        self.speed_publisher.publish(Int32(data=speed))
+        # Publicar la velocidad (puedes ajustar esta lógica según el error corregido)
+        speed = max(self.max_speed - abs(corrected_error) * 3, 1650)  # Reducir velocidad con error
+        print(f"Speed: {speed}")
+        self.speed_publisher.publish(Int32(data=int(speed)))
 
         
 def main(args=None):
@@ -86,5 +87,4 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
 

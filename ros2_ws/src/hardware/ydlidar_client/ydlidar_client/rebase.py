@@ -17,8 +17,8 @@ class YDLidarClient(Node):
         self.terceraFase = False
 
         # Crear publicadores
-        self.driver_publisher = self.create_publisher(Int32, '/detection_value', 10)
-        self.servo_publisher = self.create_publisher(Float64, 'angle_servo', 10)
+        self.driver_publisher = self.create_publisher(Int32, '/target_speed', 10)
+        self.servo_publisher = self.create_publisher(Float64, 'steering', 10)
 
         # Crear perfil QoS
         self.qos_profile = qos.qos_profile_sensor_data
@@ -33,23 +33,24 @@ class YDLidarClient(Node):
 
     def scan_callback(self, scan):
         count = int(scan.scan_time / scan.time_increment)
-        print(f"Número de medidas: {count}")
-        print(f"Medidas por grado: {count / 360:.2f}")
+        #print(f"Número de medidas: {count}")
+        #print(f"Medidas por grado: {count / 360:.2f}")
         #print(f"[YDLIDAR INFO]: Escaneo recibido {scan.header.frame_id}[{count}]:")
         #print(f"[YDLIDAR INFO]: Rango angular : [{math.degrees(scan.angle_min):.2f}, {math.degrees(scan.angle_max):.2f}]")
 
 
-        self.deteccionColisiones(scan, count)
+        #self.deteccionColisiones(scan, count)
         self.rebase(scan, count)
 
     def alineacion(self, scan, count):
+        print("Alineándose")
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if 85 < degree < 95:
                 if scan.ranges[i] < 0.22 and scan.ranges[i] != 0:
-                    self.servo_publisher.publish(Float64(data=0.2))
+                    self.servo_publisher.publish(Float64(data=0.1))
                 if scan.ranges[i] > 0.22:
-                    self.servo_publisher.publish(Float64(data=-0.2))
+                    self.servo_publisher.publish(Float64(data=-0.3))
 
     def deteccionColisiones(self, scan, count):
         colision = False
@@ -88,54 +89,67 @@ class YDLidarClient(Node):
                     if scan.ranges[i] < 0.35 and scan.ranges[i] != 0:
                         obstaculo_izquierda = True
                         print("Obstáculo detectado a la izquierda, no se puede rebasar")
-                        self.rebasando = False
+                        return False
 
             if not obstaculo_izquierda:
                 print("No hay obstáculos a la izquierda, se puede rebasar")
-                self.rebasando = True
-        else:
-            self.rebasando = False
+                return True
+
+        return False
 
     def rebase(self, scan, count):
         if self.rebasando:
             # Mover el servo a la derecha
             self.servo_publisher.publish(Float64(data=0.5))
+
+            # Primera fase: Enderezar dirección
             if not self.primeraFase:
                 if self.enderezarDireccion(scan, count):
                     self.primeraFase = True
-            if not self.segundaFase and self.primeraFase:
+                    print("Primera fase completada: Dirección enderezada")
+
+            # Segunda fase: Incorporarse
+            if self.primeraFase and not self.segundaFase:
                 if self.incorporarse(scan, count):
                     self.segundaFase = True
+                    print("Segunda fase completada: Incorporación exitosa")
                 else:
                     self.alineacion(scan, count)
-            if not self.terceraFase and self.segundaFase:
-                print("Incorporándose")
-                # Maniobra de incorporación
-                self.primeraFase = False
-                self.segundaFaseFase = False
-                self.terceraFase = False
-                self.rebasando = False
+
+            # Tercera fase: Finalizar rebase
+            if self.segundaFase and not self.terceraFase:
+                print("Tercera fase completada: Rebase finalizado")
+                self.terceraFase = True
+                self.rebasando = False  # Finalizar el proceso de rebase
         else:
-            self.detectarPosibleRebase(scan, count)
+            # Detectar si es posible iniciar el rebase
+            if self.detectarPosibleRebase(scan, count):
+                # Reiniciar las fases si se detecta un nuevo rebase
+                self.primeraFase = False
+                self.segundaFase = False
+                self.terceraFase = False
+                self.rebasando = True
 
     def enderezarDireccion(self, scan, count):
         libre = True
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 0 < degree < 30:
-                if scan.ranges[i] < 0.30 and scan.ranges[i] != 0:
+            if -10 < degree < 30:
+                if scan.ranges[i] < 0.36 and scan.ranges[i] != 0:
                     libre = False
         if libre:
+            print("Libre para 2do carril")
             self.servo_publisher.publish(Float64(data=-0.5))
             return True
         else:
+            print("No libre para 2do carril")
             return False
 
     def incorporarse(self, scan, count):
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 85 < degree < 95:
-                if scan.ranges[i] > 0.25: # Por ajustar
+            if 90 < degree < 95:
+                if scan.ranges[i] > 0.40: # Por ajustar
                     print("Incorporándose")
                     return True
         print("No se puede incorporar")

@@ -1,0 +1,1 @@
+/home/crofi/AutoModelCrofi/build/ydlidar_publicador/ament_cmake_core/ydlidar_publicadorConfig-version.cmake

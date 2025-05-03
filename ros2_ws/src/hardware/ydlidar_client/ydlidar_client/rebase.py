@@ -4,6 +4,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 from std_msgs.msg import Int32, Float64
 import math
+from time import sleep
 
 
 class YDLidarClient(Node):
@@ -32,6 +33,11 @@ class YDLidarClient(Node):
         )
 
     def scan_callback(self, scan):
+        # Verificar si los datos del escaneo son válidos
+        if scan.scan_time == 0 or scan.time_increment == 0:
+            self.get_logger().warn("Datos del LIDAR no válidos. Esperando datos correctos...")
+            return
+
         count = int(scan.scan_time / scan.time_increment)
         #print(f"Número de medidas: {count}")
         #print(f"Medidas por grado: {count / 360:.2f}")
@@ -39,7 +45,10 @@ class YDLidarClient(Node):
         #print(f"[YDLIDAR INFO]: Rango angular : [{math.degrees(scan.angle_min):.2f}, {math.degrees(scan.angle_max):.2f}]")
 
 
-        #self.deteccionColisiones(scan, count)
+        while self.deteccionColisiones(scan, count):
+            # Si hay una colisión, detener el vehículo
+            self.driver_publisher.publish(Int32(data=1500))
+            print("Colisión detectada, deteniendo el vehículo")
         self.rebase(scan, count)
 
     def alineacion(self, scan, count):
@@ -47,10 +56,12 @@ class YDLidarClient(Node):
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if 85 < degree < 95:
-                if scan.ranges[i] < 0.22 and scan.ranges[i] != 0:
+                if scan.ranges[i] < 0.20 and scan.ranges[i] != 0:
                     self.servo_publisher.publish(Float64(data=0.1))
-                if scan.ranges[i] > 0.22:
+                if scan.ranges[i] > 0.20 and scan.ranges[i] < 0.25:
                     self.servo_publisher.publish(Float64(data=-0.3))
+                else:
+                    self.servo_publisher.publish(Float64(data=0.0))
 
     def deteccionColisiones(self, scan, count):
         colision = False
@@ -59,7 +70,7 @@ class YDLidarClient(Node):
             if degree > -15 and degree < 15:
                 if scan.ranges[i] < 0.25 and scan.ranges[i] != 0:
                     colision = True
-                    print("Frente")
+                    #print("Frente")
                     
                     # Publicar valor 1500 al nodo driver
                     msg = Int32()
@@ -75,7 +86,7 @@ class YDLidarClient(Node):
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if -20 < degree < 20:
-                if scan.ranges[i] < 0.35 and scan.ranges[i] != 0:
+                if scan.ranges[i] < 0.45 and scan.ranges[i] != 0:
                     objeto_detectado = True
                     print("Objeto detectado justo enfrente")
                     break
@@ -100,8 +111,8 @@ class YDLidarClient(Node):
     def rebase(self, scan, count):
         if self.rebasando:
             # Mover el servo a la derecha
-            self.servo_publisher.publish(Float64(data=0.5))
-
+            self.servo_publisher.publish(Float64(data=0.6))
+            self.driver_publisher.publish(Int32(data=1540))  
             # Primera fase: Enderezar dirección
             if not self.primeraFase:
                 if self.enderezarDireccion(scan, count):
@@ -121,6 +132,7 @@ class YDLidarClient(Node):
                 print("Tercera fase completada: Rebase finalizado")
                 self.terceraFase = True
                 self.rebasando = False  # Finalizar el proceso de rebase
+                # Regresa a la la deteccion de carriles con la webcam
         else:
             # Detectar si es posible iniciar el rebase
             if self.detectarPosibleRebase(scan, count):
@@ -135,7 +147,7 @@ class YDLidarClient(Node):
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if -10 < degree < 30:
-                if scan.ranges[i] < 0.36 and scan.ranges[i] != 0:
+                if scan.ranges[i] < 0.46 and scan.ranges[i] != 0:
                     libre = False
         if libre:
             print("Libre para 2do carril")
@@ -146,14 +158,46 @@ class YDLidarClient(Node):
             return False
 
     def incorporarse(self, scan, count):
+        libre = True
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 90 < degree < 95:
-                if scan.ranges[i] > 0.40: # Por ajustar
+            if 25 < degree < 95:
+                if scan.ranges[i] < 0.40 and scan.ranges[i] != 0:
+                    libre = False
+        if libre:
+            print("Incorporándose")
+            self.servo_publisher.publish(Float64(data=-0.6))
+            sleep(0.4)
+            self.servo_publisher.publish(Float64(data=0.5))
+            sleep(0.3)
+            self.servo_publisher.publish(Float64(data=0.0))
+            self.driver_publisher.publish(Int32(data=1500))
+            sleep(0.3)
+            self.driver_publisher.publish(Int32(data=1500))
+            sleep(0.3)
+            self.driver_publisher.publish(Int32(data=1500))
+            
+            # Termina maniobra de incorporación
+            return True
+        else:
+            return False
+        """
+        for i in range(count):
+            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
+            if 45 < degree < 95:
+                if scan.ranges[i] > 0.50: # Por ajustar
                     print("Incorporándose")
+                    self.servo_publisher.publish(Float64(data=-0.6))
+                    sleep(0.4)
+                    self.servo_publisher.publish(Float64(data=0.5))
+                    sleep(0.3)
+                    self.servo_publisher.publish(Float64(data=0.0))
+                    self.driver_publisher.publish(Int32(data=1500))
+                    # Termina maniobra de incorporación
                     return True
         print("No se puede incorporar")
         return False
+        """
     
 
 

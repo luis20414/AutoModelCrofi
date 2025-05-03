@@ -6,7 +6,7 @@ import os
 from time import sleep
 
 # Configuración del GPIO
-BUTTON_PIN = 4  # Usando GPIO4 (Pin 7 en la Raspberry Pi)
+BUTTON_PIN = 22  # Usando GPIO4 (Pin 7 en la Raspberry Pi)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 

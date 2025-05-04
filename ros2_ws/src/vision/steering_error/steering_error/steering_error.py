@@ -72,7 +72,7 @@ class SteeringError(Node):
         self.steering_publisher.publish(Float64(data=steering_angle))
 
         # Publicar la velocidad (puedes ajustar esta lógica según el error corregido)
-        speed = max(self.max_speed - abs(corrected_error) * 3, 1650)  # Reducir velocidad con error
+        speed = max(self.max_speed - abs(corrected_error) * 3, 1560)  # Reducir velocidad con error
         print(f"Speed: {speed}")
         self.speed_publisher.publish(Int32(data=int(speed)))
 

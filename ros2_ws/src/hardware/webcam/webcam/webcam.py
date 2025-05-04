@@ -11,7 +11,7 @@ class WebcamPublisher(Node):
     def __init__(self):
         super().__init__('webcam_publisher')
         self.publisher_ = self.create_publisher(Image, 'camera', 10)
-        self.cam = cv2.VideoCapture(0)
+        self.cam = cv2.VideoCapture(0, cv2.CAP_V4L2)
         
         # Set lower resolution for the webcam
         self.cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)  # Set width to 320 pixels
@@ -24,18 +24,12 @@ class WebcamPublisher(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
     def timer_callback(self):
-        #msg = Image()
-        #msg.data = 'Hello World: %d' % self.i
-        #self.get_logger().info('Publishing: ')
         ret, frame = self.cam.read()
         if not ret or frame is None:
             self.get_logger().warn("No se pudo leer un frame del video. Fin del video o error.")
             return
-        frame = frame[80:195, :]
+        frame=frame[80:195, :]
         self.get_logger().debug(f"Tipo de frame: {type(frame)}")
-        #cv2.imshow("rgb",frame)
-        #print(frame.shape)
-        #cv2.waitKey(10)
         
         self.publisher_.publish(bridge.cv2_to_imgmsg(frame, encoding="bgr8"))
 

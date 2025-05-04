@@ -71,7 +71,7 @@ class TrafficSignDetector(Node):
                     roi = frame[y:y+h, x:x+w]
                     if self.frame_count % 10 == 0:
                         img_scene = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-                        text = pytesseract.image_to_string(img_scene, lang='eng')
+                        text = pytesseract.image_to_string(img_scene)
                         text = text.strip().upper()
                         if text:
                             self.get_logger().info(f"Señal detectada: {text}")

@@ -19,6 +19,11 @@ def generate_launch_description():
             name='driver_node'
         ),
         Node(
+            package='directional_led',
+            executable='directional_led',
+            name='led_node'
+        ),
+        Node(
             package='servo',
             executable='servo',
             name='servo_node'

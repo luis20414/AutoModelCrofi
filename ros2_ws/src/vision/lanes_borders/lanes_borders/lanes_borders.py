@@ -17,8 +17,6 @@ class LaneDetector(Node):
     def __init__(self):
         super().__init__('lane_detector')
         self.subscription = self.create_subscription(Image, 'camera', self.listener_callback, 1)
-        #imer_period = 0.05  # seconds
-        #self.timer = self.create_timer(timer_period, self.lane_publisher)
         self.publisher_ = self.create_publisher(Float64MultiArray, 'lane_borders', 10)
         self.image_publisher = self.create_publisher(Image, 'processed_image', 10)
 
@@ -44,9 +42,6 @@ class LaneDetector(Node):
             left_indexes = left_indexes[:, 0, 0]
             (_, left_point, __, ___) = cv2.minMaxLoc(left_indexes)
             left_point = int(left_point)
-            #print(left_indexes.shape)
-            #print(left_indexes)
-            #print(max_val)
         if right_indexes is not None:
             right_indexes = right_indexes[:, 0, 0]
             (right_point, _, __, ___) = cv2.minMaxLoc(right_indexes)

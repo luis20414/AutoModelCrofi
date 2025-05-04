@@ -14,8 +14,8 @@ class WebcamPublisher(Node):
         self.cam = cv2.VideoCapture(0, cv2.CAP_V4L2)
         
         # Set lower resolution for the webcam
-        self.cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)  # Set width to 320 pixels
-        self.cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)  # Set height to 240 pixels
+        self.cam.set(cv2.CAP_PROP_FRAME_WIDTH, 480)  # Set width to 320 pixels, before 640
+        self.cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)  # Set height to 240 pixels, before 480
         
         self.cam.set(cv2.CAP_PROP_POS_FRAMES, 0)
         

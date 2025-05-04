@@ -14,8 +14,8 @@ class SteeringError(Node):
         self.enable = 0
         self.left_point = 0
         self.right_point = 0
-        self.left_pointR = 64
-        self.right_pointR = 105
+        self.left_pointR = 50
+        self.right_pointR = 113
         self.previous_error = 0.0
         self.kp = 1.0  # Constante proporcional
         self.kd = 0.1  # Constante derivativa
@@ -87,4 +87,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-

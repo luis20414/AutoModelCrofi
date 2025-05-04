@@ -8,6 +8,11 @@ def generate_launch_description():
             executable='ydlidar_publicador_node',
             name='ydlidar_publicador'
         ),
+        Node(
+            package='ydlidar_client',
+            executable='ydlidar_publisher',
+            name='ydlidar_publicador_posterior'
+        ),
         #Node(
         #    package='ydlidar_client',
         #    executable='rebase',

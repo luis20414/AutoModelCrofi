@@ -1,244 +1,154 @@
 import rclpy
-from rclpy import qos
 from rclpy.node import Node
-from sensor_msgs.msg import LaserScan
-from std_msgs.msg import Int32, Float64
-import math
-from time import sleep
+from std_msgs.msg import Int32, Float64, Float64MultiArray, Bool
+import numpy as np
+import time  # Importar para medir el tiempo transcurrido
 
-def constrain(val, min_val, max_val):
-    return min(max_val, max(min_val,val))
 
-class YDLidarClient(Node):
+class RebaseNode(Node):
     def __init__(self):
-        super().__init__('ydlidar_ros2_driver_client')
+        super().__init__('rebase_node')
 
         # Variables de estado
         self.rebasando = False
-        self.primeraFase = False
-        self.segundaFase = False
-        self.terceraFase = False
+        self.fase_actual = 0  # 0: No rebasando, 1: Verificar izquierda, 2: Cambiar carril, 3: Reincorporarse, 4: Regresar al carril original, 5: Finalizar
+        self.tiempo_cambio_carril = 0  # Tiempo registrado durante el cambio de carril
+        self.colision_detectada = False  # Nueva variable para controlar si hay colisión
 
         # Crear publicadores
         self.driver_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.servo_publisher = self.create_publisher(Float64, 'steering', 10)
 
-        # Crear perfil QoS
-        self.qos_profile = qos.qos_profile_sensor_data
+        # Crear suscripciones a los datos procesados del LiDAR
+        self.degrees_subscription = self.create_subscription(
+            Float64MultiArray, 'degreesLiDar', self.degrees_callback, 10)
+        self.ranges_subscription = self.create_subscription(
+            Float64MultiArray, 'rangesLiDar', self.ranges_callback, 10)
 
-        # Crear suscripción
-        self.create_subscription(
-            LaserScan,
-            'scan',
-            self.scan_callback,
-            self.qos_profile
-        )
+        # Suscripción al tópico de colisión
+        self.colision_subscription = self.create_subscription(
+            Bool, '/colision', self.colision_callback, 10)
 
-    def scan_callback(self, scan):
-        # Verificar si los datos del escaneo son válidos
-        if scan.scan_time == 0 or scan.time_increment == 0:
-            self.get_logger().warn("Datos del LIDAR no válidos. Esperando datos correctos...")
+        # Variables para almacenar los datos recibidos
+        self.angles = []
+        self.ranges = []
+
+    def colision_callback(self, msg):
+        # Actualizar el estado de colisión
+        self.colision_detectada = msg.data
+        if self.colision_detectada:
+            self.get_logger().info("Colisión detectada, deteniendo procesamiento de rebase")
+
+    def degrees_callback(self, msg):
+        # Guardar los ángulos recibidos
+        self.angles = np.array(msg.data)
+
+    def ranges_callback(self, msg):
+        # Guardar las distancias recibidas
+        self.ranges = np.array(msg.data)
+
+        # Procesar los datos si ambos están disponibles
+        if len(self.angles) > 0 and len(self.ranges) > 0:
+            self.procesar_rebase()
+
+    def procesar_rebase(self):
+        # Detener el procesamiento si hay colisión
+        if self.colision_detectada:
+            self.get_logger().info("Procesamiento de rebase detenido por colisión")
             return
 
-        count = int(scan.scan_time / scan.time_increment)
-        #print(f"Número de medidas: {count}")
-        #print(f"Medidas por grado: {count / 360:.2f}")
-        #print(f"[YDLIDAR INFO]: Escaneo recibido {scan.header.frame_id}[{count}]:")
-        #print(f"[YDLIDAR INFO]: Rango angular : [{math.degrees(scan.angle_min):.2f}, {math.degrees(scan.angle_max):.2f}]")
-
-
-        while self.deteccionColisiones(scan, count):
-            # Si hay una colisión, detener el vehículo
-            self.driver_publisher.publish(Int32(data=1500))
-        self.rebase(scan, count)
-
-    def alineacion(self, scan, count):
-        servo_steer = 0
-
-        idealDistance = 0.20    # Ajustar estos dos valores para que
-        steeringConstant = 5    #
-
-
-        lastSmallestDistance = 10
-        #print("Alineándose")
-        for i in range(count):
-            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 45 < degree < 95:
-                if scan.ranges[i] > 0:
-                    lastSmallestDistance = min(lastSmallestDistance,scan.ranges[i])
-        fixedDistance = lastSmallestDistance - idealDistance
-        servo_steer = -steeringConstant * fixedDistance
-        print(f"Distancia: {lastSmallestDistance}")
-        self.servo_publisher.publish(Float64(data=servo_steer))
-        """
-        for i in range(count):
-            if 85 < degree < 95:
-                if scan.ranges[i] <= 0.25 and scan.ranges[i] != 0:
-                    servo_steer = 0.05 / scan.ranges[i]
-                    self.servo_publisher.publish(Float64(data=servo_steer))
-                if scan.ranges[i] > 0.25 and scan.ranges[i] < 0.30:
-                    self.servo_publisher.publish(Float64(data=-0.1))
-        """
-                    
-    def deteccionColisiones(self, scan, count):
-        colision = False
-        for i in range(count):
-            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if degree > -15 and degree < 15:
-                if scan.ranges[i] < 0.25 and scan.ranges[i] != 0:
-                    colision = True
-                    #print("Frente")
-                    
-                    # Publicar valor 1500 al nodo driver
-                    msg = Int32()
-                    msg.data = 1500
-                    self.driver_publisher.publish(msg)
-                    #print("Colisión detectada, deteniendo el vehículo")
-                    break
-        return colision
-
-    def detectarPosibleRebase(self, scan, count):
-        objeto_detectado = False
-
-        # Detectar objeto justo enfrente (-20 a 20 grados)
-        for i in range(count):
-            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if -20 < degree < 20:
-                if scan.ranges[i] < 0.45 and scan.ranges[i] != 0:
-                    objeto_detectado = True
-                    print("Objeto detectado justo enfrente")
-                    break
-
-        # Si se detectó un objeto enfrente, buscar obstáculos a la izquierda (-50 a -35 grados)
-        if objeto_detectado:
-            obstaculo_izquierda = False
-            for i in range(count):
-                degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-                if -50 < degree < -35:
-                    if scan.ranges[i] < 0.35 and scan.ranges[i] != 0:
-                        obstaculo_izquierda = True
-                        print("Obstáculo detectado a la izquierda, no se puede rebasar")
-                        return False
-
-            if not obstaculo_izquierda:
-                print("No hay obstáculos a la izquierda, se puede rebasar")
-                return True
-
-        return False
-
-    def rebase(self, scan, count):
         if self.rebasando:
-            # Mover el servo a la derecha
-            self.servo_publisher.publish(Float64(data=0.6))
-            self.driver_publisher.publish(Int32(data=1560))  
-            # Primera fase: Enderezar dirección
-            if not self.primeraFase:
-                if self.enderezarDireccion(scan, count):
-                    self.primeraFase = True
-                    print("Primera fase completada: Dirección enderezada")
-                    print("Alineándose")
-
-            # Segunda fase: Incorporarse
-            if self.primeraFase and not self.segundaFase:
-                if self.incorporarse(scan, count):
-                    self.segundaFase = True
-                    print("Segunda fase completada: Incorporación exitosa")
-                else:
-                    self.alineacion(scan, count)
-
-            # Tercera fase: Finalizar rebase
-            if self.segundaFase and not self.terceraFase:
-                print("Tercera fase completada: Rebase finalizado")
-                self.terceraFase = True
-                self.rebasando = False  # Finalizar el proceso de rebase
-                # Regresa a la la deteccion de carriles con la webcam
+            if self.fase_actual == 1:
+                if self.verificar_izquierda():
+                    self.fase_actual = 2
+                    self.get_logger().info("Carril izquierdo despejado, cambiando de carril")
+            elif self.fase_actual == 2:
+                if self.cambiar_carril():
+                    self.fase_actual = 3
+                    self.get_logger().info("Cambio de carril completado, iniciando reincorporación")
+            elif self.fase_actual == 3:
+                if self.reincorporarse():
+                    self.fase_actual = 4
+                    self.get_logger().info("Reincorporación completada, regresando al carril original")
+            elif self.fase_actual == 4:
+                if self.regresar_carril_original():
+                    self.fase_actual = 5
+                    self.get_logger().info("Regreso al carril original completado")
+            elif self.fase_actual == 5:
+                self.finalizar_rebase()
         else:
-            # Detectar si es posible iniciar el rebase
-            if self.detectarPosibleRebase(scan, count):
-                # Reiniciar las fases si se detecta un nuevo rebase
-                self.primeraFase = False
-                self.segundaFase = False
-                self.terceraFase = False
+            if self.detectar_objeto_enfrente():
                 self.rebasando = True
+                self.fase_actual = 1
+                self.get_logger().info("Iniciando maniobra de rebase")
 
-    def enderezarDireccion(self, scan, count):
-        libreFrente = True
-        libreCostado = True
-        for i in range(count):
-            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 0 < degree < 20:
-                if scan.ranges[i] < 0.38 and scan.ranges[i] != 0:
-                    libreFrente = False
-        if libreFrente:
-            for i in range(count):
-                degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-                if 20 < degree < 40:
-                    if scan.ranges[i] < 0.38 and scan.ranges[i] != 0:
-                        libreCostado = False
-                        print("Libre para 2do carril")
-                        self.servo_publisher.publish(Float64(data=-0.5))
-                        return True
-        else:
-            print("No libre para 2do carril")
-            return False
-
-    def incorporarse(self, scan, count):
-        libre = True
-        for i in range(count):
-            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 25 < degree < 95:
-                if scan.ranges[i] < 0.40 and scan.ranges[i] != 0:
-                    libre = False
-        if libre:
-            print("Incorporándose")
-            self.servo_publisher.publish(Float64(data=-0.6))
-            sleep(1)
-            self.servo_publisher.publish(Float64(data=0.5))
-            sleep(0.5)
-            self.servo_publisher.publish(Float64(data=0.0))
-            self.driver_publisher.publish(Int32(data=1500))
-            sleep(0.3)
-            self.driver_publisher.publish(Int32(data=1500))
-            sleep(0.3)
-            self.driver_publisher.publish(Int32(data=1500))
-            
-            # Termina maniobra de incorporación
+    def detectar_objeto_enfrente(self):
+        # Detectar objeto justo enfrente (-20° a 20°)
+        indices_frente = (self.angles > -20) & (self.angles < 20)
+        if np.any((self.ranges[indices_frente] < 0.45) & (self.ranges[indices_frente] != 0)):
+            self.get_logger().info("Objeto detectado enfrente, iniciando rebase")
             return True
-        else:
-            return False
-        """
-        for i in range(count):
-            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 45 < degree < 95:
-                if scan.ranges[i] > 0.50: # Por ajustar
-                    print("Incorporándose")
-                    self.servo_publisher.publish(Float64(data=-0.6))
-                    sleep(0.4)
-                    self.servo_publisher.publish(Float64(data=0.5))
-                    sleep(0.3)
-                    self.servo_publisher.publish(Float64(data=0.0))
-                    self.driver_publisher.publish(Int32(data=1500))
-                    # Termina maniobra de incorporación
-                    return True
-        print("No se puede incorporar")
         return False
-        """
-    
 
+    def verificar_izquierda(self):
+        # Verificar si el carril izquierdo está libre (-50° a -35°)
+        indices_izquierda = (self.angles > -50) & (self.angles < -35)
+        if np.any((self.ranges[indices_izquierda] < 0.35) & (self.ranges[indices_izquierda] != 0)):
+            self.get_logger().info("Obstáculo detectado a la izquierda, deteniendo vehículo")
+            self.driver_publisher.publish(Int32(data=1500))  # Detener el vehículo
+            return False
+        else:
+            self.driver_publisher.publish(Int32(data=1560))  # Reanudar velocidad para cambiar de carril
+            return True
 
-    def alinearse(self, scan, count):
-        for i in range(count):
-            degree = math.degrees(scan.angle_min + scan.angle_increment * i)
-            if 85 < degree < 95:
-                if scan.ranges[i] < 0.22 and scan.ranges[i] != 0:
-                    self.alineacion(scan, count) # Se alinea en el segundo carril mientras está rebasando
-                    print("Alineándose")
+    def cambiar_carril(self):
+        # Cambiar al carril izquierdo (0.5 en servo) y avanzar hasta 25° < degree < 30°
+        self.servo_publisher.publish(Float64(data=0.5))  # Girar a la izquierda
+        start_time = time.time()  # Registrar el tiempo de inicio
+        indices_cambio = (self.angles > 25) & (self.angles < 30)
+        if np.any(indices_cambio):  # Verificar si hay algo en el rango de ángulos
+            self.get_logger().info("Avanzando en el carril izquierdo")
+            self.tiempo_cambio_carril = time.time() - start_time  # Calcular el tiempo transcurrido
+            return False
+        return True
 
+    def reincorporarse(self):
+        # Mover el servo al máximo a la derecha (-0.5) y avanzar hasta detectar un coche en el lado derecho (30° a 50°)
+        self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
+        self.driver_publisher.publish(Int32(data=1560))  # Mantener velocidad mínima
+        indices_derecha = (self.angles > 30) & (self.angles < 50)
+        if np.any((self.ranges[indices_derecha] < 0.40) & (self.ranges[indices_derecha] != 0)):
+            self.get_logger().info("Coche detectado a la derecha, ajustando dirección")
+            self.servo_publisher.publish(Float64(data=0.2))  # Ajustar dirección
+            self.driver_publisher.publish(Int32(data=1560))  # Mantener velocidad mínima
+            # Esperar hasta que ya no haya nada en el lado derecho
+            if not np.any((self.ranges[indices_derecha] < 0.40) & (self.ranges[indices_derecha] != 0)):
+                return True
+        return False
+
+    def regresar_carril_original(self):
+        # Cambiar al carril derecho (-0.5 en servo) y avanzar hasta 25° < degree < 30°
+        self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
+        indices_cambio = (self.angles > 25) & (self.angles < 30)
+        if np.any(indices_cambio):  # Verificar si hay algo en el rango de ángulos
+            self.get_logger().info("Avanzando para regresar al carril original")
+            self.servo_publisher.publish(Float64(data=0.5))  # Girar al máximo a la izquierda
+            time.sleep(self.tiempo_cambio_carril)  # Girar por el tiempo registrado
+            self.servo_publisher.publish(Float64(data=0.0))  # Enderezar dirección
+            return False
+        return True
+
+    def finalizar_rebase(self):
+        self.get_logger().info("Rebase completado, regresando al carril original")
+        self.rebasando = False
+        self.fase_actual = 0
+        self.servo_publisher.publish(Float64(data=-0.2))  # Enderezar dirección
+        self.driver_publisher.publish(Int32(data=1540))  # Reanudar velocidad normal
 
 
 def main(args=None):
     rclpy.init(args=args)
-    node = YDLidarClient()
+    node = RebaseNode()
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()

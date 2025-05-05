@@ -6,14 +6,14 @@ import math
 from rclpy.qos import qos_profile_sensor_data
 
 
-
 class ParkingAssistant(Node):
     def __init__(self):
         super().__init__('parking_assistant')
 
         # Suscripción al LiDAR
-        self.subscription_lidar = self.create_subscription(LaserScan,'/scan', self.lidar_callback, qos_profile_sensor_data)
-
+        self.subscription_lidar = self.create_subscription(
+            LaserScan, '/scan', self.lidar_callback, qos_profile_sensor_data
+        )
 
         # Publicadores para el control del vehículo
         self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
@@ -24,7 +24,7 @@ class ParkingAssistant(Node):
         self.detecting_space = True
         self.space_start = None
         self.space_end = None
-        self.min_space_length = 0.6  # Longitud mínima del espacio (en metros)
+        self.min_space_length = 0.5  # Longitud mínima del espacio (en metros)
         self.car_width = 0.185  # Ancho del carro (en metros)
         self.safety_distance = 0.1  # Distancia mínima de seguridad al fondo (en metros)
 
@@ -50,12 +50,13 @@ class ParkingAssistant(Node):
                 self.get_logger().info("Primer coche detectado a la derecha.")
             return
 
-        # Paso 2: Detectar la pared al fondo
+        ''' # Paso 2: Detectar la pared a la derecha
         if not self.detected_wall:
-            if self.is_wall_near(ranges):
+            if self.is_wall_near_right(ranges, angle_min, angle_increment):
                 self.detected_wall = True
-                self.get_logger().info("Pared detectada al fondo.")
+                self.get_logger().info("Pared detectada a la derecha.")
             return
+        '''
 
         # Paso 3: Detectar el segundo coche a la derecha
         if not self.detected_second_car:
@@ -73,17 +74,19 @@ class ParkingAssistant(Node):
             angle = angle_min + i * angle_increment
             if -math.pi / 2 <= angle <= -math.pi / 4:  # Lado derecho
                 if 0 < distance <= 0.2:  # Detectar un coche a 20 cm
+                    self.get_logger().info(f"Coche detectado a la derecha a {distance:.2f} m.")
                     return True
         return False
 
-    def is_wall_near(self, ranges):
+    def is_wall_near_right(self, ranges, angle_min, angle_increment):
         """
-        Verifica si hay una pared al fondo del cajón.
+        Verifica si hay una pared al frente.
         """
         # Considerar los ángulos frontales (directamente hacia adelante)
         front_angles = ranges[len(ranges) // 2 - 5: len(ranges) // 2 + 5]
         for distance in front_angles:
             if 0 < distance < self.safety_distance:  # Ignorar valores 0 (sin datos)
+                self.get_logger().info(f"Pared detectada al frente a {distance:.2f} m.")
                 return True
         return False
 

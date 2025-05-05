@@ -2,7 +2,8 @@ import rclpy
 from rclpy import qos
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
-from std_msgs.msg import Bool
+from std_msgs.msg import Bool, Int32
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 import math
 
 
@@ -13,8 +14,15 @@ class YDLidarClient(Node):
         # Crear perfil QoS
         self.qos_profile = qos.qos_profile_sensor_data
 
+        self.qos_profile_driver = QoSProfile(
+            depth=10,
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            history=HistoryPolicy.KEEP_LAST
+        )
+
         # Crear publicadores
         self.colision_publisher = self.create_publisher(Bool, '/colision', 10)
+        self.driver_publisher = self.create_publisher(Int32, '/target_speed', 10) # SOLO PARA PRUEBAS. BORRAR
 
         # Crear suscripción
         self.create_subscription(
@@ -40,6 +48,7 @@ class YDLidarClient(Node):
             #print("Colision detectada")
             colision_msg.data = True
             self.colision_publisher.publish(colision_msg)
+            self.driver_publisher.publish(Int32(data=1500)) # SOLO PARA PRUEBAS. BORRAR
         else:
             #print("No hay colision")
             colision_msg.data = False

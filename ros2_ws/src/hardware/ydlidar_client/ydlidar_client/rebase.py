@@ -14,6 +14,7 @@ class RebaseNode(Node):
         self.fase_actual = 0  # 0: No rebasando, 1: Verificar izquierda, 2: Cambiar carril, 3: Reincorporarse, 4: Regresar al carril original, 5: Finalizar
         self.tiempo_cambio_carril = 0  # Tiempo registrado durante el cambio de carril
         self.colision_detectada = False  # Nueva variable para controlar si hay colisión
+        self.distanciaColision = 0.65
 
         # Banderas de máquina de estados
         self.B1 = False
@@ -21,7 +22,7 @@ class RebaseNode(Node):
         self.B3 = False
         self.B4 = False
 
-        self.idealDistance = 0.15   
+        self.idealDistance = 0.20   
         self.steeringConstant = 7  
 
         # Crear publicadores
@@ -49,7 +50,7 @@ class RebaseNode(Node):
             msg = Int32()
             msg.data = 1500
             self.driver_publisher.publish(msg)
-            self.get_logger().info("Colisión detectada, deteniendo procesamiento de rebase")
+            #self.get_logger().info("Colisión detectada, deteniendo procesamiento de rebase")
 
 
     def degrees_callback(self, msg):
@@ -71,7 +72,7 @@ class RebaseNode(Node):
     def procesar_rebase(self):
         # Detener el procesamiento si hay colisión
         if self.colision_detectada:
-            self.get_logger().info("Procesamiento de rebase detenido por colisión")
+            #self.get_logger().info("Procesamiento de rebase detenido por colisión")
             return
 
         if self.rebasando:
@@ -102,7 +103,7 @@ class RebaseNode(Node):
     def detectar_objeto_enfrente(self):
         # Detectar objeto justo enfrente (-20° a 20°)
         indices_frente = (self.angles > -15) & (self.angles < 15)
-        if np.any((self.ranges[indices_frente] < 0.50) & (self.ranges[indices_frente] != 0)):
+        if np.any((self.ranges[indices_frente] < self.distanciaColision) & (self.ranges[indices_frente] != 0)):
             self.get_logger().info("Objeto detectado enfrente, iniciando rebase")
             return True
         return False
@@ -115,64 +116,70 @@ class RebaseNode(Node):
             self.driver_publisher.publish(Int32(data=1500))  # Detener el vehículo
             return False
         else:
-            self.driver_publisher.publish(Int32(data=1560))  # Reanudar velocidad para cambiar de carril
+            self.driver_publisher.publish(Int32(data=1550))  # Reanudar velocidad para cambiar de carril
             return True
 
     def cambiar_carril(self):
         # Cambiar al carril izquierdo (0.5 en servo) y avanzar hasta 25° < degree < 30°
         self.servo_publisher.publish(Float64(data=0.5))  # Girar a la izquierda
         start_time = time.time()  # Registrar el tiempo de inicio
-        indices_cambio1 = (self.angles > -30) & (self.angles < 0)
+        indices_cambio1 = (self.angles > -20) & (self.angles < 0)
         #indices_cambio2 = (self.angles > -25) & (self.angles < -15)
-        if np.all((self.ranges[indices_cambio1] > 0.50) & (self.ranges[indices_cambio1] != 0)):  # Verificar si hay algo en el rango de ángulos
+        if np.all((self.ranges[indices_cambio1] > 0.65  ) | (self.ranges[indices_cambio1] == 0)):  # Verificar si hay algo en el rango de ángulos
             self.get_logger().info("Avanzando en el carril izquierdo")
             self.tiempo_cambio_carril = time.time() - start_time  # Calcular el tiempo transcurrido
+            self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
+            self.driver_publisher.publish(Int32(data=1540))  # Mantener velocidad mínima
+            time.sleep(0.8)
             return True
         return False
 
     def reincorporarse(self):
         # Mover el servo al máximo a la derecha (-0.5) y avanzar hasta detectar un coche en el lado derecho (30° a 50°)
-        self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
-        self.driver_publisher.publish(Int32(data=1560))  # Mantener velocidad mínima
-        indices_derecha = (self.angles > -95) & (self.angles < -85)
-        if np.any((self.ranges[indices_derecha] < 0.70) & (self.ranges[indices_derecha] != 0)):
-            self.get_logger().info("Coche detectado a la derecha, ajustando dirección")
+        
+        indices_derecha = (self.angles > -60) & (self.angles < -30)
+        if np.any((self.ranges[indices_derecha] < 0.60) & (self.ranges[indices_derecha] != 0)): # Ajustar en el torneo !!!!!
+            #self.get_logger().info("Coche detectado a la derecha, ajustando dirección")
             self.alineacion() # Cálculos para mantenerse
             # Esperar hasta que ya no haya nada en el lado derecho
-            if not np.any((self.ranges[indices_derecha] < 0.40) & (self.ranges[indices_derecha] != 0)):
-                return True
-        return False
+            #if not np.any((self.ranges[indices_derecha] < 0.40) & (self.ranges[indices_derecha] != 0)):
+            #    return True
+            return False
+        else:
+            return True
     
     def alineacion(self):
         # Definir el rango de ángulos de interés (entre -95 y -45 grados)
-        indices_alineacion_costado = (self.angles > -95) & (self.angles < -60)
-        indices_alineacion_esquina = (self.angles > -60) & (self.angles < -45)
+        indices_alineacion_costado = (self.angles > -95) & (self.angles < -45)
+        indices_alineacion_esquina = (self.angles > -45) & (self.angles < -30)
         
         # Filtrar las distancias que están dentro del rango de ángulos y son mayores que 0
 
         distancias_filtradas_costado = self.ranges[indices_alineacion_costado & (self.ranges > 0)]
         distancias_filtradas_esquina = self.ranges[indices_alineacion_esquina & (self.ranges > 0)]
         
-        if len(distancias_filtradas_esquina) > 0 or len(distancias_filtradas_costado) > 0:
+        if len(distancias_filtradas_esquina) > 0 and len(distancias_filtradas_costado) > 0:
             # Encontrar la distancia más pequeña
-            lastSmallestDistance = np.min(distancias_filtradas_costado)
-            lastSmallestDistance2 = np.min(distancias_filtradas_esquina)
+            lastSmallestDistanceCostado = np.min(distancias_filtradas_costado)
+            lastSmallestDistanceEsquina = np.min(distancias_filtradas_esquina)
 
-            if lastSmallestDistance > lastSmallestDistance2:
-                fixedIdealDistance = 2 * self.idealDistance
+            if lastSmallestDistanceCostado > ( 0.6 * lastSmallestDistanceEsquina ): 
+                fixedIdealDistance = 2.5 * self.idealDistance
+                fixedDistance = lastSmallestDistanceEsquina - fixedIdealDistance
+                self.get_logger().info(f"DISTANCIA: {lastSmallestDistanceEsquina}")
             else:
                 fixedIdealDistance = 1 * self.idealDistance
+                fixedDistance = lastSmallestDistanceCostado - fixedIdealDistance
+                self.get_logger().info(f"Distancia: {lastSmallestDistanceCostado}")
 
             
-            # Calcular la distancia ajustada y el ángulo de dirección
-            fixedDistance = lastSmallestDistance - fixedIdealDistance
+            # Calcular el ángulo de dirección
             servo_steer = -self.steeringConstant * fixedDistance
             
             # Publicar el ángulo de dirección
+            servo_steer = self.constrain(servo_steer, -0.5, 0.5)
             self.servo_publisher.publish(Float64(data=servo_steer))
             
-            # Opcional: Loggear la distancia
-            self.get_logger().info(f"Distancia: {lastSmallestDistance}")
         else:
             # Si no hay datos válidos, mantener dirección neutral
             self.servo_publisher.publish(Float64(data=0.0))
@@ -193,8 +200,10 @@ class RebaseNode(Node):
     def regresar_carril_original(self):
         # Cambiar al carril derecho (-0.5 en servo) y avanzar hasta 25° < degree < 30°
         self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
+        #time.sleep(self.tiempo_cambio_carril)  # Girar por el tiempo registrado
+        time.sleep(0.15)
         self.servo_publisher.publish(Float64(data=0.5))  # Girar al máximo a la izquierda
-        time.sleep(self.tiempo_cambio_carril)  # Girar por el tiempo registrado
+        time.sleep(0.2)
         self.servo_publisher.publish(Float64(data=0.0))  # Enderezar dirección
         return True
 
@@ -204,6 +213,10 @@ class RebaseNode(Node):
         self.fase_actual = 0
         self.servo_publisher.publish(Float64(data=0.0))  # Enderezar dirección
         self.driver_publisher.publish(Int32(data=1500))  # Reanudar velocidad neutra
+        time.sleep(3)
+
+    def constrain(self, val, min_val, max_val):
+        return min(max_val, max(min_val, val))
 
 
 def main(args=None):

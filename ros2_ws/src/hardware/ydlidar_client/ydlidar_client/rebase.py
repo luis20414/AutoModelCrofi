@@ -15,8 +15,17 @@ class RebaseNode(Node):
         self.tiempo_cambio_carril = 0  # Tiempo registrado durante el cambio de carril
         self.colision_detectada = False  # Nueva variable para controlar si hay colisión
 
+        # Banderas de máquina de estados
+        self.B1 = False
+        self.B2 = False
+        self.B3 = False
+        self.B4 = False
+
+        self.idealDistance = 0.2   
+        self.steeringConstant = 5  
+
         # Crear publicadores
-        self.driver_publisher = self.create_publisher(Int32, '/target_speed', 10)
+        self.driver_publisher = self.create_publisher(Int32, '/target_speedd', 10)
         self.servo_publisher = self.create_publisher(Float64, 'steering', 10)
 
         # Crear suscripciones a los datos procesados del LiDAR
@@ -37,7 +46,11 @@ class RebaseNode(Node):
         # Actualizar el estado de colisión
         self.colision_detectada = msg.data
         if self.colision_detectada:
+            msg = Int32()
+            msg.data = 1500
+            self.driver_publisher.publish(msg)
             self.get_logger().info("Colisión detectada, deteniendo procesamiento de rebase")
+
 
     def degrees_callback(self, msg):
         # Guardar los ángulos recibidos
@@ -47,9 +60,13 @@ class RebaseNode(Node):
         # Guardar las distancias recibidas
         self.ranges = np.array(msg.data)
 
-        # Procesar los datos si ambos están disponibles
+        # Procesar los datos si ambos están disponibles y tienen el mismo tamaño
         if len(self.angles) > 0 and len(self.ranges) > 0:
-            self.procesar_rebase()
+            if len(self.angles) == len(self.ranges):
+                self.procesar_rebase()
+            else:
+                self.get_logger().warn("Los tamaños de angles y ranges no coinciden. Esperando sincronización...")
+
 
     def procesar_rebase(self):
         # Detener el procesamiento si hay colisión
@@ -84,15 +101,15 @@ class RebaseNode(Node):
 
     def detectar_objeto_enfrente(self):
         # Detectar objeto justo enfrente (-20° a 20°)
-        indices_frente = (self.angles > -20) & (self.angles < 20)
-        if np.any((self.ranges[indices_frente] < 0.45) & (self.ranges[indices_frente] != 0)):
+        indices_frente = (self.angles > -15) & (self.angles < 15)
+        if np.any((self.ranges[indices_frente] < 0.50) & (self.ranges[indices_frente] != 0)):
             self.get_logger().info("Objeto detectado enfrente, iniciando rebase")
             return True
         return False
 
     def verificar_izquierda(self):
         # Verificar si el carril izquierdo está libre (-50° a -35°)
-        indices_izquierda = (self.angles > -50) & (self.angles < -35)
+        indices_izquierda = (self.angles > 35) & (self.angles < 50)
         if np.any((self.ranges[indices_izquierda] < 0.35) & (self.ranges[indices_izquierda] != 0)):
             self.get_logger().info("Obstáculo detectado a la izquierda, deteniendo vehículo")
             self.driver_publisher.publish(Int32(data=1500))  # Detener el vehículo
@@ -105,26 +122,50 @@ class RebaseNode(Node):
         # Cambiar al carril izquierdo (0.5 en servo) y avanzar hasta 25° < degree < 30°
         self.servo_publisher.publish(Float64(data=0.5))  # Girar a la izquierda
         start_time = time.time()  # Registrar el tiempo de inicio
-        indices_cambio = (self.angles > 25) & (self.angles < 30)
-        if np.any(indices_cambio):  # Verificar si hay algo en el rango de ángulos
+        indices_cambio = (self.angles > -20) & (self.angles < 0)
+        if np.all((self.ranges[indices_cambio] > 0.30) & (self.ranges[indices_cambio] != 0)):  # Verificar si hay algo en el rango de ángulos
             self.get_logger().info("Avanzando en el carril izquierdo")
             self.tiempo_cambio_carril = time.time() - start_time  # Calcular el tiempo transcurrido
-            return False
-        return True
+            return True
+        return False
 
     def reincorporarse(self):
         # Mover el servo al máximo a la derecha (-0.5) y avanzar hasta detectar un coche en el lado derecho (30° a 50°)
         self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
         self.driver_publisher.publish(Int32(data=1560))  # Mantener velocidad mínima
-        indices_derecha = (self.angles > 30) & (self.angles < 50)
-        if np.any((self.ranges[indices_derecha] < 0.40) & (self.ranges[indices_derecha] != 0)):
+        indices_derecha = (self.angles > -95) & (self.angles < -85)
+        if np.any((self.ranges[indices_derecha] < 0.70) & (self.ranges[indices_derecha] != 0)):
             self.get_logger().info("Coche detectado a la derecha, ajustando dirección")
-            self.servo_publisher.publish(Float64(data=0.2))  # Ajustar dirección
-            self.driver_publisher.publish(Int32(data=1560))  # Mantener velocidad mínima
+            self.alineacion(self)
             # Esperar hasta que ya no haya nada en el lado derecho
             if not np.any((self.ranges[indices_derecha] < 0.40) & (self.ranges[indices_derecha] != 0)):
                 return True
         return False
+    
+    def alineacion(self):
+        # Definir el rango de ángulos de interés (entre -95 y -45 grados)
+        indices_alineacion = (self.angles > -95) & (self.angles < -45)
+        
+        # Filtrar las distancias que están dentro del rango de ángulos y son mayores que 0
+        distancias_filtradas = self.ranges[indices_alineacion & (self.ranges > 0)]
+        
+        if len(distancias_filtradas) > 0:
+            # Encontrar la distancia más pequeña
+            lastSmallestDistance = np.min(distancias_filtradas)
+            
+            # Calcular la distancia ajustada y el ángulo de dirección
+            fixedDistance = lastSmallestDistance - self.idealDistance
+            servo_steer = -self.steeringConstant * fixedDistance
+            
+            # Publicar el ángulo de dirección
+            self.servo_publisher.publish(Float64(data=servo_steer))
+            
+            # Opcional: Loggear la distancia
+            self.get_logger().info(f"Distancia: {lastSmallestDistance}")
+        else:
+            # Si no hay datos válidos, mantener dirección neutral
+            self.servo_publisher.publish(Float64(data=0.0))
+
 
     def regresar_carril_original(self):
         # Cambiar al carril derecho (-0.5 en servo) y avanzar hasta 25° < degree < 30°

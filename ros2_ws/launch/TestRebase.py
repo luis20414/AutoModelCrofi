@@ -3,21 +3,21 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
-        Node(
-            package='ydlidar_publicador',
+        Node(   # Publica los datos del lidar
+            package='ydlidar_publicador', 
             executable='ydlidar_publicador_node',
             name='ydlidar_publicador'
         ),
-        Node(
+        Node(   # Ordena los datos en dos arreglos
             package='ydlidar_client',
             executable='ydlidar_publisher',
             name='ydlidar_publicador_posterior'
         ),
-        #Node(
-        #    package='ydlidar_client',
-        #    executable='rebase',
-        #    name='rebase_node'
-        #),
+        Node(
+            package='ydlidar_client',
+            executable='colision',
+            name='rebase_node'
+        ),
         Node(
             package='driver',
             executable='driver',

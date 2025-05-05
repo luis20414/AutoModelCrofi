@@ -23,7 +23,8 @@ setup(
             'ydlidar_client = ydlidar_client.ydlidar_client:main',
             'rebase = ydlidar_client.rebase:main',
             'colision = ydlidar_client.colision:main',
-            'ydlidar_publisher = ydlidar_client.ydlidar_publisher:main'
+            'ydlidar_publisher = ydlidar_client.ydlidar_publisher:main',
+	    'parkyng = ydlidar_client.parkyng:main'
         ],
     },
 )

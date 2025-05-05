@@ -23,9 +23,15 @@ void loop() {
     }
 
     // Limitar el valor recibido al rango PWM permitido
-    pwmValue = constrain(receivedValue, 1410, 1560);
+    pwmValue = constrain(receivedValue, 1000, 1700);
 
     // Enviar el valor al ESC
+    if (pwmValue < 1500){
+      esc.writeMicroseconds(pwmValue);
+      delay(100);
+      esc.writeMicroseconds(1500);
+      delay(100);
+    }
     esc.writeMicroseconds(pwmValue);
 
     // Imprimir el valor recibido para depuración

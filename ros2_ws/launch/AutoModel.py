@@ -33,9 +33,9 @@ def generate_launch_description():
 	        executable='servo',
 	        name='servo_node'
 	    ),
-    	#Node(
-    	#    package='driver',
-    	#    executable='driver',
-    	#    name='driver_node'
-    	#)
+    	Node(
+    	    package='driver',
+    	    executable='driver',
+    	    name='driver_node'
+    	)
     ])

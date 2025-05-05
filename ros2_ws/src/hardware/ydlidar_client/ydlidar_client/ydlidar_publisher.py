@@ -17,7 +17,8 @@ class YDLidarPublisher(Node):
 
     def scan_callback(self, scan):
         # Calcular el número de puntos detectados
-        count = int(scan.scan_time / scan.time_increment)
+        #count = int(scan.scan_time / scan.time_increment)
+        count = len(scan.ranges)
         
         # Calcular los ángulos en grados
         angles = np.degrees(scan.angle_min + scan.angle_increment * np.arange(count))

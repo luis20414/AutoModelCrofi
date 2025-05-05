@@ -25,6 +25,9 @@ class YDLidarClient(Node):
         )
 
     def scan_callback(self, scan):
+        if scan.scan_time == 0 or scan.time_increment == 0:
+            self.get_logger().warn("Datos del LIDAR no válidos. Esperando datos correctos...")
+            return
         count = int(scan.scan_time / scan.time_increment)
         #print(f"[YDLIDAR INFO]: Escaneo recibido {scan.header.frame_id}[{count}]:")
         #print(f"[YDLIDAR INFO]: Rango angular : [{math.degrees(scan.angle_min):.2f}, {math.degrees(scan.angle_max):.2f}]")
@@ -47,7 +50,7 @@ class YDLidarClient(Node):
         for i in range(count):
             degree = math.degrees(scan.angle_min + scan.angle_increment * i)
             if degree > -35 and degree < 35:
-                if scan.ranges[i] < 0.35 and scan.ranges[i] != 0:
+                if scan.ranges[i] < 0.20 and scan.ranges[i] != 0:
                     colision = True
                     break
         return colision

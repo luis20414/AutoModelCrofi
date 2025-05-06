@@ -204,9 +204,9 @@ class RebaseNode(Node):
         # Cambiar al carril derecho (-0.5 en servo) y avanzar hasta 25° < degree < 30°
         self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
         #time.sleep(self.tiempo_cambio_carril)  # Girar por el tiempo registrado
-        time.sleep(0.15)
+        time.sleep(0.35) # 0.15
         self.servo_publisher.publish(Float64(data=0.5))  # Girar al máximo a la izquierda
-        time.sleep(0.2)
+        time.sleep(0.35) # 0.2
         self.servo_publisher.publish(Float64(data=0.0))  # Enderezar dirección
         return True
 

@@ -37,6 +37,21 @@ class ParkingAssistant(Node):
         # Mensaje inicial
         self.get_logger().info("Nodo ParkingAssistant corriendo...")
 
+        # Configuración inicial del coche
+        self.initialize_vehicle()
+
+    def initialize_vehicle(self):
+        """
+        Configura el coche al inicio del nodo.
+        """
+        # Configurar la velocidad inicial a 1540
+        self.speed_publisher.publish(Int32(data=1540))
+        self.get_logger().info("Velocidad inicial configurada a 1540.")
+
+        # Configurar el servo en 0
+        self.steering_publisher.publish(Float64(data=0.0))
+        self.get_logger().info("Servo inicial configurado en 0.")
+
     def lidar_callback(self, msg):
         # Procesar los datos del LiDAR
         ranges = msg.ranges
@@ -48,46 +63,57 @@ class ParkingAssistant(Node):
             if self.detect_car_on_right(ranges, angle_min, angle_increment):
                 self.detected_first_car = True
                 self.get_logger().info("Primer coche detectado a la derecha.")
+                self.create_timer(1.0, lambda: None)  # Esperar 1 segundo antes de continuar
             return
 
-        ''' # Paso 2: Detectar la pared a la derecha
+        # Paso 2: Detectar la pared a la derecha
         if not self.detected_wall:
             if self.is_wall_near_right(ranges, angle_min, angle_increment):
                 self.detected_wall = True
                 self.get_logger().info("Pared detectada a la derecha.")
+                self.create_timer(2.0, lambda: None)  # Esperar 1 segundo antes de continuar
             return
-        '''
 
         # Paso 3: Detectar el segundo coche a la derecha
         if not self.detected_second_car:
             if self.detect_car_on_right(ranges, angle_min, angle_increment):
                 self.detected_second_car = True
                 self.get_logger().info("Segundo coche detectado a la derecha. Iniciando maniobra de estacionamiento.")
-                self.park_vehicle()
+                self.create_timer(2.0, self.park_vehicle)  # Esperar 1 segundo antes de iniciar la maniobra
             return
 
     def detect_car_on_right(self, ranges, angle_min, angle_increment):
         """
         Detecta si hay un coche a la derecha en un rango de ángulos.
         """
+        consecutive_points = 0
         for i, distance in enumerate(ranges):
             angle = angle_min + i * angle_increment
             if -math.pi / 2 <= angle <= -math.pi / 4:  # Lado derecho
-                if 0 < distance <= 0.2:  # Detectar un coche a 20 cm
-                    self.get_logger().info(f"Coche detectado a la derecha a {distance:.2f} m.")
-                    return True
+                if 0 < distance <= 0.3:  # Detectar un coche a 30 cm
+                    consecutive_points += 1
+                    if consecutive_points >= 5:  # Requiere al menos 5 puntos consecutivos
+                        self.get_logger().info(f"Coche detectado a la derecha a {distance:.2f} m.")
+                        return True
+                else:
+                    consecutive_points = 0  # Reiniciar si no cumple la condición
         return False
 
     def is_wall_near_right(self, ranges, angle_min, angle_increment):
         """
-        Verifica si hay una pared al frente.
+        Verifica si hay una pared a la derecha.
         """
-        # Considerar los ángulos frontales (directamente hacia adelante)
-        front_angles = ranges[len(ranges) // 2 - 5: len(ranges) // 2 + 5]
-        for distance in front_angles:
-            if 0 < distance < self.safety_distance:  # Ignorar valores 0 (sin datos)
-                self.get_logger().info(f"Pared detectada al frente a {distance:.2f} m.")
-                return True
+        consecutive_points = 0
+        for i, distance in enumerate(ranges):
+            angle = angle_min + i * angle_increment
+            if -math.pi / 2 <= angle <= -math.pi / 4:  # Lado derecho
+                if 0 < distance <= .7:  # Detectar pared a la derecha
+                    consecutive_points += 1
+                    if consecutive_points >= 5:  # Requiere al menos 5 puntos consecutivos
+                        self.get_logger().info(f"Pared detectada a la derecha a {distance:.2f} m.")
+                        return True
+                else:
+                    consecutive_points = 0  # Reiniciar si no cumple la condición
         return False
 
     def park_vehicle(self):
@@ -102,10 +128,10 @@ class ParkingAssistant(Node):
         self.get_logger().info("Luces intermitentes encendidas.")
 
         # Paso 1: Retroceder hacia el lado contrario
-        self.steering_publisher.publish(Float64(data=-0.5))  # Girar hacia el lado contrario
-        self.speed_publisher.publish(Int32(data=1430))  # Velocidad de reversa
+        self.steering_publisher.publish(Float64(data=0.5))  # Girar hacia el lado contrario
+        self.speed_publisher.publish(Int32(data=1380))  # Velocidad de reversa
         self.get_logger().info("Retrocediendo hacia el lado contrario...")
-        self.create_timer(2.0, self.align_vehicle)  # Retroceder por 2 segundos
+        self.create_timer(5.0, self.align_vehicle)  # Retroceder por 5 segundos
 
     def align_vehicle(self):
         # Paso 2: Verificar la posición de la pared y los coches laterales
@@ -116,6 +142,10 @@ class ParkingAssistant(Node):
         """
         Ajusta la posición del vehículo basándose en la distancia a la pared y a los coches laterales.
         """
+        # Configurar velocidad y servo antes de ajustar
+        self.speed_publisher.publish(Int32(data=1540))
+        self.steering_publisher.publish(Float64(data=0.0))
+
         # Obtener las distancias laterales y frontales
         left_distance = self.get_side_distance(-math.pi / 2, -math.pi / 4)  # Lado izquierdo
         right_distance = self.get_side_distance(math.pi / 4, math.pi / 2)  # Lado derecho
@@ -132,22 +162,6 @@ class ParkingAssistant(Node):
         else:
             self.get_logger().info("Posición alineada. Entrando al espacio de estacionamiento.")
             self.enter_parking_space()
-
-    def get_side_distance(self, start_angle, end_angle):
-        """
-        Calcula la distancia promedio en un rango de ángulos.
-        """
-        ranges = self.latest_lidar_ranges
-        angle_increment = self.latest_lidar_angle_increment
-        angle_min = self.latest_lidar_angle_min
-
-        distances = []
-        for i, distance in enumerate(ranges):
-            angle = angle_min + i * angle_increment
-            if start_angle <= angle <= end_angle and distance > 0:
-                distances.append(distance)
-
-        return sum(distances) / len(distances) if distances else float('inf')
 
     def enter_parking_space(self):
         # Paso 3: Entrar de frente al espacio de estacionamiento

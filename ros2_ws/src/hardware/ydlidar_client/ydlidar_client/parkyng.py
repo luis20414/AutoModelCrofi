@@ -18,10 +18,10 @@ class ParkingAssistant(Node):
         # Publicadores para el control del vehículo
         self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.steering_publisher = self.create_publisher(Float64, '/steering', 10)
-        self.lights_publisher = self.create_publisher(String, '/intermitentes', 10)
+        self.lights_publisher = self.create_publisher(String, '/rebase', 10)
 
         # Variables de detección de estacionamiento
-        self.detecting_space = True
+        self.detecting_space = True 
         self.space_start = None
         self.space_end = None
         self.min_space_length = 0.5  # Longitud mínima del espacio (en metros)

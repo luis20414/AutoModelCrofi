@@ -73,7 +73,7 @@ class LEDController(Node):
         GPIO.cleanup()  # Limpiar GPIO al cerrar
 
 def main(args=None):
-    print("Main")
+    print("Luces listas")
     rclpy.init(args=args)
     node = LEDController()
     rclpy.spin(node)

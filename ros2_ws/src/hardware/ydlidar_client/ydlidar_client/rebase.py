@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int32, Float64, Float64MultiArray, Bool
+from std_msgs.msg import Int32, Float64, Float64MultiArray, Bool, String
 import numpy as np
 import time  # Importar para medir el tiempo transcurrido
 
@@ -28,7 +28,8 @@ class RebaseNode(Node):
         # Crear publicadores
         self.driver_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.servo_publisher = self.create_publisher(Float64, 'steering', 10)
-        self.rebase_publisher = self.create_publisher(Bool, '/rebase', 10)
+        self.lights_publisher = self.create_publisher(String, '/rebase', 10)
+        self.rebase_publisher = self.create_publisher(Bool, '/inicio_rebase', 10)
         self.finrebase_publisher = self.create_publisher(Bool, '/final_rebase',10)
 
         # Crear suscripciones a los datos procesados del LiDAR

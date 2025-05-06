@@ -14,8 +14,8 @@ class SteeringError(Node):
         self.enable = 0
         self.left_point = 0
         self.right_point = 0
-        self.left_pointR = 235
-        self.right_pointR = 112
+        self.left_pointR = 50 #235, cambiar dependiendo de los frames
+        self.right_pointR = 113 #112
         self.previous_error = 0.0
         self.kp = 1.0  # Constante proporcional
         self.kd = 0.1  # Constante derivativa
@@ -60,9 +60,6 @@ class SteeringError(Node):
 
         print(f"Corrected Error (PD): {corrected_error}")
 
-        # Determinar el ángulo de dirección basado en el error corregido
-        # Si el error es positivo, steering_angle será positivo (girar a la derecha)
-        # Si el error es negativo, steering_angle será negativo (girar a la izquierda)
         kp_steering = 0.03  # Constante para ajustar el rango del ángulo
         steering_angle = max(min(kp_steering * -corrected_error, 0.5), -0.5)
         print(f"Steering angle: {steering_angle}")
@@ -71,7 +68,7 @@ class SteeringError(Node):
         self.steering_publisher.publish(Float64(data=steering_angle))
 
         # Publicar la velocidad (puedes ajustar esta lógica según el error corregido)
-        speed = max(self.max_speed - abs(corrected_error) * 3, 1560)  # Reducir velocidad con error
+        speed = max(self.max_speed - abs(corrected_error) * 3, 1560)  # Reducir velocidad con error, la constante de velocidad es el 3
         print(f"Speed: {speed}")
         self.speed_publisher.publish(Int32(data=int(speed)))
 

@@ -11,6 +11,7 @@ class SteeringError(Node):
         self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.max_speed = 1585
         self.subscription_enable = self.create_subscription(Bool, 'enable_Auto', self.listener_enable, 10)
+        self.subscription_stop = self.create_subscription(Bool, '/stop', 10)
         self.enable = 0
         self.left_point = 0
         self.right_point = 0
@@ -29,9 +30,25 @@ class SteeringError(Node):
         self.enable = msg.data 
         if self.enable:
             self.correction_mov()
-        # Desactivar movimiento
-        self.steering_publisher.publish(Float64(data=0.0))
-        self.speed_publisher.publish(Int32(data=1500))
+        else:
+            # Desactivar movimiento
+            self.steering_publisher.publish(Float64(data=0.0))
+            self.speed_publisher.publish(Int32(data=1500))
+
+    def stop_enable(self, msg):
+        self.stoped = msg.data
+        if not self.stoped:
+            self.correction_mov()
+        else:
+            value_msg.data = 1500
+            # Esperar 5 segundos después de la detección
+            while time.time() - self.last_detection_time < 5:
+                self.get_logger().info(f"Señal detectada: {value_msg.data}")
+                self.value_pub.publish(Bool(data=True))
+                self.value_pub.publish(value_msg)
+                self.publisher_intermittent_lights.publish(String(data='T'))
+                time.sleep(0.1)
+        
 
     def correction_mov(self):
         print("In correction_mov")

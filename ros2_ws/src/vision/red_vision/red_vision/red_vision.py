@@ -4,7 +4,7 @@ from rclpy.node import Node
 import cv2
 import numpy as np
 from sensor_msgs.msg import Image
-from std_msgs.msg import Int32, String
+from std_msgs.msg import Int32, String, Bool
 from cv_bridge import CvBridge
 import pytesseract
 import time
@@ -18,6 +18,7 @@ class TrafficSignDetector(Node):
         self.bridge = CvBridge()
         # Publicador para el valor numérico
         self.value_pub = self.create_publisher(Int32, '/stop_detected', 10)
+        self.stop_pub = self.create_publisher(Bool, '/stop', 10)
         # Publicador para la imagen procesada
         self.processed_pub = self.create_publisher(Image, '/red_image', 10)
         # Suscriptor a la cámara
@@ -88,15 +89,10 @@ class TrafficSignDetector(Node):
                     self.last_detection_time = time.time()
                     break
             # Publicar valores según detección
-            value_msg = Int32()
             if detected:
-                value_msg.data = 1500
-                # Esperar 5 segundos después de la detección
-                while time.time() - self.last_detection_time < 5:
-                    self.get_logger().info(f"Señal detectada: {value_msg.data}")
-                    self.value_pub.publish(value_msg)
-                    self.publisher_intermittent_lights.publish(String(data='T'))
-                    time.sleep(0.1)
+                self.stop_pub.publish(Bool(True))
+            else: 
+                self.stop_pub.publish(Bool(False))
             self.frame_count += 1
             
         except Exception as e:

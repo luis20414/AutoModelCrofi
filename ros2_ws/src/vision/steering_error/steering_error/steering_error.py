@@ -1,57 +1,70 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray, Float64, Bool, Int32
+import time
+
 
 class SteeringError(Node):
-    print("In steering error")
     def __init__(self):
         super().__init__('steering_error')
         self.subscription_borders = self.create_subscription(Float64MultiArray, 'lane_borders', self.listener_callback_points, 10)
         self.steering_publisher = self.create_publisher(Float64, 'steering', 10)
         self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
-        self.max_speed = 1585
         self.subscription_enable = self.create_subscription(Bool, 'enable_Auto', self.listener_enable, 10)
-        self.subscription_stop = self.create_subscription(Bool, '/stop', 10)
-        self.enable = 0
+        self.subscription_stop = self.create_subscription(Bool, '/stop', self.listener_stop, 10)
+
+        # Variables de estado
+        self.enable = False
+        self.stop_signal = False
+        self.stop_detected = False  # Nueva bandera para rastrear si ya se procesó un True en /stop
         self.left_point = 0
         self.right_point = 0
-        self.left_pointR = 50 #235, cambiar dependiendo de los frames
-        self.right_pointR = 113 #112
+        self.left_pointR = 50  # Referencia para el punto izquierdo
+        self.right_pointR = 113  # Referencia para el punto derecho
         self.previous_error = 0.0
         self.kp = 1.0  # Constante proporcional
         self.kd = 0.1  # Constante derivativa
+        self.max_speed = 1585
+        self.current_speed = 1500  # Velocidad actual del vehículo
 
     def listener_callback_points(self, msg):
+        # Actualizar los puntos de los bordes del carril
         self.left_point = msg.data[0]
         self.right_point = msg.data[1]
 
     def listener_enable(self, msg):
-        print("In listener_enable")
-        self.enable = msg.data 
-        if self.enable:
-            self.correction_mov()
-        else:
+        # Activar o desactivar el modo automático
+        self.enable = msg.data
+        if not self.enable:
             # Desactivar movimiento
             self.steering_publisher.publish(Float64(data=0.0))
             self.speed_publisher.publish(Int32(data=1500))
+            self.get_logger().info("Modo automático desactivado.")
 
-    def stop_enable(self, msg):
-        self.stoped = msg.data
-        if not self.stoped:
-            self.correction_mov()
+    def listener_stop(self, msg):
+        # Actualizar el estado de la señal de stop
+        self.stop_signal = msg.data
+        if self.enable:
+            if not self.stop_detected:  # Solo procesar si no se ha detectado antes
+                self.evaluate_stop_signal()
+            elif not self.stop_signal:  # Si ya se procesó y la señal es False, continuar movimiento
+                self.correction_mov()
+
+    def evaluate_stop_signal(self):
+        if self.stop_signal:
+            # Detener el coche por 5 segundos
+            self.get_logger().info("Señal de STOP detectada. Deteniendo el coche por 5 segundos.")
+            self.steering_publisher.publish(Float64(data=0.0))
+            self.speed_publisher.publish(Int32(data=1500))
+            time.sleep(5)  # Pausa de 5 segundos
+            self.get_logger().info("Reanudando movimiento después de STOP.")
+            self.stop_detected = True  # Marcar que ya se procesó el STOP
         else:
-            value_msg.data = 1500
-            # Esperar 5 segundos después de la detección
-            while time.time() - self.last_detection_time < 5:
-                self.get_logger().info(f"Señal detectada: {value_msg.data}")
-                self.value_pub.publish(Bool(data=True))
-                self.value_pub.publish(value_msg)
-                self.publisher_intermittent_lights.publish(String(data='T'))
-                time.sleep(0.1)
-        
+            # Continuar con el movimiento normal
+            self.correction_mov()
 
     def correction_mov(self):
-        print("In correction_mov")
+        # Calcular el error de dirección y ajustar el movimiento
         error = 0.0
         if self.left_point > 0 and self.right_point > 0:
             # Ambos puntos válidos, calcular error promedio
@@ -68,35 +81,41 @@ class SteeringError(Node):
             self.get_logger().warn("No se recibieron puntos válidos.")
             return
 
-        print(f"Raw Error: {error}")
-
         # Aplicar el controlador PD al error
         derivative = error - self.previous_error
         corrected_error = self.kp * error + self.kd * derivative
         self.previous_error = error
 
-        print(f"Corrected Error (PD): {corrected_error}")
-
+        # Calcular el ángulo de dirección
         kp_steering = 0.03  # Constante para ajustar el rango del ángulo
         steering_angle = max(min(kp_steering * -corrected_error, 0.5), -0.5)
-        print(f"Steering angle: {steering_angle}")
 
         # Publicar el ángulo de dirección
         self.steering_publisher.publish(Float64(data=steering_angle))
 
-        # Publicar la velocidad (puedes ajustar esta lógica según el error corregido)
-        speed = max(self.max_speed - abs(corrected_error) * 3, 1560)  # Reducir velocidad con error, la constante de velocidad es el 3
-        print(f"Speed: {speed}")
-        self.speed_publisher.publish(Int32(data=int(speed)))
+        # Calcular y publicar la velocidad
+        target_speed = max(self.max_speed - abs(corrected_error) * 3, 1560)  # Reducir velocidad con error
 
-        
+        # Si la velocidad actual es mayor a 1670 y se necesita reducir
+        if self.current_speed > 1670 and target_speed < self.current_speed:
+            self.get_logger().info("Reduciendo velocidad: pasando por 1500 antes de establecer 1600.")
+            self.speed_publisher.publish(Int32(data=1500))  # Detener momentáneamente
+            time.sleep(0.5)  # Pausa breve para simular la transición
+            self.speed_publisher.publish(Int32(data=1600))  # Establecer velocidad a 1600
+            self.current_speed = 1600
+        else:
+            # Publicar la velocidad calculada normalmente
+            self.speed_publisher.publish(Int32(data=int(target_speed)))
+            self.current_speed = target_speed
+
+
 def main(args=None):
-    print("Hi there")
     rclpy.init(args=args)
     node = SteeringError()
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

@@ -19,8 +19,9 @@ class SteeringError(Node):
         self.stop_detected = False  # Nueva bandera para rastrear si ya se procesó un True en /stop
         self.left_point = 0
         self.right_point = 0
-        self.left_pointR = 50  # Referencia para el punto izquierdo
-        self.right_pointR = 113  # Referencia para el punto derecho
+        self.left_pointR = 45  # Referencia para el punto izquierdo, 50
+        self.right_pointR = 116  # Referencia para el punto derecho, 113
+        #140 para la interseccion
         self.previous_error = 0.0
         self.kp = 1.0  # Constante proporcional
         self.kd = 0.1  # Constante derivativa

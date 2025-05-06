@@ -127,7 +127,7 @@ class RebaseNode(Node):
         # Cambiar al carril izquierdo (0.5 en servo) y avanzar hasta 25° < degree < 30°
         self.servo_publisher.publish(Float64(data=0.5))  # Girar a la izquierda
         start_time = time.time()  # Registrar el tiempo de inicio
-        indices_cambio1 = (self.angles > -20) & (self.angles < 0)
+        indices_cambio1 = (self.angles > -45) & (self.angles < 0)
         #indices_cambio2 = (self.angles > -25) & (self.angles < -15)
         if np.all((self.ranges[indices_cambio1] > 0.65  ) | (self.ranges[indices_cambio1] == 0)):  # Verificar si hay algo en el rango de ángulos
             self.get_logger().info("Avanzando en el carril izquierdo")
@@ -205,7 +205,7 @@ class RebaseNode(Node):
         # Cambiar al carril derecho (-0.5 en servo) y avanzar hasta 25° < degree < 30°
         self.servo_publisher.publish(Float64(data=-0.5))  # Girar a la derecha
         #time.sleep(self.tiempo_cambio_carril)  # Girar por el tiempo registrado
-        time.sleep(0.35) # 0.15
+        time.sleep(0.5) # 0.15
         self.servo_publisher.publish(Float64(data=0.5))  # Girar al máximo a la izquierda
         time.sleep(0.35) # 0.2
         self.servo_publisher.publish(Float64(data=0.0))  # Enderezar dirección

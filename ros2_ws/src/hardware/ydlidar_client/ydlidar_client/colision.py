@@ -48,7 +48,7 @@ class Colision_Lidar(Node):
             else:
                 self.get_logger().warn("Los tamaños de angles y ranges no coinciden. Esperando sincronización...")
 
-def procesar_rebase(self):
+    def procesar_rebase(self):
         # Verificar colisiones
         colision_detectada = self.deteccionColisiones()
         colision_msg = Bool()
@@ -61,13 +61,13 @@ def procesar_rebase(self):
             colision_msg.data = False
             self.colision_publisher.publish(colision_msg)
 
-def deteccionColisiones(self):
-    # Filtrar los ángulos dentro del rango de -35° a 35°
-    indices_frente = (self.angles > -35) & (self.angles < 35)
+    def deteccionColisiones(self):
+        # Filtrar los ángulos dentro del rango de -35° a 35°
+        indices_frente = (self.angles > -35) & (self.angles < 35)
 
-    # Verificar si hay alguna distancia menor a 0.20 m en el rango frontal
-    colision = np.any((self.ranges[indices_frente] < 0.20) & (self.ranges[indices_frente] != 0))
-    return colision
+        # Verificar si hay alguna distancia menor a 0.20 m en el rango frontal
+        colision = np.any((self.ranges[indices_frente] < 0.20) & (self.ranges[indices_frente] != 0))
+        return colision
 
 
 def main(args=None):

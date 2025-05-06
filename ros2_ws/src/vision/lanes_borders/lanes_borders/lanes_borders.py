@@ -11,6 +11,9 @@ bridge = CvBridge()
 blackBajo = np.array([0, 0, 0], np.uint8)  # Esta para negro
 blackAlto = np.array([255, 255, 80], np.uint8)
 
+whiteBajo = np.array([0, 0, 200], np.uint8)  # Esta para blanco
+whiteAlto = np.array([255, 255, 255], np.uint8)
+
 #cv2.namedWindow('Bordes + Lineas Detectadas', cv2.WINDOW_NORMAL)
 
 class LaneDetector(Node):
@@ -29,7 +32,7 @@ class LaneDetector(Node):
         center_x, center_y = width // 2, height // 2
 
         frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-        mask = cv2.inRange(frameHSV, blackBajo, blackAlto)
+        mask = cv2.inRange(frameHSV, whiteBajo, whiteAlto)
         kernel = np.ones((2, 2), np.uint8)
         mask_clean = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel, iterations=3)
 

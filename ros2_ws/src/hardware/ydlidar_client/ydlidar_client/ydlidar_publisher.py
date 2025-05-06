@@ -13,7 +13,7 @@ class YDLidarPublisher(Node):
         self.degrees_publisher = self.create_publisher(Float64MultiArray, 'degreesLiDar', 10)
         self.ranges_publisher = self.create_publisher(Float64MultiArray, 'rangesLiDar', 10)
         # Suscripción al tópico del LiDAR con QoS
-        self.create_subscription(LaserScan, 'scan', self.scan_callback, qos_profile_sensor_data)
+        self.create_subscription(LaserScan, '/scan', self.scan_callback, qos_profile_sensor_data)
 
     def scan_callback(self, scan):
         # Calcular el número de puntos detectados

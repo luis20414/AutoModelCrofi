@@ -14,8 +14,8 @@ class SteeringError(Node):
         self.enable = 0
         self.left_point = 0
         self.right_point = 0
-        self.left_pointR = 50
-        self.right_pointR = 113
+        self.left_pointR = 235
+        self.right_pointR = 112
         self.previous_error = 0.0
         self.kp = 1.0  # Constante proporcional
         self.kd = 0.1  # Constante derivativa
@@ -29,10 +29,9 @@ class SteeringError(Node):
         self.enable = msg.data 
         if self.enable:
             self.correction_mov()
-        else:
-            # Desactivar movimiento
-            self.steering_publisher.publish(Float64(data=0.0))
-            self.speed_publisher.publish(Int32(data=1500))
+        # Desactivar movimiento
+        self.steering_publisher.publish(Float64(data=0.0))
+        self.speed_publisher.publish(Int32(data=1500))
 
     def correction_mov(self):
         print("In correction_mov")

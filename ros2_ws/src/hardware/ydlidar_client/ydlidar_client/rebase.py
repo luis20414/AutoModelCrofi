@@ -28,6 +28,8 @@ class RebaseNode(Node):
         # Crear publicadores
         self.driver_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.servo_publisher = self.create_publisher(Float64, 'steering', 10)
+        self.rebase_publisher = self.create_publisher(Bool, '/rebase', 10)
+        self.finrebase_publisher = self.create_publisher(Bool, '/final_rebase',10)
 
         # Crear suscripciones a los datos procesados del LiDAR
         self.degrees_subscription = self.create_subscription(
@@ -105,6 +107,7 @@ class RebaseNode(Node):
         indices_frente = (self.angles > -15) & (self.angles < 15)
         if np.any((self.ranges[indices_frente] < self.distanciaColision) & (self.ranges[indices_frente] != 0)):
             self.get_logger().info("Objeto detectado enfrente, iniciando rebase")
+            self.rebase_publisher.publish(Bool(data=True))
             return True
         return False
 
@@ -213,6 +216,7 @@ class RebaseNode(Node):
         self.fase_actual = 0
         self.servo_publisher.publish(Float64(data=0.0))  # Enderezar dirección
         self.driver_publisher.publish(Int32(data=1500))  # Reanudar velocidad neutra
+        self.finrebase_publisher.publish(Bool(data=True))
         time.sleep(3)
 
     def constrain(self, val, min_val, max_val):

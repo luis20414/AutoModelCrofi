@@ -28,7 +28,7 @@ class WebcamPublisher(Node):
         if not ret or frame is None:
             self.get_logger().warn("No se pudo leer un frame del video. Fin del video o error.")
             return
-        frame=frame[80:195, :]
+        frame=frame[50:160, :]
         self.get_logger().debug(f"Tipo de frame: {type(frame)}")
         
         self.publisher_.publish(bridge.cv2_to_imgmsg(frame, encoding="bgr8"))

@@ -4,7 +4,7 @@ from rclpy.node import Node
 import cv2
 import numpy as np
 from sensor_msgs.msg import Image
-from std_msgs.msg import Int32
+from std_msgs.msg import Int32, String
 from cv_bridge import CvBridge
 import pytesseract
 import time
@@ -22,6 +22,7 @@ class TrafficSignDetector(Node):
         self.processed_pub = self.create_publisher(Image, '/red_image', 10)
         # Suscriptor a la cámara
         self.camera_sub = self.create_subscription(Image, '/camera', self.image_callback, 10)
+        self.publisher_intermittent_lights = self.create_publisher(String, 'rebase', 10) 
         
         self.frame_count = 0
         self.last_detection_time = 0
@@ -69,7 +70,10 @@ class TrafficSignDetector(Node):
                 if len(approx) == 8:  # Octágono
                     x, y, w, h = cv2.boundingRect(contour)
                     roi = frame[y:y+h, x:x+w]
+                    print("Octagono detctado")
+                    '''
                     if self.frame_count % 10 == 0:
+                        print("Checando si hay texto en el octagono")
                         img_scene = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
                         text = pytesseract.image_to_string(img_scene)
                         text = text.strip().upper()
@@ -78,7 +82,11 @@ class TrafficSignDetector(Node):
                             detected = True
                             self.last_detection_time = time.time()
                             break
-            
+                    '''
+                    self.get_logger().info(f"Señal detectada")
+                    detected = True
+                    self.last_detection_time = time.time()
+                    break
             # Publicar valores según detección
             value_msg = Int32()
             if detected:
@@ -87,6 +95,7 @@ class TrafficSignDetector(Node):
                 while time.time() - self.last_detection_time < 5:
                     self.get_logger().info(f"Señal detectada: {value_msg.data}")
                     self.value_pub.publish(value_msg)
+                    self.publisher_intermittent_lights.publish(String(data='T'))
                     time.sleep(0.1)
             self.frame_count += 1
             

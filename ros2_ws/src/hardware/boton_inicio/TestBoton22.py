@@ -6,7 +6,7 @@ import os
 from time import sleep
 
 # Configuración
-BUTTON_PIN = 22          # GPIO4 (Pin 7)
+BUTTON_PIN = 22          # GPIO22
 LAUNCH_PATH = "/home/crofi/AutoModelCrofi/ros2_ws/launch/AutoModelT.py"  # Ajusta la ruta
 
 # Estado del botón y proceso

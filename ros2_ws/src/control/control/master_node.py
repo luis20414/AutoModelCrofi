@@ -24,7 +24,7 @@ class MasterNode(Node):
         # Subscripciones a distintos tópicos para validar transiciones
         self.encender_sub = self.create_subscription(Bool, '/enable_Auto', self.encender_callback, 10)
         self.senal_sub = self.create_subscription(Bool, '/stop_detected', self.signal_callback, 10)
-        self.finrebase_sub = self.create_subscription(Bool, '/final_rebase', self.continue_callback, 10)
+        self.finrebase_sub = self.create_subscription(Bool, '/end_stop', self.continue_callback, 10)
 
         # Estado actual
         self.estado_actual = Estado.IDLE

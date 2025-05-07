@@ -19,8 +19,8 @@ class SteeringError(Node):
         self.stop_detected = False  # Nueva bandera para rastrear si ya se procesó un True en /stop
         self.left_point = 0
         self.right_point = 0
-        self.left_pointR = 45  # Referencia para el punto izquierdo, 50
-        self.right_pointR = 116  # Referencia para el punto derecho, 113
+        self.left_pointR = 50  # Referencia para el punto izquierdo, 50 o 45 para la real
+        self.right_pointR = 113  # Referencia para el punto derecho, 113 o 116 para la real
         #140 para la interseccion
         self.previous_error = 0.0
         self.kp = 1.0  # Constante proporcional
@@ -29,7 +29,7 @@ class SteeringError(Node):
         self.current_speed = 1500  # Velocidad actual del vehículo
 
     def listener_callback_points(self, msg):
-        # Actualizar los puntos de los bordes del carril
+        # Actualizar los puntos de los bordes del carril[[]]
         self.left_point = msg.data[0]
         self.right_point = msg.data[1]
 
@@ -46,11 +46,13 @@ class SteeringError(Node):
         # Actualizar el estado de la señal de stop
         self.stop_signal = msg.data
         if self.enable:
+            self.evaluate_stop_signal()
+            """
             if not self.stop_detected:  # Solo procesar si no se ha detectado antes
                 self.evaluate_stop_signal()
             elif not self.stop_signal:  # Si ya se procesó y la señal es False, continuar movimiento
                 self.correction_mov()
-
+            """
     def evaluate_stop_signal(self):
         if self.stop_signal:
             # Detener el coche por 5 segundos
@@ -93,22 +95,25 @@ class SteeringError(Node):
 
         # Publicar el ángulo de dirección
         self.steering_publisher.publish(Float64(data=steering_angle))
+        self.speed_publisher.publish(Int32(data=1562))
 
         # Calcular y publicar la velocidad
-        target_speed = max(self.max_speed - abs(corrected_error) * 3, 1560)  # Reducir velocidad con error
-
+        #target_speed = max(self.max_speed - abs(corrected_error) * 3, 1560)  # Reducir velocidad con error
+        #print("Target Speed: ", int(target_speed))
+        """
         # Si la velocidad actual es mayor a 1670 y se necesita reducir
         if self.current_speed > 1670 and target_speed < self.current_speed:
             self.get_logger().info("Reduciendo velocidad: pasando por 1500 antes de establecer 1600.")
             self.speed_publisher.publish(Int32(data=1500))  # Detener momentáneamente
             time.sleep(0.5)  # Pausa breve para simular la transición
-            self.speed_publisher.publish(Int32(data=1600))  # Establecer velocidad a 1600
-            self.current_speed = 1600
+            self.speed_publisher.publish(Int32(data=1560))  # Establecer velocidad a 1600
+            self.current_speed = 1560
         else:
             # Publicar la velocidad calculada normalmente
             self.speed_publisher.publish(Int32(data=int(target_speed)))
             self.current_speed = target_speed
-
+        """
+        
 
 def main(args=None):
     rclpy.init(args=args)

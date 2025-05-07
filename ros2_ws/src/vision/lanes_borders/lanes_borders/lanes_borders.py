@@ -32,7 +32,7 @@ class LaneDetector(Node):
         center_x, center_y = width // 2, height // 2
 
         frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-        mask = cv2.inRange(frameHSV, whiteBajo, whiteAlto)
+        mask = cv2.inRange(frameHSV, blackBajo, blackAlto)
         kernel = np.ones((2, 2), np.uint8)
         mask_clean = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel, iterations=3)
 

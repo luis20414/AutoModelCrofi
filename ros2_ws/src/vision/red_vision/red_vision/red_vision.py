@@ -6,29 +6,34 @@ import numpy as np
 from sensor_msgs.msg import Image
 from std_msgs.msg import Bool
 from cv_bridge import CvBridge
-import time
 import pytesseract
+import time
 
 class TrafficSignDetector(Node):
     def __init__(self):
         super().__init__('traffic_sign_detector')
-        #Configurar Tesseract (ajusta según tu instalación)
+        # Configurar Tesseract (ajusta según tu instalación)
         pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
         # Inicializar puente OpenCV-ROS
         self.bridge = CvBridge()
         # Publicador para el valor numérico
-        self.stop_pub = self.create_publisher(Bool, '/stop', 10)
+        self.value_pub = self.create_publisher(Bool, '/stop', 10)
         # Publicador para la imagen procesada
         self.processed_pub = self.create_publisher(Image, '/red_image', 10)
         # Suscriptor a la cámara
         self.camera_sub = self.create_subscription(Image, '/camera', self.image_callback, 10)
         
         self.frame_count = 0
-        self.last_detection_time = 0
+        self.last_detection_time = 0  # Tiempo de la última detección
         self.get_logger().info("Nodo de detección de señales inicializado")
 
     def image_callback(self, msg):
         try:
+            # Verificar si han pasado 20 segundos desde la última detección
+            if time.time() - self.last_detection_time < 20:
+                self.get_logger().info("Esperando 20 segundos antes de permitir una nueva detección.")
+                return
+            
             # Verificar el formato de la imagen
             if msg.encoding != 'bgr8':
                 self.get_logger().error(f"Formato de imagen no compatible: {msg.encoding}")
@@ -60,36 +65,30 @@ class TrafficSignDetector(Node):
             
             for contour in contours:
                 area = cv2.contourArea(contour)
-                if area < 500:  # Filtrar áreas pequeñas
+                if area < 500:
                     continue
                     
                 epsilon = 0.02 * cv2.arcLength(contour, True)
                 approx = cv2.approxPolyDP(contour, epsilon, True)
                 
-                if len(approx) == 8:  # Verificar si es un octágono
-                    self.get_logger().info("Octágono detectado")
-                    detected = True
-                    # Extraer región de interés (ROI) del contorno detectado
+                if len(approx) == 8:  # Octágono
                     x, y, w, h = cv2.boundingRect(contour)
                     roi = frame[y:y+h, x:x+w]
-                    
-                    # Convertir ROI a escala de grises
-                    gray_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-                    
-                    # Aplicar umbral para mejorar el contraste
-                    _, thresh_roi = cv2.threshold(gray_roi, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-                    
-                    # Usar OCR para detectar texto en el ROI
-                    text = pytesseract.image_to_string(thresh_roi, config='--psm 8').strip()
-                    
-                    if text:  # Si se detecta texto
-                        self.get_logger().info(f"Texto detectado en el octágono: {text}")
-                        detected = True
-                        
+                    if self.frame_count % 10 == 0:
+                        img_scene = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+                        text = pytesseract.image_to_string(img_scene)
+                        text = text.strip().upper()
+                        if text:
+                            self.get_logger().info(f"Señal detectada: {text}")
+                            detected = True
+                            self.last_detection_time = time.time()  # Actualizar el tiempo de la última detección
+                            break
+            
             # Publicar valores según detección
-            msg = Bool()
-            msg.data = detected
-            self.stop_pub.publish(msg)
+            value_msg = Bool()
+            value_msg.data = detected
+            self.get_logger().info(f"Publicando señal detectada: {value_msg.data}")
+            self.value_pub.publish(value_msg)
             
             self.frame_count += 1
             

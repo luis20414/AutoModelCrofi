@@ -45,7 +45,7 @@ class ParkingAssistant(Node):
         Configura el coche al inicio del nodo.
         """
         # Configurar la velocidad inicial a 1540
-        self.speed_publisher.publish(Int32(data=1540))
+        self.speed_publisher.publish(Int32(data=1570))
         self.get_logger().info("Velocidad inicial configurada a 1540.")
 
         # Configurar el servo en 0
@@ -63,7 +63,7 @@ class ParkingAssistant(Node):
             if self.detect_car_on_right(ranges, angle_min, angle_increment):
                 self.detected_first_car = True
                 self.get_logger().info("Primer coche detectado a la derecha.")
-                self.create_timer(1.0, lambda: None)  # Esperar 1 segundo antes de continuar
+                self.create_timer(2.0, lambda: None)  # Esperar 1 segundo antes de continuar
             return
 
         # Paso 2: Detectar la pared a la derecha
@@ -79,7 +79,7 @@ class ParkingAssistant(Node):
             if self.detect_car_on_right(ranges, angle_min, angle_increment):
                 self.detected_second_car = True
                 self.get_logger().info("Segundo coche detectado a la derecha. Iniciando maniobra de estacionamiento.")
-                self.create_timer(2.0, self.park_vehicle)  # Esperar 1 segundo antes de iniciar la maniobra
+                self.create_timer(1.0, self.park_vehicle)  # Esperar 1 segundo antes de iniciar la maniobra
             return
 
     def detect_car_on_right(self, ranges, angle_min, angle_increment):
@@ -129,7 +129,7 @@ class ParkingAssistant(Node):
 
         # Paso 1: Retroceder hacia el lado contrario
         self.steering_publisher.publish(Float64(data=0.5))  # Girar hacia el lado contrario
-        self.speed_publisher.publish(Int32(data=1380))  # Velocidad de reversa
+        self.speed_publisher.publish(Int32(data=1340))  # Velocidad de reversa
         self.get_logger().info("Retrocediendo hacia el lado contrario...")
         self.create_timer(5.0, self.align_vehicle)  # Retroceder por 5 segundos
 
@@ -143,7 +143,7 @@ class ParkingAssistant(Node):
         Ajusta la posición del vehículo basándose en la distancia a la pared y a los coches laterales.
         """
         # Configurar velocidad y servo antes de ajustar
-        self.speed_publisher.publish(Int32(data=1540))
+        self.speed_publisher.publish(Int32(data=1560))
         self.steering_publisher.publish(Float64(data=0.0))
 
         # Obtener las distancias laterales y frontales

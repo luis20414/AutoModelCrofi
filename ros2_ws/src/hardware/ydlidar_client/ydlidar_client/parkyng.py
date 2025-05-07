@@ -63,7 +63,7 @@ class ParkingAssistant(Node):
             if self.detect_car_on_right(ranges, angle_min, angle_increment):
                 self.detected_first_car = True
                 self.get_logger().info("Primer coche detectado a la derecha.")
-                self.create_timer(2.0, lambda: None)  # Esperar 1 segundo antes de continuar
+                self.create_timer(1.0, lambda: None)  # Esperar 1 segundo antes de continuar
             return
 
         # Paso 2: Detectar la pared a la derecha
@@ -71,7 +71,7 @@ class ParkingAssistant(Node):
             if self.is_wall_near_right(ranges, angle_min, angle_increment):
                 self.detected_wall = True
                 self.get_logger().info("Pared detectada a la derecha.")
-                self.create_timer(2.0, lambda: None)  # Esperar 1 segundo antes de continuar
+                self.create_timer(1.0, lambda: None)  # Esperar 1 segundo antes de continuar
             return
 
         # Paso 3: Detectar el segundo coche a la derecha
@@ -92,7 +92,7 @@ class ParkingAssistant(Node):
             if -math.pi / 2 <= angle <= -math.pi / 4:  # Lado derecho
                 if 0 < distance <= 0.3:  # Detectar un coche a 30 cm
                     consecutive_points += 1
-                    if consecutive_points >= 5:  # Requiere al menos 5 puntos consecutivos
+                    if consecutive_points >= 10:  # Requiere al menos 5 puntos consecutivos
                         self.get_logger().info(f"Coche detectado a la derecha a {distance:.2f} m.")
                         return True
                 else:
@@ -109,7 +109,7 @@ class ParkingAssistant(Node):
             if -math.pi / 2 <= angle <= -math.pi / 4:  # Lado derecho
                 if 0 < distance <= .7:  # Detectar pared a la derecha
                     consecutive_points += 1
-                    if consecutive_points >= 5:  # Requiere al menos 5 puntos consecutivos
+                    if consecutive_points >= 15:  # Requiere al menos 5 puntos consecutivos
                         self.get_logger().info(f"Pared detectada a la derecha a {distance:.2f} m.")
                         return True
                 else:

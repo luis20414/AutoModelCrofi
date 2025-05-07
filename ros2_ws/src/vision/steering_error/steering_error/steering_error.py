@@ -9,6 +9,7 @@ class SteeringError(Node):
         self.subscription_borders = self.create_subscription(Float64MultiArray, 'lane_borders', self.listener_callback_points, 10)
         self.steering_publisher = self.create_publisher(Float64, 'steering', 10)
         self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
+        self.continue_publisher = self.create_publisher(Bool, '/end_stop', 10)
         self.subscription_enable = self.create_subscription(Bool, 'enable_Auto', self.listener_enable, 10)
         self.subscription_stop = self.create_subscription(Bool, '/stop', self.listener_stop, 10)
 
@@ -63,6 +64,7 @@ class SteeringError(Node):
             self.speed_publisher.publish(Int32(data=1500))
             time.sleep(5)
             self.get_logger().info("Reanudando movimiento después de STOP.")
+            self.continue_publisher.publish(Bool(data=True))
             self.stop_detected = True
         else:
             self.correction_mov()

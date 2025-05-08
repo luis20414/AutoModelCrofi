@@ -29,7 +29,10 @@ class TrafficSignDetector(Node):
 
     def image_callback(self, msg):
         if not self.allow_processing:
+        	self.value_pub.publish(Bool(data=True))
             return
+        self.value_pub.publish(Bool(data=True))
+        return
 
         try:
             if time.time() - self.last_detection_time < 20:

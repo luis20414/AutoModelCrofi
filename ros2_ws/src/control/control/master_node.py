@@ -20,8 +20,8 @@ class MasterNode(Node):
 
         # Subscripciones a distintos tópicos para validar transiciones
         self.encender_sub = self.create_subscription(Bool, '/enable_Auto', self.encender_callback, 10)
-        self.rebase_sub = self.create_subscription(Bool, '/overtake_detected', self.signal_callback, 10)
-        self.final_rebase_sub = self.create_subscription(Bool, '/end_overtake', self.continue_callback, 10)
+        self.rebase_sub = self.create_subscription(Bool, '/overtake_detected', self.rebase_callback, 10)
+        self.final_rebase_sub = self.create_subscription(Bool, '/end_overtake', self.fin_rebase_callback, 10)
 
         # Estado actual
         self.estado_actual = Estado.IDLE

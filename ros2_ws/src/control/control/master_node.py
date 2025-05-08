@@ -6,9 +6,7 @@ from enum import Enum
 class Estado(Enum):
     IDLE = 0
     GO = 1
-    STOP = 2
-    GO_ON = 3
-    OVERTAKE = 4
+    OVERTAKE = 2
 
 class MasterNode(Node):
     def __init__(self):
@@ -18,16 +16,16 @@ class MasterNode(Node):
         self.prueba_pub = self.create_publisher(String, '/tipo_prueba', 10)
         self.idle_pub = self.create_publisher(Bool, '/idle_state', 10)
         self.go_pub = self.create_publisher(Bool, '/go_state', 10)
-        self.stop_pub = self.create_publisher(Bool, '/stop_state', 10)
-        self.go_on_pub = self.create_publisher(Bool, '/go_on_state', 10)
+        self.overtake_pub = self.create_publisher(Bool, '/overtake_state', 10)
 
         # Subscripciones a distintos tópicos para validar transiciones
         self.encender_sub = self.create_subscription(Bool, '/enable_Auto', self.encender_callback, 10)
-        self.senal_sub = self.create_subscription(Bool, '/stop_detected', self.signal_callback, 10)
-        self.finrebase_sub = self.create_subscription(Bool, '/end_stop', self.continue_callback, 10)
+        self.rebase_sub = self.create_subscription(Bool, '/overtake_detected', self.signal_callback, 10)
+        self.final_rebase_sub = self.create_subscription(Bool, '/end_overtake', self.continue_callback, 10)
 
         # Estado actual
         self.estado_actual = Estado.IDLE
+        self.publicar_estado()  # Publica el estado inicial
 
         # Lista de pruebas
         """self.nom_prueba = ['prueba1', 'prueba23']
@@ -41,34 +39,29 @@ class MasterNode(Node):
     def publicar_estado(self):
         msg = Bool()
         msg.data = True
+        self.get_logger().info(f"Publicando estado actual: {self.estado_actual.name}")
 
-        if self.estado_actual == Estado.IDLE:
-            self.idle_pub.publish(msg)
-        elif self.estado_actual == Estado.GO:
-            self.go_pub.publish(msg)
-        elif self.estado_actual == Estado.STOP:
-            self.stop_pub.publish(msg)
-        elif self.estado_actual == Estado.GO_ON:
-            self.go_on_pub.publish(msg)
+        self.idle_pub.publish(Bool(data=self.estado_actual == Estado.IDLE))
+        self.go_pub.publish(Bool(data=self.estado_actual == Estado.GO))
+        self.overtake_pub.publish(Bool(data=self.estado_actual == Estado.OVERTAKE))
 
     def encender_callback(self, msg):
-        if msg.data:
+        if msg.data and self.estado_actual == Estado.IDLE:
             self.estado_actual = Estado.GO
-            self.get_logger().info('Transición a GO')
+            self.get_logger().info('Transición IDLE → GO')
             self.publicar_estado()
 
-    def signal_callback(self, msg):
-        if msg.data:
-            self.estado_actual = Estado.STOP
-            self.get_logger().info('Transición a STOP')
+    def rebase_callback(self, msg):
+        if msg.data and self.estado_actual == Estado.GO:
+            self.estado_actual = Estado.OVERTAKE
+            self.get_logger().info('Transición GO → OVERTAKE')
             self.publicar_estado()
 
-    def continue_callback(self, msg):
-        if msg.data:
-            self.estado_actual = Estado.GO_ON
-            self.get_logger().info('Transición a GO_ON')
+    def fin_rebase_callback(self, msg):
+        if msg.data and self.estado_actual == Estado.OVERTAKE:
+            self.estado_actual = Estado.GO
+            self.get_logger().info('Transición OVERTAKE → GO')
             self.publicar_estado()
-
 
 def main(args=None):
     rclpy.init(args=args)

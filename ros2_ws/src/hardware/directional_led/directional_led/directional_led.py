@@ -22,17 +22,17 @@ class LEDController(Node):
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.LOW)
 
-        self.allow_processing = False  # Solo se activa en stop_state=True
+        self.allow_processing = False  # Solo se activa en overtake_state=True
 
         self.subscription = self.create_subscription(String, 'rebase', self.listener_callback, 10)
-        self.stop_sub = self.create_subscription(Bool, '/stop_state', self.stop_callback, 10)
+        self.overtake_sub = self.create_subscription(Bool, '/overtake_state', self.overtake_callback, 10)
 
         self.get_logger().info("LED Controller listo, esperando mensajes en /rebase...")
 
-    def stop_callback(self, msg):
+    def overtake_callback(self, msg):
         self.allow_processing = msg.data
         estado = "activado" if msg.data else "desactivado"
-        self.get_logger().info(f"Procesamiento {estado} por /stop_state = {msg.data}")
+        self.get_logger().info(f"Procesamiento {estado} por /overtake_state = {msg.data}")
 
     def blink_leds(self, pins, blink_count=1, delay=0.5):
         for _ in range(blink_count):
@@ -45,7 +45,7 @@ class LEDController(Node):
 
     def listener_callback(self, msg):
         if not self.allow_processing:
-            self.get_logger().info("Ignorando comando /rebase: procesamiento no permitido (stop_state = False).")
+            self.get_logger().info("Ignorando comando /rebase: procesamiento no permitido (overtake_state = False).")
             return
 
         command = msg.data.strip().upper()

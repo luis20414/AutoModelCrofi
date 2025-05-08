@@ -17,14 +17,14 @@ class DriverController(Node):
             history=HistoryPolicy.KEEP_LAST
         )
         
-        self.allow_drive = False  # <--- Bandera para permitir movimiento
+        self.in_go_state = False
+        self.in_overtake_state = False
 
         self.subscription_angle = self.create_subscription(Int32, '/target_speed', self.listener_callback, qos_profile)
         self.publisher_intermittent_lights = self.create_publisher(String, 'rebase', 10) 
 
         self.go_sub = self.create_subscription(Bool, '/go_state', self.go_callback, 10)
-        self.stop_sub = self.create_subscription(Bool, '/stop_state', self.stop_callback, 10)
-        self.go_on_sub = self.create_subscription(Bool, '/go_on_state', self.go_on_callback, 10)
+        self.overtake_sub = self.create_subscription(Bool, '/overtake_state', self.overtake_callback, 10)
 
         try:
             self.arduino = serial.Serial('/dev/arduino_nano', 115200, timeout=1)
@@ -35,36 +35,35 @@ class DriverController(Node):
             self.arduino = None
 
     def go_callback(self, msg):
-        if msg.data:
-            self.allow_drive = True
-            self.get_logger().info("Permitir conducción (go_state = True)")
+        self.in_go_state = msg.data
+        self._update_drive_permission()
 
-    def stop_callback(self, msg):
-        if msg.data:
-            self.allow_drive = True
-            self.get_logger().info("Permitir conducción (stop_state = True)")
+    def overtake_callback(self, msg):
+        self.in_overtake_state = msg.data
+        self._update_drive_permission()
 
-    def go_on_callback(self, msg):
-        if msg.data:
-            self.allow_drive = True
-            self.get_logger().info("Permitir conducción (go_on_state = True)")
+    def _update_drive_permission(self):
+        if self.in_go_state or self.in_overtake_state:
+            self.get_logger().info("Conducción permitida (GO u OVERTAKE = True)")
+        else:
+            self.get_logger().info("Conducción detenida (ambos estados False)")
 
     def listener_callback(self, msg):
-        if self.allow_drive and self.arduino:
+        if (self.in_go_state or self.in_overtake_state) and self.arduino:
             try:
                 self.arduino.write(struct.pack('<i', msg.data))  # Enviar el valor como entero
                 self.arduino.flush()
-                self.get_logger().info(f"Sent speed: {msg.data}")
+                self.get_logger().info(f"Velocidad enviada: {msg.data}")
                 if msg.data == 1500:
                     self.publisher_intermittent_lights.publish(String(data='T'))
                 else:
                     self.publisher_intermittent_lights.publish(String(data='N'))
             except Exception as e:
                 self.get_logger().error(f"Error: {e}")
-        elif not self.allow_drive:
-            self.get_logger().info("Movimiento no permitido. Ignorando velocidad recibida.")
+        elif not (self.in_go_state or self.in_overtake_state):
+            self.get_logger().info("Conducción no permitida. Ignorando velocidad recibida.")
         else:
-            self.get_logger().error("Arduino not connected.")
+            self.get_logger().error("Arduino no conectado.")
 
 
 def main(args=None):

@@ -13,13 +13,11 @@ class WebcamPublisher(Node):
         self.publisher_ = self.create_publisher(Image, 'camera', 10)
         self.cam = cv2.VideoCapture(0, cv2.CAP_V4L2)
 
-        self.allow_camera = False  # <--- Bandera de control
-
+        # Solo se activa si el estado GO está activo
+        self.allow_camera = False
         self.go_sub = self.create_subscription(Bool, '/go_state', self.go_callback, 10)
-        self.stop_sub = self.create_subscription(Bool, '/stop_state', self.stop_callback, 10)
-        self.go_on_sub = self.create_subscription(Bool, '/go_on_state', self.go_on_callback, 10)
 
-        # Configura la resolución
+        # Configura la cámara
         self.cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
         self.cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
         self.cam.set(cv2.CAP_PROP_POS_FRAMES, 0)
@@ -29,19 +27,8 @@ class WebcamPublisher(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def go_callback(self, msg):
-        if msg.data:
-            self.allow_camera = True
-            self.get_logger().info("Captura de cámara activada (go_state)")
-
-    def stop_callback(self, msg):
-        if msg.data:
-            self.allow_camera = True
-            self.get_logger().info("Captura de cámara activada (stop_state)")
-
-    def go_on_callback(self, msg):
-        if msg.data:
-            self.allow_camera = True
-            self.get_logger().info("Captura de cámara activada (go_on_state)")
+        self.allow_camera = msg.data
+        self.get_logger().info(f"Captura {'activada' if msg.data else 'desactivada'} (go_state = {msg.data})")
 
     def timer_callback(self):
         if not self.allow_camera:
@@ -54,7 +41,6 @@ class WebcamPublisher(Node):
 
         frame = frame[50:160, :]  # Recorte vertical
         self.publisher_.publish(bridge.cv2_to_imgmsg(frame, encoding="bgr8"))
-
 
 def main(args=None):
     rclpy.init(args=args)

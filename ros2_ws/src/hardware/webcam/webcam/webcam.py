@@ -31,9 +31,6 @@ class WebcamPublisher(Node):
         self.get_logger().info(f"Captura {'activada' if msg.data else 'desactivada'} (go_state = {msg.data})")
 
     def timer_callback(self):
-        if not self.allow_camera:
-            return
-
         ret, frame = self.cam.read()
         if not ret or frame is None:
             self.get_logger().warn("No se pudo leer un frame del video.")

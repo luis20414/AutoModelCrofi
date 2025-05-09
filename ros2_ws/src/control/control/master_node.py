@@ -55,6 +55,7 @@ class MasterNode(Node):
         if msg.data and self.estado_actual == Estado.GO:
             self.estado_actual = Estado.OVERTAKE
             self.get_logger().info('Transición GO → OVERTAKE')
+            self.go_pub.publish(Bool(data=False))
             self.publicar_estado()
 
     def fin_rebase_callback(self, msg):

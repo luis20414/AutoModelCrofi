@@ -6,15 +6,15 @@ import time
 class SteeringError(Node):
     def __init__(self):
         super().__init__('steering_error')
-        self.subscription_borders = self.create_subscription(Float64MultiArray, 'lane_borders', self.listener_callback_points, 10)
+        
         self.steering_publisher = self.create_publisher(Float64, 'steering', 10)
         self.speed_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.continue_publisher = self.create_publisher(Bool, '/end_stop', 10)
         self.subscription_enable = self.create_subscription(Bool, 'enable_Auto', self.listener_enable, 10)
-        self.subscription_stop = self.create_subscription(Bool, '/stop', self.listener_stop, 10)
+        #self.subscription_stop = self.create_subscription(Bool, '/stop', self.listener_stop, 10)
+        #self.subscription_stop = self.create_subscription(Bool, '/stop', self.listener_stop_callback, 10)
 
         self.go_sub = self.create_subscription(Bool, '/go_state', self.avanzar_callback, 10)
-        self.go_on_sub = self.create_subscription(Bool, '/go_on_state', self.continuar_callback, 10)
 
         self.selectorVelocidades = True # True para el inicial, False para el segundo
 
@@ -48,6 +48,11 @@ class SteeringError(Node):
         self.kd = 0.1
         self.current_speed = 1500
         self.contador = 0
+
+
+
+        self.subscription_borders = self.create_subscription(Float64MultiArray, 'lane_borders', self.listener_callback_points, 10)
+        #self.get_logger().info("FIN INIT AAAAAAAAAAAAAAAAAAAAAAaa")
     
     def timerInicial_callback(self):
         if self.selectorVelocidades:
@@ -68,20 +73,21 @@ class SteeringError(Node):
     """
 
 
+
     def avanzar_callback(self, msg):
         if msg.data:
             self.allow_processing = True
             self.get_logger().info("Procesamiento activado por /go_state")
+        else:
+            self.allow_processing = False
+            self.get_logger().info("Procesamiento Desactivado por /go_state")
 
-    def continuar_callback(self, msg):
-        if msg.data:
-            self.allow_processing = True
-            self.get_logger().info("Procesamiento activado por /go_on_state")  
-            self.correction_mov()
 
     def listener_callback_points(self, msg):
         self.left_point = msg.data[0]
         self.right_point = msg.data[1]
+        self.get_logger().info("Puntos recibidos")
+        self.correction_mov()
 
     def listener_enable(self, msg):
         self.enable = msg.data
@@ -90,32 +96,11 @@ class SteeringError(Node):
             self.speed_publisher.publish(Int32(data=1500))
             self.get_logger().info("Modo automático desactivado.")
 
-    def listener_stop(self, msg):
-        self.stop_signal = msg.data
-        if self.enable and self.allow_processing:
-            self.evaluate_stop_signal()
-        if self.enable and not self.allow_processing:
-            self.correction_mov()
-
-    def evaluate_stop_signal(self):
-        self.get_logger().info("En evaluate_stop_signal")
-        if self.stop_signal:
-            self.get_logger().info("Señal de STOP detectada. Deteniendo el coche por 5 segundos.")
-            self.steering_publisher.publish(Float64(data=0.0))
-            self.speed_publisher.publish(Int32(data=1500))
-            time.sleep(5)
-            self.get_logger().info("Reanudando movimiento después de STOP.")
-            self.continue_publisher.publish(Bool(data=True))
-            self.stop_detected = True
-            self.speed_publisher.publish(Int32(data=1555))
-            time.sleep(.5)
-        else:
-            self.correction_mov()
-
     def correction_mov(self):
         if not self.enable or not self.allow_processing:
+            #self.get_logger().info("No entró")
             return
-
+        
         error = 0.0
         if self.left_point > 0 and self.right_point > 0:
             error_left = self.left_point - self.left_pointR
@@ -136,9 +121,9 @@ class SteeringError(Node):
         #kp_steering = 0.035
         kp_steering = 0.03
         steering_angle = max(min(kp_steering * -corrected_error, 0.5), -0.5)
-
         self.steering_publisher.publish(Float64(data=steering_angle))
         self.speed_publisher.publish(Int32(data=self.currentSpeed))
+        self.get_logger().info("Publicacion de puntos")
         
 
 

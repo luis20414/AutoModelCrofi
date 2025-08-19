@@ -11,6 +11,10 @@ bridge = CvBridge()
 
 blackBajo = np.array([0, 0, 0], np.uint8)
 blackAlto = np.array([255, 255, 80], np.uint8)
+whiteBajo = np.array([0, 0, 200], np.uint8)  # Esta para blanco
+whiteAlto = np.array([255, 255, 255], np.uint8)
+
+
 
 class LaneDetector(Node):
     def __init__(self):
@@ -27,14 +31,14 @@ class LaneDetector(Node):
         self.get_logger().info(f"go_state: {msg.data}")
 
     def listener_callback(self, msg):
-        if not self.allow_processing:
-            return
+        #if not self.allow_processing:
+        #    return
 
         frame = bridge.imgmsg_to_cv2(msg)
         height, width = frame.shape[:2]
 
         frameHSV = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-        mask = cv2.inRange(frameHSV, blackBajo, blackAlto)
+        mask = cv2.inRange(frameHSV, whiteBajo, whiteAlto)
         kernel = np.ones((2, 2), np.uint8)
         mask_clean = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel, iterations=3)
 
@@ -64,6 +68,7 @@ class LaneDetector(Node):
 
         msg = Float64MultiArray()
         msg.data = [float(left_point), float(right_point)]
+        #self.get_logger().info("Puntos enviados")
         self.publisher_.publish(msg)
 
 def main(args=None):

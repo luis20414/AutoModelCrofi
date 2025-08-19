@@ -15,6 +15,8 @@ class RebaseNode(Node):
         self.colision_detectada = False
         self.distanciaColision = 0.65
 
+        
+
         # Banderas de máquina de estados
         self.B1 = False
         self.B2 = False
@@ -24,12 +26,20 @@ class RebaseNode(Node):
         self.idealDistance = 0.20   
         self.steeringConstant = 7  
 
+        # Timer de velocidad
+        self.startSpeed = 1547
+        self.max_speed = 1553
+        self.currentSpeed = self.startSpeed
+
+        tiempoTimer = 1
+        self.timer = self.create_timer(tiempoTimer, self.timer_callback)
+
         # Crear publicadores
         self.driver_publisher = self.create_publisher(Int32, '/target_speed', 10)
         self.servo_publisher = self.create_publisher(Float64, 'steering', 10)
         self.lights_publisher = self.create_publisher(String, '/rebase', 10)
-        self.rebase_publisher = self.create_publisher(Bool, '/inicio_rebase', 10)
-        self.finrebase_publisher = self.create_publisher(Bool, '/final_rebase', 10)
+        self.rebase_publisher = self.create_publisher(Bool, '/overtake_detected', 10)
+        self.finrebase_publisher = self.create_publisher(Bool, '/end_overtake', 10)
 
         # Crear suscripciones
         self.degrees_subscription = self.create_subscription(
@@ -64,6 +74,14 @@ class RebaseNode(Node):
         self.active = self.go_active or self.overtake_active
         estado = "activo" if self.active else "inactivo"
         self.get_logger().info(f"Rebase está {estado} (go={self.go_active}, overtake={self.overtake_active})")
+
+
+    def timer_callback(self):
+        if self.currentSpeed <= self.max_speed:
+                self.currentSpeed += 1
+        else:
+            self.currentSpeed = self.startSpeed
+
 
     def colision_callback(self, msg):
         self.colision_detectada = msg.data
@@ -128,7 +146,7 @@ class RebaseNode(Node):
             self.driver_publisher.publish(Int32(data=1500))
             return False
         else:
-            self.driver_publisher.publish(Int32(data=1550))
+            self.driver_publisher.publish(Int32(data=self.currentSpeed))
             return True
 
     def cambiar_carril(self):
@@ -139,13 +157,13 @@ class RebaseNode(Node):
             self.get_logger().info("Avanzando en el carril izquierdo")
             self.tiempo_cambio_carril = time.time() - start_time
             self.servo_publisher.publish(Float64(data=-0.5))
-            self.driver_publisher.publish(Int32(data=1540))
+            self.driver_publisher.publish(Int32(data=self.currentSpeed))
             time.sleep(0.8)
             return True
         return False
 
     def reincorporarse(self):
-        indices_derecha = (self.angles > -60) & (self.angles < -30)
+        indices_derecha = (self.angles > -90) & (self.angles < -30)
         if np.any((self.ranges[indices_derecha] < 0.60) & (self.ranges[indices_derecha] != 0)):
             self.alineacion()
             return False

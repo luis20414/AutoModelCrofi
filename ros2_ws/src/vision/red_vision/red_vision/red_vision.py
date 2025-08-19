@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+import cv2
+import numpy as np
+from sensor_msgs.msg import Image
+from std_msgs.msg import Bool
+from cv_bridge import CvBridge
+import pytesseract
+import time
+
 
 class TrafficSignDetector(Node):
     def __init__(self):
@@ -28,10 +39,12 @@ class TrafficSignDetector(Node):
             self.get_logger().info("Procesamiento activado por /go_on_state")
 
     def image_callback(self, msg):
-        if not self.allow_processing:
-        	self.value_pub.publish(Bool(data=True))
-            return
-        self.value_pub.publish(Bool(data=True))
+
+        #if not self.allow_processing:
+        # 	self.value_pub.publish(Bool(data=False))
+
+        
+        self.value_pub.publish(Bool(data=False))
         return
 
         try:

@@ -92,7 +92,7 @@ class ParkingAssistant(Node):
             if -math.pi / 2 <= angle <= -math.pi / 4:  # Lado derecho
                 if 0 < distance <= 0.3:  # Detectar un coche a 30 cm
                     consecutive_points += 1
-                    if consecutive_points >= 10:  # Requiere al menos 5 puntos consecutivos
+                    if consecutive_points >= 2:  # Requiere al menos 5 puntos consecutivos
                         self.get_logger().info(f"Coche detectado a la derecha a {distance:.2f} m.")
                         return True
                 else:
@@ -109,7 +109,7 @@ class ParkingAssistant(Node):
             if -math.pi / 2 <= angle <= -math.pi / 4:  # Lado derecho
                 if 0 < distance <= .7:  # Detectar pared a la derecha
                     consecutive_points += 1
-                    if consecutive_points >= 15:  # Requiere al menos 5 puntos consecutivos
+                    if consecutive_points >= 40:  # Requiere al menos 5 puntos consecutivos
                         self.get_logger().info(f"Pared detectada a la derecha a {distance:.2f} m.")
                         return True
                 else:

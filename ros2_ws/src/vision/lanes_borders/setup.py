@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-		'lanes_borders=lanes_borders.lanes_borders:main'
+		    'lanes_borders=lanes_borders.lanes_borders:main',
+            'lanes_borders_monitor=lanes_borders.lanes_borders_monitor:main'
         ],
     },
 )

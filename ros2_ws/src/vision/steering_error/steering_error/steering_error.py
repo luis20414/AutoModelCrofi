@@ -20,7 +20,7 @@ class SteeringError(Node):
 
         self.startSpeed1 = 1540
 
-        self.startSpeed = 1547
+        self.startSpeed = 1548
         self.max_speed = 1553
 
 
